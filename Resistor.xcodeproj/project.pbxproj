@@ -15,6 +15,7 @@
 		ADDC6BA92AE56A4000FBEEA8 /* ResistorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDC6BA82AE56A4000FBEEA8 /* ResistorTests.swift */; };
 		ADDC6BB32AE56A4000FBEEA8 /* ResistorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDC6BB22AE56A4000FBEEA8 /* ResistorUITests.swift */; };
 		ADDC6BB52AE56A4000FBEEA8 /* ResistorUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDC6BB42AE56A4000FBEEA8 /* ResistorUITestsLaunchTests.swift */; };
+		ADDC6BC22AE56DB600FBEEA8 /* ResistorEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDC6BC12AE56DB600FBEEA8 /* ResistorEditor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		ADDC6BAE2AE56A4000FBEEA8 /* ResistorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ResistorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADDC6BB22AE56A4000FBEEA8 /* ResistorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResistorUITests.swift; sourceTree = "<group>"; };
 		ADDC6BB42AE56A4000FBEEA8 /* ResistorUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResistorUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		ADDC6BC12AE56DB600FBEEA8 /* ResistorEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResistorEditor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 		ADDC6B922AE56A3E00FBEEA8 /* Resistor */ = {
 			isa = PBXGroup;
 			children = (
+				ADDC6BC12AE56DB600FBEEA8 /* ResistorEditor.swift */,
 				ADDC6B932AE56A3E00FBEEA8 /* ResistorApp.swift */,
 				ADDC6B952AE56A3E00FBEEA8 /* ResistorDocument.swift */,
 				ADDC6B972AE56A3E00FBEEA8 /* ContentView.swift */,
@@ -265,6 +268,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADDC6B942AE56A3E00FBEEA8 /* ResistorApp.swift in Sources */,
+				ADDC6BC22AE56DB600FBEEA8 /* ResistorEditor.swift in Sources */,
 				ADDC6B962AE56A3E00FBEEA8 /* ResistorDocument.swift in Sources */,
 				ADDC6B982AE56A3E00FBEEA8 /* ContentView.swift in Sources */,
 			);
