@@ -16,6 +16,8 @@
 		ADDC6BB32AE56A4000FBEEA8 /* ResistorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDC6BB22AE56A4000FBEEA8 /* ResistorUITests.swift */; };
 		ADDC6BB52AE56A4000FBEEA8 /* ResistorUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDC6BB42AE56A4000FBEEA8 /* ResistorUITestsLaunchTests.swift */; };
 		ADDC6BC22AE56DB600FBEEA8 /* ResistorEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDC6BC12AE56DB600FBEEA8 /* ResistorEditor.swift */; };
+		ADDC6BC42AE5BA4A00FBEEA8 /* CircuitComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDC6BC32AE5BA4A00FBEEA8 /* CircuitComponents.swift */; };
+		ADDC6BC92AE5BAF200FBEEA8 /* CircuitShapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDC6BC82AE5BAF200FBEEA8 /* CircuitShapes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,8 @@
 		ADDC6BB22AE56A4000FBEEA8 /* ResistorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResistorUITests.swift; sourceTree = "<group>"; };
 		ADDC6BB42AE56A4000FBEEA8 /* ResistorUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResistorUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		ADDC6BC12AE56DB600FBEEA8 /* ResistorEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResistorEditor.swift; sourceTree = "<group>"; };
+		ADDC6BC32AE5BA4A00FBEEA8 /* CircuitComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircuitComponents.swift; sourceTree = "<group>"; };
+		ADDC6BC82AE5BAF200FBEEA8 /* CircuitShapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircuitShapes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,10 +104,12 @@
 		ADDC6B922AE56A3E00FBEEA8 /* Resistor */ = {
 			isa = PBXGroup;
 			children = (
-				ADDC6BC12AE56DB600FBEEA8 /* ResistorEditor.swift */,
 				ADDC6B932AE56A3E00FBEEA8 /* ResistorApp.swift */,
-				ADDC6B952AE56A3E00FBEEA8 /* ResistorDocument.swift */,
 				ADDC6B972AE56A3E00FBEEA8 /* ContentView.swift */,
+				ADDC6BC12AE56DB600FBEEA8 /* ResistorEditor.swift */,
+				ADDC6BC72AE5BAA300FBEEA8 /* Persistence */,
+				ADDC6BC62AE5BA9800FBEEA8 /* Drawing */,
+				ADDC6BC52AE5BA8800FBEEA8 /* Model */,
 				ADDC6B992AE56A4000FBEEA8 /* Assets.xcassets */,
 				ADDC6B9B2AE56A4000FBEEA8 /* Info.plist */,
 				ADDC6B9C2AE56A4000FBEEA8 /* Resistor.entitlements */,
@@ -135,6 +141,30 @@
 				ADDC6BB42AE56A4000FBEEA8 /* ResistorUITestsLaunchTests.swift */,
 			);
 			path = ResistorUITests;
+			sourceTree = "<group>";
+		};
+		ADDC6BC52AE5BA8800FBEEA8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				ADDC6BC32AE5BA4A00FBEEA8 /* CircuitComponents.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		ADDC6BC62AE5BA9800FBEEA8 /* Drawing */ = {
+			isa = PBXGroup;
+			children = (
+				ADDC6BC82AE5BAF200FBEEA8 /* CircuitShapes.swift */,
+			);
+			path = Drawing;
+			sourceTree = "<group>";
+		};
+		ADDC6BC72AE5BAA300FBEEA8 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				ADDC6B952AE56A3E00FBEEA8 /* ResistorDocument.swift */,
+			);
+			path = Persistence;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,8 +297,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADDC6BC42AE5BA4A00FBEEA8 /* CircuitComponents.swift in Sources */,
 				ADDC6B942AE56A3E00FBEEA8 /* ResistorApp.swift in Sources */,
 				ADDC6BC22AE56DB600FBEEA8 /* ResistorEditor.swift in Sources */,
+				ADDC6BC92AE5BAF200FBEEA8 /* CircuitShapes.swift in Sources */,
 				ADDC6B962AE56A3E00FBEEA8 /* ResistorDocument.swift in Sources */,
 				ADDC6B982AE56A3E00FBEEA8 /* ContentView.swift in Sources */,
 			);
