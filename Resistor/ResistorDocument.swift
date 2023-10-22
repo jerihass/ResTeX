@@ -9,31 +9,28 @@ import SwiftUI
 import UniformTypeIdentifiers
 
 extension UTType {
-    static var exampleText: UTType {
-        UTType(importedAs: "com.example.plain-text")
+    static var restest: UTType {
+        UTType(importedAs: "com.saletlucem.restest")
     }
 }
 
 struct ResistorDocument: FileDocument {
-    var text: String
+    var component: CircuitCodable
+    static var readableContentTypes: [UTType] { [.restest]}
 
-    init(text: String = "Hello, world!") {
-        self.text = text
+    init(component: CircuitCodable = Point(radius: 1, origin: .zero)) {
+        self.component = component
     }
-
-    static var readableContentTypes: [UTType] { [.exampleText] }
 
     init(configuration: ReadConfiguration) throws {
-        guard let data = configuration.file.regularFileContents,
-              let string = String(data: data, encoding: .utf8)
-        else {
-            throw CocoaError(.fileReadCorruptFile)
-        }
-        text = string
+        guard let data = configuration.file.regularFileContents else { throw CocoaError(.fileReadCorruptFile) }
+        let decoder = JSONDecoder()
+        component = try decoder.decode(Point.self, from: data)
     }
-    
+
     func fileWrapper(configuration: WriteConfiguration) throws -> FileWrapper {
-        let data = text.data(using: .utf8)!
+        let encoder = JSONEncoder()
+        let data = try encoder.encode(component)
         return .init(regularFileWithContents: data)
     }
 }

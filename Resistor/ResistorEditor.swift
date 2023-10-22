@@ -17,6 +17,7 @@ struct ResistorEditor: Sendable, View {
 }
 
 protocol CircuitShape: Shape, Identifiable {}
+protocol CircuitCodable: Codable {}
 
 struct CircuitComponent: Identifiable {
     var id = UUID()
@@ -36,12 +37,12 @@ struct CircuitComponent: Identifiable {
     }
 }
 
-struct Point {
+struct Point: CircuitCodable {
     var radius: Float
     var origin: CGPoint
 }
 
-struct Line {
+struct Line : CircuitCodable {
     var start: CGPoint
     var end: CGPoint
 }
