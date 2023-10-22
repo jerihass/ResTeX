@@ -6,17 +6,25 @@ import Foundation
 import SwiftUI
 
 struct ResistorEditor: Sendable, View {
-    var items: [any CircuitShape]
+    var items: [MyThing]
     var body: some View {
         ZStack {
-            items[0].path(in: .infinite)
-            items[1].path(in: .infinite)
-            items[2].path(in: .infinite)
+            ForEach(items) { item in
+                item.draw()
+            }
         }
     }
 }
 
 protocol CircuitShape: Shape, Identifiable {}
+
+struct MyThing: Identifiable {
+    var id = UUID()
+    var circuitShape: any CircuitShape
+    func draw(in rect: CGRect = .infinite) -> some View {
+        return circuitShape.path(in: .infinite).stroke(lineWidth: 2.0).fill()
+    }
+}
 
 struct Point {
     var radius: Float
@@ -48,9 +56,11 @@ struct NodeShape: CircuitShape {
 struct ShortShape: CircuitShape {
     var id = UUID()
     var line: Line
+    var thickness: Int = 1
     func path(in rect: CGRect = .infinite) -> Path {
-        var path = Path()
 
+        var path = Path()
+        path.addLine(to: .zero)
         path.move(to: line.start)
         path.addLine(to: line.end)
         path.closeSubpath()
@@ -67,7 +77,8 @@ struct ResistorShape: Shape {
 }
 
 #Preview {
-    ResistorEditor(items: [NodeShape(point: .init(radius: 5, origin: .init(x: 40, y: 20))),
-                           ShortShape(line: .init(start: .init(x: 2, y: 3), end: .init(x: 5, y: 9))),
-                           NodeShape(point: .init(radius: 12, origin: .init(x: 60, y: 200)))])
+    let node1 = NodeShape(point: .init(radius: 5, origin: .init(x: 40, y: 20)))
+    let short1 = ShortShape(line: .init(start: .init(x: 2, y: 3), end: .init(x: 50, y: 3)))
+    let node2 = NodeShape(point: .init(radius: 12, origin: .init(x: 60, y: 200)))
+    return ResistorEditor(items: [.init(circuitShape: node1), .init(circuitShape: short1), .init(circuitShape: node2)])
 }
