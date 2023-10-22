@@ -11,7 +11,7 @@ struct ContentView: View {
     @Binding var document: ResistorDocument
 
     var body: some View {
-        ResistorEditor(items: [])
+        ResistorEditor(items: [document.component])
     }
 }
 

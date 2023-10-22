@@ -18,12 +18,14 @@ struct ResistorDocument: FileDocument {
     var component: CircuitCodable
     static var readableContentTypes: [UTType] { [.restest]}
 
-    init(component: CircuitCodable = Point(radius: 1, origin: .zero)) {
+    init(component: CircuitCodable = Point(radius: 20, origin: .zero)) {
         self.component = component
     }
 
     init(configuration: ReadConfiguration) throws {
-        guard let data = configuration.file.regularFileContents else { throw CocoaError(.fileReadCorruptFile) }
+        guard let data = configuration.file.regularFileContents else {
+            throw CocoaError(.fileReadCorruptFile)
+        }
         let decoder = JSONDecoder()
         component = try decoder.decode(Point.self, from: data)
     }
