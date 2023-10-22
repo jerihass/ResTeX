@@ -6,7 +6,7 @@ import Foundation
 import SwiftUI
 
 struct ResistorEditor: Sendable, View {
-    var items: [MyThing]
+    var items: [CircuitComponent]
     var body: some View {
         ZStack {
             ForEach(items) { item in
@@ -18,11 +18,21 @@ struct ResistorEditor: Sendable, View {
 
 protocol CircuitShape: Shape, Identifiable {}
 
-struct MyThing: Identifiable {
+struct CircuitComponent: Identifiable {
     var id = UUID()
     var circuitShape: any CircuitShape
+    var fill: Bool = true
     func draw(in rect: CGRect = .infinite) -> some View {
-        return circuitShape.path(in: .infinite).stroke(lineWidth: 2.0).fill()
+        return makeBody()
+    }
+
+    @ViewBuilder
+    private func makeBody() -> some View {
+        if fill {
+            circuitShape.path(in: .infinite).fill()
+        } else {
+            circuitShape.path(in: .infinite).stroke(lineWidth: 2.0)
+        }
     }
 }
 
@@ -80,5 +90,5 @@ struct ResistorShape: Shape {
     let node1 = NodeShape(point: .init(radius: 5, origin: .init(x: 40, y: 20)))
     let short1 = ShortShape(line: .init(start: .init(x: 2, y: 3), end: .init(x: 50, y: 3)))
     let node2 = NodeShape(point: .init(radius: 12, origin: .init(x: 60, y: 200)))
-    return ResistorEditor(items: [.init(circuitShape: node1), .init(circuitShape: short1), .init(circuitShape: node2)])
+    return ResistorEditor(items: [.init(circuitShape: node1), .init(circuitShape: short1, fill: false), .init(circuitShape: node2)])
 }
