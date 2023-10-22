@@ -15,11 +15,11 @@ extension UTType {
 }
 
 struct ResistorDocument: FileDocument {
-    var component: CircuitCodable
+    var circuit: Circuit
     static var readableContentTypes: [UTType] { [.restest]}
 
-    init(component: CircuitCodable = Point(radius: 20, origin: .zero)) {
-        self.component = component
+    init(circuit: Circuit) {
+        self.circuit = circuit
     }
 
     init(configuration: ReadConfiguration) throws {
@@ -27,12 +27,12 @@ struct ResistorDocument: FileDocument {
             throw CocoaError(.fileReadCorruptFile)
         }
         let decoder = JSONDecoder()
-        component = try decoder.decode(Point.self, from: data)
+        circuit = try decoder.decode(Circuit.self, from: data)
     }
 
     func fileWrapper(configuration: WriteConfiguration) throws -> FileWrapper {
         let encoder = JSONEncoder()
-        let data = try encoder.encode(component)
+        let data = try encoder.encode(circuit)
         return .init(regularFileWithContents: data)
     }
 }

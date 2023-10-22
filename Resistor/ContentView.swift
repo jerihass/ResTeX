@@ -11,10 +11,10 @@ struct ContentView: View {
     @Binding var document: ResistorDocument
 
     var body: some View {
-        ResistorEditor(items: [document.component])
+        ResistorEditor(circuit: document.circuit)
     }
 }
 
 #Preview {
-    ContentView(document: .constant(ResistorDocument(component: Line(start: .init(x: 0, y: 0), end: .init(x: 10, y: 10)))))
+    ContentView(document: .constant(ResistorDocument(circuit: Circuit())))
 }
