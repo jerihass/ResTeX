@@ -1,7 +1,4 @@
 //
-//  ContentView.swift
-//  Resistor
-//
 //  Created by Jericho Hasselbush on 10/22/23.
 //
 

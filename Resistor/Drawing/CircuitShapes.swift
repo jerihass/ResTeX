@@ -1,7 +1,4 @@
 //
-//  CircuitShapes.swift
-//  Resistor
-//
 //  Created by Jericho Hasselbush on 10/22/23.
 //
 
@@ -10,7 +7,7 @@ import SwiftUI
 
 protocol CircuitShape: Shape, Identifiable {}
 
-struct CircuitComponent: Identifiable {
+struct CircuitPresenter: Identifiable {
     var id = UUID()
     var circuitShape: any CircuitShape
     var fill: Bool = false

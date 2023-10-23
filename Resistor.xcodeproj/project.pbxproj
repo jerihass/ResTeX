@@ -18,6 +18,7 @@
 		ADDC6BC22AE56DB600FBEEA8 /* ResistorEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDC6BC12AE56DB600FBEEA8 /* ResistorEditor.swift */; };
 		ADDC6BC42AE5BA4A00FBEEA8 /* CircuitComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDC6BC32AE5BA4A00FBEEA8 /* CircuitComponents.swift */; };
 		ADDC6BC92AE5BAF200FBEEA8 /* CircuitShapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDC6BC82AE5BAF200FBEEA8 /* CircuitShapes.swift */; };
+		ADDC6BCB2AE5FC5100FBEEA8 /* CircuitComponent+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDC6BCA2AE5FC5100FBEEA8 /* CircuitComponent+Codable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		ADDC6BC12AE56DB600FBEEA8 /* ResistorEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResistorEditor.swift; sourceTree = "<group>"; };
 		ADDC6BC32AE5BA4A00FBEEA8 /* CircuitComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircuitComponents.swift; sourceTree = "<group>"; };
 		ADDC6BC82AE5BAF200FBEEA8 /* CircuitShapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircuitShapes.swift; sourceTree = "<group>"; };
+		ADDC6BCA2AE5FC5100FBEEA8 /* CircuitComponent+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CircuitComponent+Codable.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				ADDC6B952AE56A3E00FBEEA8 /* ResistorDocument.swift */,
+				ADDC6BCA2AE5FC5100FBEEA8 /* CircuitComponent+Codable.swift */,
 			);
 			path = Persistence;
 			sourceTree = "<group>";
@@ -303,6 +306,7 @@
 				ADDC6BC92AE5BAF200FBEEA8 /* CircuitShapes.swift in Sources */,
 				ADDC6B962AE56A3E00FBEEA8 /* ResistorDocument.swift in Sources */,
 				ADDC6B982AE56A3E00FBEEA8 /* ContentView.swift in Sources */,
+				ADDC6BCB2AE5FC5100FBEEA8 /* CircuitComponent+Codable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

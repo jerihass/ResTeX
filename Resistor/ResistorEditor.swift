@@ -6,7 +6,7 @@ import Foundation
 import SwiftUI
 
 struct ResistorEditor: Sendable, View {
-    var items: [CircuitComponent] = [CircuitComponent]()
+    var items: [CircuitPresenter] = [CircuitPresenter]()
 
     init(circuit: Circuit) {
         for item in circuit.components {
