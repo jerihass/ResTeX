@@ -5,7 +5,26 @@
 import Foundation
 import SwiftUI
 
-protocol CircuitShape: Shape, Identifiable {}
+protocol CircuitShape: Shape, Identifiable {
+    var origin: CGPoint { get }
+    var isSelected: Bool { get set }
+}
+
+struct Circuit {
+    var components: [Component]
+    init(components: [Component] = []) {
+        self.components = components
+    }
+}
+
+extension Circuit {
+    mutating func moveComponent(_ component: Component, to newPoint: CGPoint) {
+        guard var component = components.first(where: { $0.id == component.id }) else { return }
+        components.removeAll(where: {$0.id == component.id})
+        component.move(newPoint)
+        components.append(component)
+    }
+}
 
 struct ComponentPresenter: Identifiable {
     var id = UUID()
@@ -27,7 +46,9 @@ struct ComponentPresenter: Identifiable {
 
 struct NodeShape: CircuitShape {
     var id = UUID()
-    var point: Point
+    var point: Node
+    var isSelected: Bool = false
+
     func path(in rect: CGRect = .infinite) -> Path {
         var path = Path()
 
@@ -40,11 +61,15 @@ struct NodeShape: CircuitShape {
 
         return path
     }
+
+    var origin: CGPoint { point.origin }
 }
 
-struct ShortShape: CircuitShape {
+struct WireShape: CircuitShape {
     var id = UUID()
-    var line: Line
+    var line: Wire
+    var isSelected: Bool = false
+
     var thickness: Int = 1
     func path(in rect: CGRect = .infinite) -> Path {
 
@@ -55,11 +80,46 @@ struct ShortShape: CircuitShape {
 
         return path
     }
+
+    var origin: CGPoint { line.start }
 }
 
-struct ResistorShape: Shape {
+struct ResistorShape: CircuitShape {
+    var id = UUID()
+    var resistor: Resistor
+    var isSelected: Bool = false
+
+    private var points: [CGPoint]
+    private var vertical: Bool
+    init(resistor: Resistor, vertical: Bool = false) {
+        self.resistor = resistor
+        points = [.init(x: 3, y: 0),
+                  .init(x: 6, y: 5),
+                  .init(x: 12, y: -5),
+                  .init(x: 18, y: 5),
+                  .init(x: 24, y: -5),
+                  .init(x: 30, y: 5),
+                  .init(x: 36, y: -5),
+                  .init(x: 39, y: 0),
+                  .init(x: 42, y: 0)
+        ]
+        self.vertical = vertical
+    }
+
     func path(in rect: CGRect) -> Path {
         var path = Path()
+        path.move(to: resistor.start)
+        for point in points {
+            if !vertical {
+                path.addLine(to: .init(x: resistor.start.x + point.x, y: resistor.start.y + point.y))
+            } else {
+                path.addLine(to: .init(x: resistor.start.x + point.y, y: resistor.start.y + point.x))
+            }
+        }
+        path.move(to: resistor.start)
+        path.closeSubpath()
         return path
     }
+
+    var origin: CGPoint { resistor.start }
 }

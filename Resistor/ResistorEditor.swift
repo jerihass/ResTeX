@@ -7,14 +7,21 @@ import SwiftUI
 
 struct ResistorEditor: Sendable, View {
     var components: [ComponentPresenter] = [ComponentPresenter]()
+    @State var circuit: Circuit
 
     init(circuit: Circuit) {
+        self.circuit = circuit
+
         for item in circuit.components {
-            if item is Point {
-                self.components.append(.init(circuitShape: NodeShape(point: item as! Point)))
+            if item is Node {
+                self.components.append(.init(circuitShape: NodeShape(point: item as! Node)))
             }
-            if item is Line {
-                self.components.append(.init(circuitShape: ShortShape(line: item as! Line)))
+            if item is Wire {
+                self.components.append(.init(circuitShape: WireShape(line: item as! Wire)))
+            }
+            if item is Resistor {
+                guard let res = item as? Resistor else { return }
+                self.components.append(.init(circuitShape: ResistorShape(resistor: res, vertical: res.vertical ?? false)))
             }
         }
     }
@@ -29,7 +36,9 @@ struct ResistorEditor: Sendable, View {
 }
 
 #Preview {
-    return ResistorEditor(circuit: Circuit(components: [Point(radius: 5, origin: .zero),
-                                  Line(start: .init(x: 60, y: 75), end: .init(x: 175, y: 300)),
-                                  Point(radius: 10, origin: .init(x: 150, y: 350))]))
+    return ResistorEditor(circuit: Circuit(components: [
+        Node(radius: 5, origin: .init(x: 60, y: 75)),
+        Wire(start: .init(x: 60, y: 75), end: .init(x: 60, y: 300)),
+        Resistor(start: .init(x: 50, y: 50)),
+        Resistor(start: .init(x: 100, y: 100), vertical: true)]))
 }
