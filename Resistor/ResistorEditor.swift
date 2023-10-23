@@ -6,22 +6,22 @@ import Foundation
 import SwiftUI
 
 struct ResistorEditor: Sendable, View {
-    var items: [CircuitPresenter] = [CircuitPresenter]()
+    var components: [ComponentPresenter] = [ComponentPresenter]()
 
     init(circuit: Circuit) {
         for item in circuit.components {
             if item is Point {
-                self.items.append(.init(circuitShape: NodeShape(point: item as! Point)))
+                self.components.append(.init(circuitShape: NodeShape(point: item as! Point)))
             }
             if item is Line {
-                self.items.append(.init(circuitShape: ShortShape(line: item as! Line)))
+                self.components.append(.init(circuitShape: ShortShape(line: item as! Line)))
             }
         }
     }
 
     var body: some View {
         ZStack {
-            ForEach(items) { item in
+            ForEach(components) { item in
                 item.draw()
             }
         }

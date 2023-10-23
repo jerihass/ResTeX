@@ -7,7 +7,7 @@ import SwiftUI
 
 protocol CircuitShape: Shape, Identifiable {}
 
-struct CircuitPresenter: Identifiable {
+struct ComponentPresenter: Identifiable {
     var id = UUID()
     var circuitShape: any CircuitShape
     var fill: Bool = false
