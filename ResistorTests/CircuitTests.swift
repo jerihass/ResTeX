@@ -18,4 +18,3 @@ final class CircuitTests: XCTestCase {
         XCTAssertEqual(moved?.origin, .init(x: 5, y: 5))
     }
 }
-
