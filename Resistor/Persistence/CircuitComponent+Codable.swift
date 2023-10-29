@@ -4,51 +4,42 @@
 
 import Foundation
 
-enum ComponentEnum {
+enum ComponentEnum: Codable {
     case point(Node)
     case line(Wire)
     case resistor(Resistor)
 }
 
-extension ComponentEnum: Codable {}
-
 extension Circuit: Codable {
     enum CodingKeys: String, CodingKey {
         case components
         case type
+        case circuit
     }
 
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
-        var enums = [ComponentEnum]()
-        for component in components {
-            if component is Node {
-                enums.append(.point(component as! Node))
-            }
-            if component is Wire {
-                enums.append(.line(component as! Wire))
-            }
-            if component is Resistor {
-                enums.append(.resistor(component as! Resistor))
-            }
+        var compContiner = container.nestedContainer(keyedBy: ComponentKeys.self, forKey: .components)
+        for component in self.components {
+            try compContiner.encode(component, forKey: component.key)
         }
-        try container.encode(enums, forKey: CodingKeys.components)
     }
 
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        let items = try container.decode([ComponentEnum].self, forKey: CodingKeys.components)
-        var comps = [Component]()
-        for item in items {
-            switch item {
-            case .point(let p):
-                comps.append(p)
-            case .line(let l):
-                comps.append(l)
-            case .resistor(let r):
-                comps.append(r)
+        let componentContainer = try container.nestedContainer(keyedBy: ComponentKeys.self, forKey: .components)
+        var components = [Component]()
+        for key in componentContainer.allKeys {
+            switch key {
+            case .node:
+                components.append(try componentContainer.decode(Node.self, forKey: .node))
+            case .wire:
+                components.append(try componentContainer.decode(Wire.self, forKey: .wire))
+            case .resistor:
+                components.append(try componentContainer.decode(Resistor.self, forKey: .resistor))
             }
         }
-        self.init(components: comps)
+
+        self = Circuit(components: components)
     }
 }
