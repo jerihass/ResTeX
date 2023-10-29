@@ -18,8 +18,13 @@ class ResistorModel: ObservableObject {
         callback(circuit)
     }
 
-    func selectComponent(_ component: Component) {
-        circuit.selectComponent(component)
+    func selectComponent(_ component: Component?) {
+        circuit.deselectAll()
+        guard let comp = component else {
+            self.objectWillChange.send()
+            return
+        }
+        circuit.selectComponent(comp)
     }
 }
 
@@ -39,18 +44,25 @@ struct ResistorEditor: Sendable, View {
             }
         }
         .onTapGesture { point in
+            print("tapped: \(point)")
             for component in model.circuit.components {
-                if let hitbox = component as? HitBox, hitbox.inBounds(point: point) {
-                    model.selectComponent(component)
-                    selectedComponent = component
-                } else { }
+                if let hitbox = component as? HitBox {
+                    if hitbox.inBounds(point: point) {
+                        model.selectComponent(component)
+                        selectedComponent = component
+                        return
+                    } else {
+                        model.selectComponent(nil)
+                        selectedComponent = nil
+                    }
+                }
             }
         }
         .gesture(drag)
     }
 
     var drag: some Gesture {
-        return DragGesture()
+        return DragGesture(minimumDistance: 0.0)
             .onChanged { value in
                 if let sel = selectedComponent {
                     model.moveComponent(sel, destination: value.location)

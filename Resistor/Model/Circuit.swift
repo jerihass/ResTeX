@@ -28,6 +28,16 @@ extension Circuit {
         components.insert(component, at: index)
     }
 
+    mutating func deselectAll() {
+        var components = [Component]()
+        for component in self.components {
+            var comp = component
+            comp.selected = false
+            components.append(comp)
+        }
+        self.components = components
+    }
+
     var presenter: [ComponentPresenter] {
         components.compactMap({
             guard let shape = $0 as? ComponentShape else { return nil }
