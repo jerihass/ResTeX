@@ -13,8 +13,6 @@ enum ComponentEnum: Codable {
 extension Circuit: Codable {
     enum CodingKeys: String, CodingKey {
         case components
-        case type
-        case circuit
     }
 
     func encode(to encoder: Encoder) throws {
