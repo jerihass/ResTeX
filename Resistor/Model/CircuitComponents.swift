@@ -35,7 +35,10 @@ struct Wire: Component {
     var end: CGPoint
     var selected: Bool = false
     mutating func move(_ location: CGPoint) {
+        let dX = start.x - location.x
+        let dY = start.y - location.y
         start = location
+        end = .init(x: end.x - dX, y: end.y - dY)
     }
     var origin: CGPoint { start }
     var key: ComponentKeys { .wire }

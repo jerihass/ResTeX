@@ -31,9 +31,6 @@ extension Wire: HitBox {
 extension Resistor : HitBox {
     func inBounds(point: CGPoint) -> Bool {
         let resRect = CGRect(origin: .init(x: start.x, y: start.y - 5), size: .init(width: 36, height: 10))
-//        let size = CGSize(width: Double(self.), height: Double(self.radius))
-//        let rect = CGRect(origin: self.origin,
-//                          size: size)
         return point.x <= resRect.maxX && point.x >= resRect.minX && point.y <= resRect.maxY && point.y >= resRect.minY
     }
 }

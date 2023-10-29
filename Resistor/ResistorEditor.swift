@@ -25,27 +25,42 @@ class ResistorModel: ObservableObject {
 
 struct ResistorEditor: Sendable, View {
     @ObservedObject var model: ResistorModel
+    @State private var selectedComponent: (any Component)?
 
     init(model: ResistorModel) {
         self.model = model
     }
 
     var body: some View {
-        ScrollView {
-            ZStack {
-                ForEach(model.circuit.presenter) { item in
-                    item.draw()
-                        .foregroundStyle(item.selected ? Color.red : Color.primary)
-                }
+        ZStack {
+            ForEach(model.circuit.presenter) { item in
+                item.draw()
+                    .foregroundStyle(item.selected ? Color.red : Color.primary)
             }
         }
-        .onTapGesture(perform: { point in
+        .onTapGesture { point in
             for component in model.circuit.components {
                 if let hitbox = component as? HitBox, hitbox.inBounds(point: point) {
                     model.selectComponent(component)
+                    selectedComponent = component
+                } else { }
+            }
+        }
+        .gesture(drag)
+    }
+
+    var drag: some Gesture {
+        return DragGesture()
+            .onChanged { value in
+                if let sel = selectedComponent {
+                    model.moveComponent(sel, destination: value.location)
                 }
             }
-        })
+            .onEnded { value in
+                if let sel = selectedComponent {
+                    model.moveComponent(sel, destination: value.location)
+                }
+            }
     }
 }
 
