@@ -3,4 +3,54 @@
    uuid = "2FE9F588-F542-4876-82AD-3D0EBC986BA5"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "30EC6A7F-602E-4B3B-B968-41167390BF36"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Resistor/ResistorEditor.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "30EC6A7F-602E-4B3B-B968-41167390BF36 - 90af201940dc8ee"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (__C.CGPoint) -&gt; () in Resistor.ResistorEditor.body.getter : some"
+                  moduleName = "Resistor"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/countermind/Projects/Resistor/Resistor/ResistorEditor.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "393">
+               </Location>
+               <Location
+                  uuid = "30EC6A7F-602E-4B3B-B968-41167390BF36 - 90af201940dc8ee"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (__C.CGPoint) -&gt; () in Resistor.ResistorEditor.body.getter : some"
+                  moduleName = "Resistor"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/countermind/Projects/Resistor/Resistor/ResistorEditor.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "688">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

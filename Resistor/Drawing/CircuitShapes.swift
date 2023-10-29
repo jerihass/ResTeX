@@ -14,6 +14,7 @@ struct ComponentPresenter: Identifiable {
     var id = UUID()
     var circuitShape: any CircuitShape
     var fill: Bool = false
+    var selected: Bool = false
     func draw(in rect: CGRect = .infinite) -> some View {
         return makeBody()
     }

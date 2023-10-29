@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD67E3382AEE832B00D5BAA2 /* Component+HitBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD67E3372AEE832B00D5BAA2 /* Component+HitBox.swift */; };
 		AD6E24452AE6CD1400F313E7 /* CircuitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6E24442AE6CD1400F313E7 /* CircuitTests.swift */; };
 		ADDC6B942AE56A3E00FBEEA8 /* ResistorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDC6B932AE56A3E00FBEEA8 /* ResistorApp.swift */; };
 		ADDC6B962AE56A3E00FBEEA8 /* ResistorDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDC6B952AE56A3E00FBEEA8 /* ResistorDocument.swift */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AD67E3372AEE832B00D5BAA2 /* Component+HitBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Component+HitBox.swift"; sourceTree = "<group>"; };
 		AD6E24442AE6CD1400F313E7 /* CircuitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircuitTests.swift; sourceTree = "<group>"; };
 		ADDC6B902AE56A3E00FBEEA8 /* Resistor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Resistor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADDC6B932AE56A3E00FBEEA8 /* ResistorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResistorApp.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 				ADDC6BC32AE5BA4A00FBEEA8 /* CircuitComponents.swift */,
 				ADF3D8D62AEE5B0C00095953 /* Circuit.swift */,
 				ADF3D8D82AEE5BA100095953 /* Component+Shape.swift */,
+				AD67E3372AEE832B00D5BAA2 /* Component+HitBox.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 				ADDC6BC42AE5BA4A00FBEEA8 /* CircuitComponents.swift in Sources */,
 				ADDC6B942AE56A3E00FBEEA8 /* ResistorApp.swift in Sources */,
 				ADDC6BC22AE56DB600FBEEA8 /* ResistorEditor.swift in Sources */,
+				AD67E3382AEE832B00D5BAA2 /* Component+HitBox.swift in Sources */,
 				ADF3D8D92AEE5BA100095953 /* Component+Shape.swift in Sources */,
 				ADF3D8D72AEE5B0C00095953 /* Circuit.swift in Sources */,
 				ADDC6BC92AE5BAF200FBEEA8 /* CircuitShapes.swift in Sources */,

@@ -17,4 +17,12 @@ final class CircuitTests: XCTestCase {
         let moved = sut.components.first(where: {$0.id == node.id})
         XCTAssertEqual(moved?.origin, .init(x: 5, y: 5))
     }
+
+    func test_shouldHitTestComponent() throws {
+        let hit: CGPoint = .init(x: 0, y: 0)
+        let didHit = node.inBounds(point: hit)
+        node.selected = didHit
+        XCTAssertEqual(didHit, true)
+        XCTAssertEqual(node.selected, true)
+    }
 }

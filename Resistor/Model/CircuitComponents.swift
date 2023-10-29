@@ -15,12 +15,14 @@ protocol Component: Codable, Sendable {
     mutating func move(_ location: CGPoint)
     var origin: CGPoint { get }
     var key: ComponentKeys { get }
+    var selected: Bool { get set }
 }
 
 struct Node: Component {
     var id = UUID()
     var radius: Float
     var origin: CGPoint
+    var selected: Bool = false
     mutating func move(_ location: CGPoint) {
         origin = location
     }
@@ -31,6 +33,7 @@ struct Wire: Component {
     var id = UUID()
     var start: CGPoint
     var end: CGPoint
+    var selected: Bool = false
     mutating func move(_ location: CGPoint) {
         start = location
     }
@@ -42,6 +45,7 @@ struct Resistor: Component {
     var id = UUID()
     var start: CGPoint
     var vertical: Bool? = false
+    var selected: Bool = false
     mutating func move(_ location: CGPoint) {
         start = location
     }

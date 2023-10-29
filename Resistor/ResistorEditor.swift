@@ -17,11 +17,15 @@ class ResistorModel: ObservableObject {
         circuit.moveComponent(comp, to: destination)
         callback(circuit)
     }
+
+    func selectComponent(_ component: Component) {
+        circuit.selectComponent(component)
+    }
 }
 
 struct ResistorEditor: Sendable, View {
     @ObservedObject var model: ResistorModel
-    
+
     init(model: ResistorModel) {
         self.model = model
     }
@@ -31,12 +35,16 @@ struct ResistorEditor: Sendable, View {
             ZStack {
                 ForEach(model.circuit.presenter) { item in
                     item.draw()
+                        .foregroundStyle(item.selected ? Color.red : Color.primary)
                 }
             }
         }
-        .onTapGesture(perform: {point in
-            guard let comp = model.circuit.components.first else { return }
-            model.moveComponent(comp, destination: point)
+        .onTapGesture(perform: { point in
+            for component in model.circuit.components {
+                if let hitbox = component as? HitBox, hitbox.inBounds(point: point) {
+                    model.selectComponent(component)
+                }
+            }
         })
     }
 }
