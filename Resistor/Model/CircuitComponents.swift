@@ -4,10 +4,11 @@
 
 import Foundation
 
-protocol Component: Codable {
+protocol Component: Codable, Sendable {
     var id: UUID { get }
     mutating func move(_ location: CGPoint)
     var origin: CGPoint { get }
+    var shape: any CircuitShape { get }
 }
 
 struct Node: Component {
@@ -16,6 +17,10 @@ struct Node: Component {
     var origin: CGPoint
     mutating func move(_ location: CGPoint) {
         origin = location
+    }
+
+    var shape: any CircuitShape {
+        NodeShape(point: self)
     }
 }
 
@@ -27,6 +32,9 @@ struct Wire: Component {
         start = location
     }
     var origin: CGPoint { start }
+    var shape: any CircuitShape {
+        WireShape(line: self)
+    }
 }
 
 struct Resistor: Component {
@@ -37,6 +45,9 @@ struct Resistor: Component {
         start = location
     }
     var origin: CGPoint { start }
+    var shape: any CircuitShape {
+        ResistorShape(resistor: self, vertical: self.vertical ?? false)
+    }
 }
 
 

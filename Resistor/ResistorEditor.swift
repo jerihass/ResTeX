@@ -7,29 +7,19 @@ import SwiftUI
 
 struct ResistorEditor: Sendable, View {
     var components: [ComponentPresenter] = [ComponentPresenter]()
-    @State var circuit: Circuit
+    var circuit: Circuit
 
     init(circuit: Circuit) {
         self.circuit = circuit
-
-        for item in circuit.components {
-            if item is Node {
-                self.components.append(.init(circuitShape: NodeShape(point: item as! Node)))
-            }
-            if item is Wire {
-                self.components.append(.init(circuitShape: WireShape(line: item as! Wire)))
-            }
-            if item is Resistor {
-                guard let res = item as? Resistor else { return }
-                self.components.append(.init(circuitShape: ResistorShape(resistor: res, vertical: res.vertical ?? false)))
-            }
-        }
+        self.components = circuit.presenter
     }
 
     var body: some View {
-        ZStack {
-            ForEach(components) { item in
-                item.draw()
+        ScrollView {
+            ZStack {
+                ForEach(components) { item in
+                    item.draw()
+                }
             }
         }
     }

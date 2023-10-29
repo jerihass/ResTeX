@@ -10,7 +10,7 @@ protocol CircuitShape: Shape, Identifiable {
     var isSelected: Bool { get set }
 }
 
-struct Circuit {
+struct Circuit: Sendable {
     var components: [Component]
     init(components: [Component] = []) {
         self.components = components
@@ -23,6 +23,14 @@ extension Circuit {
         components.removeAll(where: {$0.id == component.id})
         component.move(newPoint)
         components.append(component)
+    }
+}
+
+extension Circuit {
+    var presenter: [ComponentPresenter] {
+        components.compactMap({
+            ComponentPresenter(circuitShape: $0.shape)
+        })
     }
 }
 
@@ -93,16 +101,19 @@ struct ResistorShape: CircuitShape {
     private var vertical: Bool
     init(resistor: Resistor, vertical: Bool = false) {
         self.resistor = resistor
-        points = [.init(x: 3, y: 0),
-                  .init(x: 6, y: 5),
-                  .init(x: 12, y: -5),
-                  .init(x: 18, y: 5),
+
+        points = [.init(x: 0, y: 0),
+                  .init(x: 6, y: 0),
+                  .init(x: 8, y: -5),
+                  .init(x: 12, y: 5),
+                  .init(x: 16, y: -5),
+                  .init(x: 20, y: 5),
                   .init(x: 24, y: -5),
-                  .init(x: 30, y: 5),
-                  .init(x: 36, y: -5),
-                  .init(x: 39, y: 0),
-                  .init(x: 42, y: 0)
+                  .init(x: 28, y: 5),
+                  .init(x: 30, y: 0),
+                  .init(x: 36, y: 0),
         ]
+
         self.vertical = vertical
     }
 
