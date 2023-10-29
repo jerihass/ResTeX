@@ -6,29 +6,43 @@ import Foundation
 import SwiftUI
 
 struct ResistorEditor: Sendable, View {
-    var components: [ComponentPresenter] = [ComponentPresenter]()
-    var circuit: Circuit
-
-    init(circuit: Circuit) {
-        self.circuit = circuit
-        self.components = circuit.presenter
+    @ObservedObject var model: ResistorModel
+    
+    init(model: ResistorModel) {
+        self.model = model
     }
 
     var body: some View {
         ScrollView {
             ZStack {
-                ForEach(components) { item in
+                ForEach(model.circuit.presenter) { item in
                     item.draw()
                 }
             }
+        }
+        .onTapGesture {
+            guard let comp = model.circuit.components.first else { return }
+            let x = comp.origin.x
+            model.moveComponent(comp, destination: .init(x: x + 3, y: comp.origin.y))
         }
     }
 }
 
 #Preview {
-    return ResistorEditor(circuit: Circuit(components: [
-        Node(radius: 5, origin: .init(x: 60, y: 75)),
-        Wire(start: .init(x: 60, y: 75), end: .init(x: 60, y: 300)),
-        Resistor(start: .init(x: 50, y: 50)),
-        Resistor(start: .init(x: 100, y: 100), vertical: true)]))
+    return ResistorEditor(model: .init(circuit: Circuit(components: [Resistor(start: .init(x: 50, y: 50))]),
+                                       callback: { _ in }))
+}
+
+class ResistorModel: ObservableObject {
+    @Published var circuit: Circuit
+    var callback: (Circuit) -> Void
+    init(circuit: Circuit, callback: @escaping (Circuit) -> Void) {
+        self.circuit = circuit
+        self.callback = callback
+    }
+
+    func moveComponent(_ comp: Component, destination: CGPoint) {
+        circuit.moveComponent(comp, to: destination)
+        callback(circuit)
+    }
 }

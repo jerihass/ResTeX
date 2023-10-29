@@ -20,9 +20,10 @@ struct Circuit: Sendable {
 extension Circuit {
     mutating func moveComponent(_ component: Component, to newPoint: CGPoint) {
         guard var component = components.first(where: { $0.id == component.id }) else { return }
+        guard let index = components.firstIndex(where: {$0.id == component.id }) else { return }
         components.removeAll(where: {$0.id == component.id})
         component.move(newPoint)
-        components.append(component)
+        components.insert(component, at: index)
     }
 }
 
