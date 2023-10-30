@@ -14,30 +14,35 @@ struct ResistorEditor: Sendable, View {
     }
 
     var body: some View {
-        ZStack {
-            Rectangle().fill().frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center).foregroundStyle(.ultraThinMaterial).backgroundStyle(.clear)
-            ForEach(model.circuit.presenter) { item in
-                item.draw()
-                    .foregroundStyle(item.selected ? Color.red : Color.primary)
+        VStack {
+            Button("Resistor", action: {
+                model.addComponent(Resistor(start: .init(x: 20, y: 20)))
+            })
+            ZStack {
+                Rectangle().fill().frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center).foregroundStyle(.ultraThinMaterial).backgroundStyle(.clear)
+                ForEach(model.circuit.presenter) { item in
+                    item.draw()
+                        .foregroundStyle(item.selected ? Color.red : Color.primary)
+                }
             }
-        }
-        .allowsHitTesting(true)
-        .onTapGesture { point in
-            print("tapped: \(point)")
-            for component in model.circuit.components {
-                if let hitbox = component as? HitBox {
-                    if hitbox.inBounds(point: point) {
-                        model.selectComponent(component)
-                        selectedComponent = component
-                        return
-                    } else {
-                        model.selectComponent(nil)
-                        selectedComponent = nil
+            .allowsHitTesting(true)
+            .onTapGesture { point in
+                print("tapped: \(point)")
+                for component in model.circuit.components {
+                    if let hitbox = component as? HitBox {
+                        if hitbox.inBounds(point: point) {
+                            model.selectComponent(component)
+                            selectedComponent = component
+                            return
+                        } else {
+                            model.selectComponent(nil)
+                            selectedComponent = nil
+                        }
                     }
                 }
             }
+            .gesture(drag)
         }
-        .gesture(drag)
     }
 
     var drag: some Gesture {

@@ -35,4 +35,11 @@ final class CircuitTests: XCTestCase {
         let didHit = node.inBounds(point: hit)
         XCTAssertEqual(didHit, false)
     }
+
+    func test_shouldAddComponent() throws {
+        let res2 = Resistor(start: .init(x: 10, y: 10))
+        let sut = ResistorModel(circuit: .init(), callback: { _ in })
+        sut.addComponent(res2)
+        XCTAssertEqual(sut.circuit.components.count, 1)
+    }
 }

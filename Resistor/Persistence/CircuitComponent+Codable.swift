@@ -19,8 +19,10 @@ extension Circuit: Codable {
         var container = encoder.container(keyedBy: CodingKeys.self)
         var compContiner = container.nestedContainer(keyedBy: ComponentKeys.self, forKey: .components)
         for component in self.components {
+            print("Component: \(component)")
             try compContiner.encode(component, forKey: component.key)
         }
+        print("Container: \(compContiner)")
     }
 
     init(from decoder: Decoder) throws {

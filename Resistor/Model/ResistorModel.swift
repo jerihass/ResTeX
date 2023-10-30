@@ -27,4 +27,9 @@ class ResistorModel: ObservableObject {
         circuit.selectComponent(comp)
         self.selectedComponent = comp
     }
+
+    func addComponent(_ component: Component) {
+        circuit.components.append(component)
+        callback(circuit)
+    }
 }

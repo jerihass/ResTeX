@@ -7,11 +7,11 @@ import SwiftUI
 @main
 struct ResistorApp: App {
 
-    var circuit: Circuit = Circuit(components: [Resistor(start: .init(x: 50, y: 50)),
-                                                Wire(start: .init(x: 10, y: 10), end: .init(x: 40, y: 10))])
+//    @State var circuit: Circuit = Circuit(components: [Resistor(start: .init(x: 50, y: 50)),
+//                                                Wire(start: .init(x: 10, y: 10), end: .init(x: 40, y: 10))])
 
     var body: some Scene {
-        DocumentGroup(newDocument: ResistorDocument(circuit: circuit)) { file in
+        DocumentGroup(newDocument: ResistorDocument(circuit: .init())) { file in
                 ContentView(document: file.$document)
             }
     }
