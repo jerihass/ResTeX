@@ -19,16 +19,20 @@ final class CircuitTests: XCTestCase {
     }
 
     func test_shouldSelectComponent() throws {
-        var circuit = Circuit(components: [node, wire, resistor])
-
-        var sut = ResistorModel(circuit: circuit, callback: { _ in })
+        let circuit = Circuit(components: [node, wire, resistor])
+        let sut = ResistorModel(circuit: circuit, callback: { _ in })
         sut.selectComponent(node)
-
     }
 
     func test_shouldHitboxNode() throws {
         let hit: CGPoint = .init(x: 0, y: 0)
         let didHit = node.inBounds(point: hit)
         XCTAssertEqual(didHit, true)
+    }
+
+    func test_shouldMissHitbox() throws {
+        let hit = CGPoint(x: 100, y: 100)
+        let didHit = node.inBounds(point: hit)
+        XCTAssertEqual(didHit, false)
     }
 }

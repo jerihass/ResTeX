@@ -5,29 +5,6 @@
 import Foundation
 import SwiftUI
 
-class ResistorModel: ObservableObject {
-    @Published var circuit: Circuit
-    var callback: (Circuit) -> Void
-    init(circuit: Circuit, callback: @escaping (Circuit) -> Void) {
-        self.circuit = circuit
-        self.callback = callback
-    }
-
-    func moveComponent(_ comp: Component, destination: CGPoint) {
-        circuit.moveComponent(comp, to: destination)
-        callback(circuit)
-    }
-
-    func selectComponent(_ component: Component?) {
-        circuit.deselectAll()
-        guard let comp = component else {
-            self.objectWillChange.send()
-            return
-        }
-        circuit.selectComponent(comp)
-    }
-}
-
 struct ResistorEditor: Sendable, View {
     @ObservedObject var model: ResistorModel
     @State private var selectedComponent: (any Component)?
@@ -38,11 +15,13 @@ struct ResistorEditor: Sendable, View {
 
     var body: some View {
         ZStack {
+            Rectangle().fill().frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center).foregroundStyle(.ultraThinMaterial).backgroundStyle(.clear)
             ForEach(model.circuit.presenter) { item in
                 item.draw()
                     .foregroundStyle(item.selected ? Color.red : Color.primary)
             }
         }
+        .allowsHitTesting(true)
         .onTapGesture { point in
             print("tapped: \(point)")
             for component in model.circuit.components {
