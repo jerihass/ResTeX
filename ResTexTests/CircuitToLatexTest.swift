@@ -30,21 +30,4 @@ final class CircuitToLatexTest: XCTestCase {
     }
 }
 
-extension Circuit {
-    var latexString: String {
-        var fullString: String = ""
-        let latex = components.compactMap({$0 as? LaTeXRepresentable})
-        for component in latex.enumerated() {
-            fullString += component.element.latexString
-            if component.offset < latex.count - 1 {
-                fullString += "\n"
-            }
-            if component.offset != latex.endIndex - 1 {
-                fullString += "to "
-            } else {
-                fullString += ";"
-            }
-        }
-        return fullString
-    }
-}
+
