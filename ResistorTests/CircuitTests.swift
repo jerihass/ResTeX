@@ -42,4 +42,13 @@ final class CircuitTests: XCTestCase {
         sut.addComponent(res2)
         XCTAssertEqual(sut.circuit.components.count, 1)
     }
+
+    func test_shouldEncodeAndDecodeCircuit() throws {
+        var sut = Circuit(components: [node, wire, resistor])
+        let encoder = JSONEncoder()
+        let data = try encoder.encode(sut)
+        let decoder = JSONDecoder()
+        let circuit = try decoder.decode(Circuit.self, from: data)
+        XCTAssertEqual(circuit.components.count, sut.components.count)
+    }
 }

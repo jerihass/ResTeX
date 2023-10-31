@@ -18,13 +18,11 @@ extension Circuit: Codable {
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         var componentContainer = container.nestedContainer(keyedBy: ComponentKeys.self, forKey: .components)
-//        var componentContainer = container.nestedUnkeyedContainer(forKey: .components)
         for key in ComponentKeys.allCases {
             let sameComps = components.compactMap({ component in
                 component.key == key ? key.magic(component) : nil
             })
             try componentContainer.encode(sameComps, forKey: key)
-//            try componentContainer.encode(sameComps)
         }
     }
 
@@ -34,7 +32,6 @@ extension Circuit: Codable {
         let componentContainer = try container.nestedContainer(keyedBy: ComponentKeys.self, forKey: .components)
         for key in ComponentKeys.allCases {
             let things = try componentContainer.decode([ComponentEnum].self, forKey: key)
-            print(things)
             if !things.isEmpty {
                 for thing in things {
                     switch thing {
