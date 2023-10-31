@@ -4,10 +4,23 @@
 
 import Foundation
 
-enum ComponentKeys: String, CodingKey {
+enum ComponentKeys: String, CodingKey, CaseIterable {
     case node
     case wire
     case resistor
+    func magic(_ component: Component) -> ComponentEnum? {
+        switch self {
+        case .node:
+            guard let node = component as? Node else { return nil }
+            return ComponentEnum.node(node)
+        case .wire:
+            guard let wire = component as? Wire else { return nil }
+            return ComponentEnum.wire(wire)
+        case .resistor:
+            guard let res = component as? Resistor else { return nil }
+            return ComponentEnum.resistor(res)
+        }
+    }
 }
 
 protocol Component: Codable, Sendable {
