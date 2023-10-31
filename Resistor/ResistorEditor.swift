@@ -15,9 +15,17 @@ struct ResistorEditor: Sendable, View {
 
     var body: some View {
         VStack {
-            Button("Resistor", action: {
-                model.addComponent(Resistor(start: .init(x: 20, y: 20)))
-            })
+            HStack {
+                Button("Resistor", action: {
+                    model.addComponent(Resistor(start: .init(x: 20, y: 20)))
+                })
+                Button("Node", action: {
+                    model.addComponent(Node(radius: 2, origin: .init(x: 30, y: 30)))
+                })
+                Button("Wire", action: {
+                    model.addComponent(Wire(start: .init(x: 40, y: 40), end: .init(x: 60, y: 40)))
+                })
+            }
             ZStack {
                 Rectangle().fill().frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center).foregroundStyle(.ultraThinMaterial).backgroundStyle(.clear)
                 ForEach(model.circuit.presenter) { item in
@@ -27,7 +35,6 @@ struct ResistorEditor: Sendable, View {
             }
             .allowsHitTesting(true)
             .onTapGesture { point in
-                print("tapped: \(point)")
                 for component in model.circuit.components {
                     if let hitbox = component as? HitBox {
                         if hitbox.inBounds(point: point) {
