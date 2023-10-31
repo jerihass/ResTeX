@@ -22,6 +22,7 @@
 		ADDC6BCB2AE5FC5100FBEEA8 /* CircuitComponent+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDC6BCA2AE5FC5100FBEEA8 /* CircuitComponent+Codable.swift */; };
 		ADEAD23F2AEF42110069DC7E /* ResTexModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEAD23E2AEF42110069DC7E /* ResTexModel.swift */; };
 		ADEAD2412AF148490069DC7E /* CircuitToLatexTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEAD2402AF148490069DC7E /* CircuitToLatexTest.swift */; };
+		ADEAD2442AF1739A0069DC7E /* LaTeXPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEAD2432AF1739A0069DC7E /* LaTeXPresentation.swift */; };
 		ADF3D8D72AEE5B0C00095953 /* Circuit.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF3D8D62AEE5B0C00095953 /* Circuit.swift */; };
 		ADF3D8D92AEE5BA100095953 /* Component+Shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF3D8D82AEE5BA100095953 /* Component+Shape.swift */; };
 /* End PBXBuildFile section */
@@ -64,6 +65,7 @@
 		ADDC6BCA2AE5FC5100FBEEA8 /* CircuitComponent+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CircuitComponent+Codable.swift"; sourceTree = "<group>"; };
 		ADEAD23E2AEF42110069DC7E /* ResTexModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResTexModel.swift; sourceTree = "<group>"; };
 		ADEAD2402AF148490069DC7E /* CircuitToLatexTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircuitToLatexTest.swift; sourceTree = "<group>"; };
+		ADEAD2432AF1739A0069DC7E /* LaTeXPresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaTeXPresentation.swift; sourceTree = "<group>"; };
 		ADF3D8D62AEE5B0C00095953 /* Circuit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Circuit.swift; sourceTree = "<group>"; };
 		ADF3D8D82AEE5BA100095953 /* Component+Shape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Component+Shape.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -119,6 +121,7 @@
 				ADDC6B932AE56A3E00FBEEA8 /* ResTexApp.swift */,
 				ADDC6B972AE56A3E00FBEEA8 /* ContentView.swift */,
 				ADDC6BC12AE56DB600FBEEA8 /* ResTexEditor.swift */,
+				ADEAD2422AF1737D0069DC7E /* Presentation */,
 				ADDC6BC72AE5BAA300FBEEA8 /* Persistence */,
 				ADDC6BC62AE5BA9800FBEEA8 /* Drawing */,
 				ADDC6BC52AE5BA8800FBEEA8 /* Model */,
@@ -183,6 +186,14 @@
 				ADDC6BCA2AE5FC5100FBEEA8 /* CircuitComponent+Codable.swift */,
 			);
 			path = Persistence;
+			sourceTree = "<group>";
+		};
+		ADEAD2422AF1737D0069DC7E /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				ADEAD2432AF1739A0069DC7E /* LaTeXPresentation.swift */,
+			);
+			path = Presentation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -315,6 +326,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADEAD2442AF1739A0069DC7E /* LaTeXPresentation.swift in Sources */,
 				ADEAD23F2AEF42110069DC7E /* ResTexModel.swift in Sources */,
 				ADDC6BC42AE5BA4A00FBEEA8 /* CircuitComponents.swift in Sources */,
 				ADDC6B942AE56A3E00FBEEA8 /* ResTexApp.swift in Sources */,
