@@ -4,7 +4,7 @@
 
 import Foundation
 
-class ResistorModel: ObservableObject {
+class ResTexModel: ObservableObject {
     @Published var circuit: Circuit
     @Published private(set) var selectedComponent: Component?
     var callback: (Circuit) -> Void

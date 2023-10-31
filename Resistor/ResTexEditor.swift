@@ -6,10 +6,10 @@ import Foundation
 import SwiftUI
 
 struct ResTexEditor: Sendable, View {
-    @ObservedObject var model: ResistorModel
+    @ObservedObject var model: ResTexModel
     @State private var selectedComponent: (any Component)?
 
-    init(model: ResistorModel) {
+    init(model: ResTexModel) {
         self.model = model
     }
 

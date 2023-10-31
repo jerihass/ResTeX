@@ -8,7 +8,7 @@ struct ContentView: View {
     @Binding var document: ResTexDocument
     
     var body: some View {
-        ResTexEditor(model: ResistorModel(circuit: document.circuit,
+        ResTexEditor(model: ResTexModel(circuit: document.circuit,
                                             callback: { circuit in
             document.circuit = circuit
         }))

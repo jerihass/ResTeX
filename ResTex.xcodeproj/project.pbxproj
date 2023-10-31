@@ -20,7 +20,7 @@
 		ADDC6BC42AE5BA4A00FBEEA8 /* CircuitComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDC6BC32AE5BA4A00FBEEA8 /* CircuitComponents.swift */; };
 		ADDC6BC92AE5BAF200FBEEA8 /* CircuitShapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDC6BC82AE5BAF200FBEEA8 /* CircuitShapes.swift */; };
 		ADDC6BCB2AE5FC5100FBEEA8 /* CircuitComponent+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDC6BCA2AE5FC5100FBEEA8 /* CircuitComponent+Codable.swift */; };
-		ADEAD23F2AEF42110069DC7E /* ResistorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEAD23E2AEF42110069DC7E /* ResistorModel.swift */; };
+		ADEAD23F2AEF42110069DC7E /* ResTexModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEAD23E2AEF42110069DC7E /* ResTexModel.swift */; };
 		ADF3D8D72AEE5B0C00095953 /* Circuit.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF3D8D62AEE5B0C00095953 /* Circuit.swift */; };
 		ADF3D8D92AEE5BA100095953 /* Component+Shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF3D8D82AEE5BA100095953 /* Component+Shape.swift */; };
 /* End PBXBuildFile section */
@@ -61,7 +61,7 @@
 		ADDC6BC32AE5BA4A00FBEEA8 /* CircuitComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircuitComponents.swift; sourceTree = "<group>"; };
 		ADDC6BC82AE5BAF200FBEEA8 /* CircuitShapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircuitShapes.swift; sourceTree = "<group>"; };
 		ADDC6BCA2AE5FC5100FBEEA8 /* CircuitComponent+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CircuitComponent+Codable.swift"; sourceTree = "<group>"; };
-		ADEAD23E2AEF42110069DC7E /* ResistorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResistorModel.swift; sourceTree = "<group>"; };
+		ADEAD23E2AEF42110069DC7E /* ResTexModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResTexModel.swift; sourceTree = "<group>"; };
 		ADF3D8D62AEE5B0C00095953 /* Circuit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Circuit.swift; sourceTree = "<group>"; };
 		ADF3D8D82AEE5BA100095953 /* Component+Shape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Component+Shape.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -95,8 +95,8 @@
 			isa = PBXGroup;
 			children = (
 				ADDC6B922AE56A3E00FBEEA8 /* Resistor */,
-				ADDC6BA72AE56A4000FBEEA8 /* ResistorTests */,
-				ADDC6BB12AE56A4000FBEEA8 /* ResistorUITests */,
+				ADDC6BA72AE56A4000FBEEA8 /* ResTexTests */,
+				ADDC6BB12AE56A4000FBEEA8 /* ResTexUITests */,
 				ADDC6B912AE56A3E00FBEEA8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -136,21 +136,21 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		ADDC6BA72AE56A4000FBEEA8 /* ResistorTests */ = {
+		ADDC6BA72AE56A4000FBEEA8 /* ResTexTests */ = {
 			isa = PBXGroup;
 			children = (
 				AD6E24442AE6CD1400F313E7 /* CircuitTests.swift */,
 			);
-			path = ResistorTests;
+			path = ResTexTests;
 			sourceTree = "<group>";
 		};
-		ADDC6BB12AE56A4000FBEEA8 /* ResistorUITests */ = {
+		ADDC6BB12AE56A4000FBEEA8 /* ResTexUITests */ = {
 			isa = PBXGroup;
 			children = (
 				ADDC6BB22AE56A4000FBEEA8 /* ResistorUITests.swift */,
 				ADDC6BB42AE56A4000FBEEA8 /* ResistorUITestsLaunchTests.swift */,
 			);
-			path = ResistorUITests;
+			path = ResTexUITests;
 			sourceTree = "<group>";
 		};
 		ADDC6BC52AE5BA8800FBEEA8 /* Model */ = {
@@ -160,7 +160,7 @@
 				ADF3D8D62AEE5B0C00095953 /* Circuit.swift */,
 				ADF3D8D82AEE5BA100095953 /* Component+Shape.swift */,
 				AD67E3372AEE832B00D5BAA2 /* Component+HitBox.swift */,
-				ADEAD23E2AEF42110069DC7E /* ResistorModel.swift */,
+				ADEAD23E2AEF42110069DC7E /* ResTexModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -312,7 +312,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ADEAD23F2AEF42110069DC7E /* ResistorModel.swift in Sources */,
+				ADEAD23F2AEF42110069DC7E /* ResTexModel.swift in Sources */,
 				ADDC6BC42AE5BA4A00FBEEA8 /* CircuitComponents.swift in Sources */,
 				ADDC6B942AE56A3E00FBEEA8 /* ResTexApp.swift in Sources */,
 				ADDC6BC22AE56DB600FBEEA8 /* ResTexEditor.swift in Sources */,
