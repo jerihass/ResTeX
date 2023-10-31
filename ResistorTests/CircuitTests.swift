@@ -22,6 +22,7 @@ final class CircuitTests: XCTestCase {
         let circuit = Circuit(components: [node, wire, resistor])
         let sut = ResistorModel(circuit: circuit, callback: { _ in })
         sut.selectComponent(node)
+        XCTAssertEqual(sut.selectedComponent?.id, node.id)
     }
 
     func test_shouldHitboxNode() throws {
