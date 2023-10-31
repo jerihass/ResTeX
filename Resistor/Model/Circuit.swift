@@ -13,10 +13,19 @@ struct Circuit: Sendable {
 
 extension Circuit {
     mutating func moveComponent(_ component: Component, to newPoint: CGPoint) {
+        let snapX: Int = 5
+        let snapY: Int = 5
+
+        let dX = Int(newPoint.x) % snapX
+        let dY = Int(newPoint.y) % snapY
+        let newX = Int(Int(newPoint.x) - dX)
+        let newY = Int(Int(newPoint.y) - dY)
+        let snapPoint = CGPoint(x: newX, y: newY)
+
         guard var component = components.first(where: { $0.id == component.id }) else { return }
         guard let index = components.firstIndex(where: { $0.id == component.id }) else { return }
         components.removeAll(where: {$0.id == component.id})
-        component.move(newPoint)
+        component.move(snapPoint)
         components.insert(component, at: index)
     }
 
