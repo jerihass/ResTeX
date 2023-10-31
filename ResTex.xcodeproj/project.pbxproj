@@ -10,13 +10,13 @@
 		AD67E3382AEE832B00D5BAA2 /* Component+HitBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD67E3372AEE832B00D5BAA2 /* Component+HitBox.swift */; };
 		AD6E24452AE6CD1400F313E7 /* CircuitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6E24442AE6CD1400F313E7 /* CircuitTests.swift */; };
 		ADDC6B942AE56A3E00FBEEA8 /* ResTexApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDC6B932AE56A3E00FBEEA8 /* ResTexApp.swift */; };
-		ADDC6B962AE56A3E00FBEEA8 /* ResistorDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDC6B952AE56A3E00FBEEA8 /* ResistorDocument.swift */; };
+		ADDC6B962AE56A3E00FBEEA8 /* ResTexDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDC6B952AE56A3E00FBEEA8 /* ResTexDocument.swift */; };
 		ADDC6B982AE56A3E00FBEEA8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDC6B972AE56A3E00FBEEA8 /* ContentView.swift */; };
 		ADDC6B9A2AE56A4000FBEEA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADDC6B992AE56A4000FBEEA8 /* Assets.xcassets */; };
 		ADDC6B9F2AE56A4000FBEEA8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADDC6B9E2AE56A4000FBEEA8 /* Preview Assets.xcassets */; };
 		ADDC6BB32AE56A4000FBEEA8 /* ResistorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDC6BB22AE56A4000FBEEA8 /* ResistorUITests.swift */; };
 		ADDC6BB52AE56A4000FBEEA8 /* ResistorUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDC6BB42AE56A4000FBEEA8 /* ResistorUITestsLaunchTests.swift */; };
-		ADDC6BC22AE56DB600FBEEA8 /* ResistorEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDC6BC12AE56DB600FBEEA8 /* ResistorEditor.swift */; };
+		ADDC6BC22AE56DB600FBEEA8 /* ResTexEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDC6BC12AE56DB600FBEEA8 /* ResTexEditor.swift */; };
 		ADDC6BC42AE5BA4A00FBEEA8 /* CircuitComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDC6BC32AE5BA4A00FBEEA8 /* CircuitComponents.swift */; };
 		ADDC6BC92AE5BAF200FBEEA8 /* CircuitShapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDC6BC82AE5BAF200FBEEA8 /* CircuitShapes.swift */; };
 		ADDC6BCB2AE5FC5100FBEEA8 /* CircuitComponent+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDC6BCA2AE5FC5100FBEEA8 /* CircuitComponent+Codable.swift */; };
@@ -47,7 +47,7 @@
 		AD6E24442AE6CD1400F313E7 /* CircuitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircuitTests.swift; sourceTree = "<group>"; };
 		ADDC6B902AE56A3E00FBEEA8 /* ResTex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ResTex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADDC6B932AE56A3E00FBEEA8 /* ResTexApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResTexApp.swift; sourceTree = "<group>"; };
-		ADDC6B952AE56A3E00FBEEA8 /* ResistorDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResistorDocument.swift; sourceTree = "<group>"; };
+		ADDC6B952AE56A3E00FBEEA8 /* ResTexDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResTexDocument.swift; sourceTree = "<group>"; };
 		ADDC6B972AE56A3E00FBEEA8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		ADDC6B992AE56A4000FBEEA8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ADDC6B9B2AE56A4000FBEEA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -57,7 +57,7 @@
 		ADDC6BAE2AE56A4000FBEEA8 /* ResTexUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ResTexUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADDC6BB22AE56A4000FBEEA8 /* ResistorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResistorUITests.swift; sourceTree = "<group>"; };
 		ADDC6BB42AE56A4000FBEEA8 /* ResistorUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResistorUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		ADDC6BC12AE56DB600FBEEA8 /* ResistorEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResistorEditor.swift; sourceTree = "<group>"; };
+		ADDC6BC12AE56DB600FBEEA8 /* ResTexEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResTexEditor.swift; sourceTree = "<group>"; };
 		ADDC6BC32AE5BA4A00FBEEA8 /* CircuitComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircuitComponents.swift; sourceTree = "<group>"; };
 		ADDC6BC82AE5BAF200FBEEA8 /* CircuitShapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircuitShapes.swift; sourceTree = "<group>"; };
 		ADDC6BCA2AE5FC5100FBEEA8 /* CircuitComponent+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CircuitComponent+Codable.swift"; sourceTree = "<group>"; };
@@ -116,7 +116,7 @@
 			children = (
 				ADDC6B932AE56A3E00FBEEA8 /* ResTexApp.swift */,
 				ADDC6B972AE56A3E00FBEEA8 /* ContentView.swift */,
-				ADDC6BC12AE56DB600FBEEA8 /* ResistorEditor.swift */,
+				ADDC6BC12AE56DB600FBEEA8 /* ResTexEditor.swift */,
 				ADDC6BC72AE5BAA300FBEEA8 /* Persistence */,
 				ADDC6BC62AE5BA9800FBEEA8 /* Drawing */,
 				ADDC6BC52AE5BA8800FBEEA8 /* Model */,
@@ -176,7 +176,7 @@
 		ADDC6BC72AE5BAA300FBEEA8 /* Persistence */ = {
 			isa = PBXGroup;
 			children = (
-				ADDC6B952AE56A3E00FBEEA8 /* ResistorDocument.swift */,
+				ADDC6B952AE56A3E00FBEEA8 /* ResTexDocument.swift */,
 				ADDC6BCA2AE5FC5100FBEEA8 /* CircuitComponent+Codable.swift */,
 			);
 			path = Persistence;
@@ -315,12 +315,12 @@
 				ADEAD23F2AEF42110069DC7E /* ResistorModel.swift in Sources */,
 				ADDC6BC42AE5BA4A00FBEEA8 /* CircuitComponents.swift in Sources */,
 				ADDC6B942AE56A3E00FBEEA8 /* ResTexApp.swift in Sources */,
-				ADDC6BC22AE56DB600FBEEA8 /* ResistorEditor.swift in Sources */,
+				ADDC6BC22AE56DB600FBEEA8 /* ResTexEditor.swift in Sources */,
 				AD67E3382AEE832B00D5BAA2 /* Component+HitBox.swift in Sources */,
 				ADF3D8D92AEE5BA100095953 /* Component+Shape.swift in Sources */,
 				ADF3D8D72AEE5B0C00095953 /* Circuit.swift in Sources */,
 				ADDC6BC92AE5BAF200FBEEA8 /* CircuitShapes.swift in Sources */,
-				ADDC6B962AE56A3E00FBEEA8 /* ResistorDocument.swift in Sources */,
+				ADDC6B962AE56A3E00FBEEA8 /* ResTexDocument.swift in Sources */,
 				ADDC6B982AE56A3E00FBEEA8 /* ContentView.swift in Sources */,
 				ADDC6BCB2AE5FC5100FBEEA8 /* CircuitComponent+Codable.swift in Sources */,
 			);

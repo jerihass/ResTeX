@@ -5,10 +5,10 @@
 import SwiftUI
 
 struct ContentView: View {
-    @Binding var document: ResistorDocument
+    @Binding var document: ResTexDocument
     
     var body: some View {
-        ResistorEditor(model: ResistorModel(circuit: document.circuit,
+        ResTexEditor(model: ResistorModel(circuit: document.circuit,
                                             callback: { circuit in
             document.circuit = circuit
         }))
@@ -16,5 +16,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView(document: .constant(ResistorDocument(circuit: Circuit())))
+    ContentView(document: .constant(ResTexDocument(circuit: Circuit())))
 }

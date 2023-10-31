@@ -11,7 +11,7 @@ extension UTType {
     }
 }
 
-struct ResistorDocument: FileDocument {
+struct ResTexDocument: FileDocument {
     var circuit: Circuit
     static var readableContentTypes: [UTType] { [.restest]}
 

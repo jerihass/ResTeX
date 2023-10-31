@@ -3,7 +3,7 @@
 //
 
 import XCTest
-@testable import Resistor
+@testable import ResTex
 
 final class CircuitTests: XCTestCase {
 

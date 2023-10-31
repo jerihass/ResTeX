@@ -5,7 +5,7 @@
 import Foundation
 import SwiftUI
 
-struct ResistorEditor: Sendable, View {
+struct ResTexEditor: Sendable, View {
     @ObservedObject var model: ResistorModel
     @State private var selectedComponent: (any Component)?
 
@@ -68,6 +68,6 @@ struct ResistorEditor: Sendable, View {
 }
 
 #Preview {
-    return ResistorEditor(model: .init(circuit: Circuit(components: [Resistor(start: .init(x: 50, y: 50))]),
+    return ResTexEditor(model: .init(circuit: Circuit(components: [Resistor(start: .init(x: 50, y: 50))]),
                                        callback: { _ in }))
 }
