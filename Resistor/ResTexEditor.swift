@@ -25,6 +25,7 @@ struct ResTexEditor: Sendable, View {
                 Button("Wire", action: {
                     model.addComponent(Wire(start: .init(x: 40, y: 40), end: .init(x: 60, y: 40)))
                 })
+                Button("Make Latex", action: { model.makeLatex() })
             }
             ZStack {
                 Rectangle().fill().frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center).foregroundStyle(.ultraThinMaterial).backgroundStyle(.clear)
@@ -49,6 +50,7 @@ struct ResTexEditor: Sendable, View {
                 }
             }
             .gesture(drag)
+            Text(model.latex)
         }
     }
 

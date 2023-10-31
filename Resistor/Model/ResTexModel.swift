@@ -7,6 +7,7 @@ import Foundation
 class ResTexModel: ObservableObject {
     @Published var circuit: Circuit
     @Published private(set) var selectedComponent: Component?
+    @Published var latex: String = ""
     var callback: (Circuit) -> Void
     init(circuit: Circuit, callback: @escaping (Circuit) -> Void) {
         self.circuit = circuit
@@ -31,5 +32,10 @@ class ResTexModel: ObservableObject {
     func addComponent(_ component: Component) {
         circuit.components.append(component)
         callback(circuit)
+    }
+
+    func makeLatex() {
+        latex = circuit.latexString
+        print(latex)
     }
 }
