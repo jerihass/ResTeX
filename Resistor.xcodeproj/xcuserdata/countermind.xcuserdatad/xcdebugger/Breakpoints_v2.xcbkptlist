@@ -7,78 +7,47 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "A4E1E40D-F39B-4D1E-9277-7D2257FF94D9"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Resistor/Model/ResistorModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
-            landmarkName = "addComponent(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "1C7EEB3E-22BE-440B-A176-80F11566AFA1"
+            uuid = "CE4E1D4E-4116-4F42-93C5-D68608865DD1"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Resistor/Persistence/CircuitComponent+Codable.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
-            landmarkName = "encode(to:)"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "init(from:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "1C7EEB3E-22BE-440B-A176-80F11566AFA1 - 944a361773153c14"
+                  uuid = "CE4E1D4E-4116-4F42-93C5-D68608865DD1 - ca51ddb932ba9a1b"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Resistor.Circuit.encode(to: Swift.Encoder) throws -&gt; ()"
+                  symbolName = "Resistor.Circuit.init(from: Swift.Decoder) throws -&gt; Resistor.Circuit"
                   moduleName = "Resistor"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/countermind/Projects/Resistor/Resistor/Persistence/CircuitComponent+Codable.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "23"
-                  endingLineNumber = "23"
-                  offsetFromSymbolStart = "915">
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "892">
                </Location>
                <Location
-                  uuid = "1C7EEB3E-22BE-440B-A176-80F11566AFA1 - 944a361773153c14"
+                  uuid = "CE4E1D4E-4116-4F42-93C5-D68608865DD1 - ca51ddb932ba9a1b"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Resistor.Circuit.encode(to: Swift.Encoder) throws -&gt; ()"
+                  symbolName = "Resistor.Circuit.init(from: Swift.Decoder) throws -&gt; Resistor.Circuit"
                   moduleName = "Resistor"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/countermind/Projects/Resistor/Resistor/Persistence/CircuitComponent+Codable.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "23"
-                  endingLineNumber = "23"
-                  offsetFromSymbolStart = "1208">
-               </Location>
-               <Location
-                  uuid = "1C7EEB3E-22BE-440B-A176-80F11566AFA1 - 944a361773153c14"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Resistor.Circuit.encode(to: Swift.Encoder) throws -&gt; ()"
-                  moduleName = "Resistor"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/countermind/Projects/Resistor/Resistor/Persistence/CircuitComponent+Codable.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "23"
-                  endingLineNumber = "23"
-                  offsetFromSymbolStart = "1538">
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "1337">
                </Location>
             </Locations>
          </BreakpointContent>
