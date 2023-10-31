@@ -21,6 +21,7 @@
 		ADDC6BC92AE5BAF200FBEEA8 /* CircuitShapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDC6BC82AE5BAF200FBEEA8 /* CircuitShapes.swift */; };
 		ADDC6BCB2AE5FC5100FBEEA8 /* CircuitComponent+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDC6BCA2AE5FC5100FBEEA8 /* CircuitComponent+Codable.swift */; };
 		ADEAD23F2AEF42110069DC7E /* ResTexModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEAD23E2AEF42110069DC7E /* ResTexModel.swift */; };
+		ADEAD2412AF148490069DC7E /* CircuitToLatexTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEAD2402AF148490069DC7E /* CircuitToLatexTest.swift */; };
 		ADF3D8D72AEE5B0C00095953 /* Circuit.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF3D8D62AEE5B0C00095953 /* Circuit.swift */; };
 		ADF3D8D92AEE5BA100095953 /* Component+Shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF3D8D82AEE5BA100095953 /* Component+Shape.swift */; };
 /* End PBXBuildFile section */
@@ -62,6 +63,7 @@
 		ADDC6BC82AE5BAF200FBEEA8 /* CircuitShapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircuitShapes.swift; sourceTree = "<group>"; };
 		ADDC6BCA2AE5FC5100FBEEA8 /* CircuitComponent+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CircuitComponent+Codable.swift"; sourceTree = "<group>"; };
 		ADEAD23E2AEF42110069DC7E /* ResTexModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResTexModel.swift; sourceTree = "<group>"; };
+		ADEAD2402AF148490069DC7E /* CircuitToLatexTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircuitToLatexTest.swift; sourceTree = "<group>"; };
 		ADF3D8D62AEE5B0C00095953 /* Circuit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Circuit.swift; sourceTree = "<group>"; };
 		ADF3D8D82AEE5BA100095953 /* Component+Shape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Component+Shape.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -140,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				AD6E24442AE6CD1400F313E7 /* CircuitTests.swift */,
+				ADEAD2402AF148490069DC7E /* CircuitToLatexTest.swift */,
 			);
 			path = ResTexTests;
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD6E24452AE6CD1400F313E7 /* CircuitTests.swift in Sources */,
+				ADEAD2412AF148490069DC7E /* CircuitToLatexTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
