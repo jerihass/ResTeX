@@ -6,14 +6,14 @@ import SwiftUI
 import UniformTypeIdentifiers
 
 extension UTType {
-    static var restest: UTType {
-        UTType(importedAs: "com.saletlucem.restest")
+    static var restex: UTType {
+        UTType(importedAs: "com.saletlucem.restex")
     }
 }
 
 struct ResTexDocument: FileDocument {
     var circuit: Circuit
-    static var readableContentTypes: [UTType] { [.restest]}
+    static var readableContentTypes: [UTType] { [.restex]}
 
     init(circuit: Circuit) {
         self.circuit = circuit
