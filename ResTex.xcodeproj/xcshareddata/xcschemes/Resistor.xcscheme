@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "ADDC6B8F2AE56A3E00FBEEA8"
-               BuildableName = "Resistor.app"
-               BlueprintName = "Resistor"
-               ReferencedContainer = "container:Resistor.xcodeproj">
+               BuildableName = "ResTex.app"
+               BlueprintName = "ResTex"
+               ReferencedContainer = "container:ResTex.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,9 +35,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "ADDC6BA32AE56A4000FBEEA8"
-               BuildableName = "ResistorTests.xctest"
-               BlueprintName = "ResistorTests"
-               ReferencedContainer = "container:Resistor.xcodeproj">
+               BuildableName = "ResTexTests.xctest"
+               BlueprintName = "ResTexTests"
+               ReferencedContainer = "container:ResTex.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -46,9 +46,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "ADDC6BAD2AE56A4000FBEEA8"
-               BuildableName = "ResistorUITests.xctest"
-               BlueprintName = "ResistorUITests"
-               ReferencedContainer = "container:Resistor.xcodeproj">
+               BuildableName = "ResTexUITests.xctest"
+               BlueprintName = "ResTexUITests"
+               ReferencedContainer = "container:ResTex.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -70,9 +70,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "ADDC6B8F2AE56A3E00FBEEA8"
-            BuildableName = "Resistor.app"
-            BlueprintName = "Resistor"
-            ReferencedContainer = "container:Resistor.xcodeproj">
+            BuildableName = "ResTex.app"
+            BlueprintName = "ResTex"
+            ReferencedContainer = "container:ResTex.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -87,9 +87,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "ADDC6B8F2AE56A3E00FBEEA8"
-            BuildableName = "Resistor.app"
-            BlueprintName = "Resistor"
-            ReferencedContainer = "container:Resistor.xcodeproj">
+            BuildableName = "ResTex.app"
+            BlueprintName = "ResTex"
+            ReferencedContainer = "container:ResTex.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

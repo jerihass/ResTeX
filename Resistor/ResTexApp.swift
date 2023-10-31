@@ -5,7 +5,7 @@
 import SwiftUI
 
 @main
-struct ResistorApp: App {
+struct ResTexApp: App {
     var body: some Scene {
         DocumentGroup(newDocument: ResistorDocument(circuit: .init())) { file in
                 ContentView(document: file.$document)

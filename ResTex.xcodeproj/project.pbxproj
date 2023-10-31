@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		AD67E3382AEE832B00D5BAA2 /* Component+HitBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD67E3372AEE832B00D5BAA2 /* Component+HitBox.swift */; };
 		AD6E24452AE6CD1400F313E7 /* CircuitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6E24442AE6CD1400F313E7 /* CircuitTests.swift */; };
-		ADDC6B942AE56A3E00FBEEA8 /* ResistorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDC6B932AE56A3E00FBEEA8 /* ResistorApp.swift */; };
+		ADDC6B942AE56A3E00FBEEA8 /* ResTexApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDC6B932AE56A3E00FBEEA8 /* ResTexApp.swift */; };
 		ADDC6B962AE56A3E00FBEEA8 /* ResistorDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDC6B952AE56A3E00FBEEA8 /* ResistorDocument.swift */; };
 		ADDC6B982AE56A3E00FBEEA8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDC6B972AE56A3E00FBEEA8 /* ContentView.swift */; };
 		ADDC6B9A2AE56A4000FBEEA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADDC6B992AE56A4000FBEEA8 /* Assets.xcassets */; };
@@ -45,16 +45,16 @@
 /* Begin PBXFileReference section */
 		AD67E3372AEE832B00D5BAA2 /* Component+HitBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Component+HitBox.swift"; sourceTree = "<group>"; };
 		AD6E24442AE6CD1400F313E7 /* CircuitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircuitTests.swift; sourceTree = "<group>"; };
-		ADDC6B902AE56A3E00FBEEA8 /* Resistor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Resistor.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		ADDC6B932AE56A3E00FBEEA8 /* ResistorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResistorApp.swift; sourceTree = "<group>"; };
+		ADDC6B902AE56A3E00FBEEA8 /* ResTex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ResTex.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADDC6B932AE56A3E00FBEEA8 /* ResTexApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResTexApp.swift; sourceTree = "<group>"; };
 		ADDC6B952AE56A3E00FBEEA8 /* ResistorDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResistorDocument.swift; sourceTree = "<group>"; };
 		ADDC6B972AE56A3E00FBEEA8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		ADDC6B992AE56A4000FBEEA8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ADDC6B9B2AE56A4000FBEEA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ADDC6B9C2AE56A4000FBEEA8 /* Resistor.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Resistor.entitlements; sourceTree = "<group>"; };
 		ADDC6B9E2AE56A4000FBEEA8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		ADDC6BA42AE56A4000FBEEA8 /* ResistorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ResistorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		ADDC6BAE2AE56A4000FBEEA8 /* ResistorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ResistorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADDC6BA42AE56A4000FBEEA8 /* ResTexTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ResTexTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADDC6BAE2AE56A4000FBEEA8 /* ResTexUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ResTexUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADDC6BB22AE56A4000FBEEA8 /* ResistorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResistorUITests.swift; sourceTree = "<group>"; };
 		ADDC6BB42AE56A4000FBEEA8 /* ResistorUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResistorUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		ADDC6BC12AE56DB600FBEEA8 /* ResistorEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResistorEditor.swift; sourceTree = "<group>"; };
@@ -104,9 +104,9 @@
 		ADDC6B912AE56A3E00FBEEA8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				ADDC6B902AE56A3E00FBEEA8 /* Resistor.app */,
-				ADDC6BA42AE56A4000FBEEA8 /* ResistorTests.xctest */,
-				ADDC6BAE2AE56A4000FBEEA8 /* ResistorUITests.xctest */,
+				ADDC6B902AE56A3E00FBEEA8 /* ResTex.app */,
+				ADDC6BA42AE56A4000FBEEA8 /* ResTexTests.xctest */,
+				ADDC6BAE2AE56A4000FBEEA8 /* ResTexUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -114,7 +114,7 @@
 		ADDC6B922AE56A3E00FBEEA8 /* Resistor */ = {
 			isa = PBXGroup;
 			children = (
-				ADDC6B932AE56A3E00FBEEA8 /* ResistorApp.swift */,
+				ADDC6B932AE56A3E00FBEEA8 /* ResTexApp.swift */,
 				ADDC6B972AE56A3E00FBEEA8 /* ContentView.swift */,
 				ADDC6BC12AE56DB600FBEEA8 /* ResistorEditor.swift */,
 				ADDC6BC72AE5BAA300FBEEA8 /* Persistence */,
@@ -185,9 +185,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		ADDC6B8F2AE56A3E00FBEEA8 /* Resistor */ = {
+		ADDC6B8F2AE56A3E00FBEEA8 /* ResTex */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = ADDC6BB82AE56A4000FBEEA8 /* Build configuration list for PBXNativeTarget "Resistor" */;
+			buildConfigurationList = ADDC6BB82AE56A4000FBEEA8 /* Build configuration list for PBXNativeTarget "ResTex" */;
 			buildPhases = (
 				ADDC6B8C2AE56A3E00FBEEA8 /* Sources */,
 				ADDC6B8D2AE56A3E00FBEEA8 /* Frameworks */,
@@ -197,14 +197,14 @@
 			);
 			dependencies = (
 			);
-			name = Resistor;
+			name = ResTex;
 			productName = Resistor;
-			productReference = ADDC6B902AE56A3E00FBEEA8 /* Resistor.app */;
+			productReference = ADDC6B902AE56A3E00FBEEA8 /* ResTex.app */;
 			productType = "com.apple.product-type.application";
 		};
-		ADDC6BA32AE56A4000FBEEA8 /* ResistorTests */ = {
+		ADDC6BA32AE56A4000FBEEA8 /* ResTexTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = ADDC6BBB2AE56A4000FBEEA8 /* Build configuration list for PBXNativeTarget "ResistorTests" */;
+			buildConfigurationList = ADDC6BBB2AE56A4000FBEEA8 /* Build configuration list for PBXNativeTarget "ResTexTests" */;
 			buildPhases = (
 				ADDC6BA02AE56A4000FBEEA8 /* Sources */,
 				ADDC6BA12AE56A4000FBEEA8 /* Frameworks */,
@@ -215,14 +215,14 @@
 			dependencies = (
 				ADDC6BA62AE56A4000FBEEA8 /* PBXTargetDependency */,
 			);
-			name = ResistorTests;
+			name = ResTexTests;
 			productName = ResistorTests;
-			productReference = ADDC6BA42AE56A4000FBEEA8 /* ResistorTests.xctest */;
+			productReference = ADDC6BA42AE56A4000FBEEA8 /* ResTexTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		ADDC6BAD2AE56A4000FBEEA8 /* ResistorUITests */ = {
+		ADDC6BAD2AE56A4000FBEEA8 /* ResTexUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = ADDC6BBE2AE56A4000FBEEA8 /* Build configuration list for PBXNativeTarget "ResistorUITests" */;
+			buildConfigurationList = ADDC6BBE2AE56A4000FBEEA8 /* Build configuration list for PBXNativeTarget "ResTexUITests" */;
 			buildPhases = (
 				ADDC6BAA2AE56A4000FBEEA8 /* Sources */,
 				ADDC6BAB2AE56A4000FBEEA8 /* Frameworks */,
@@ -233,9 +233,9 @@
 			dependencies = (
 				ADDC6BB02AE56A4000FBEEA8 /* PBXTargetDependency */,
 			);
-			name = ResistorUITests;
+			name = ResTexUITests;
 			productName = ResistorUITests;
-			productReference = ADDC6BAE2AE56A4000FBEEA8 /* ResistorUITests.xctest */;
+			productReference = ADDC6BAE2AE56A4000FBEEA8 /* ResTexUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -261,7 +261,7 @@
 					};
 				};
 			};
-			buildConfigurationList = ADDC6B8B2AE56A3D00FBEEA8 /* Build configuration list for PBXProject "Resistor" */;
+			buildConfigurationList = ADDC6B8B2AE56A3D00FBEEA8 /* Build configuration list for PBXProject "ResTex" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -274,9 +274,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				ADDC6B8F2AE56A3E00FBEEA8 /* Resistor */,
-				ADDC6BA32AE56A4000FBEEA8 /* ResistorTests */,
-				ADDC6BAD2AE56A4000FBEEA8 /* ResistorUITests */,
+				ADDC6B8F2AE56A3E00FBEEA8 /* ResTex */,
+				ADDC6BA32AE56A4000FBEEA8 /* ResTexTests */,
+				ADDC6BAD2AE56A4000FBEEA8 /* ResTexUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -314,7 +314,7 @@
 			files = (
 				ADEAD23F2AEF42110069DC7E /* ResistorModel.swift in Sources */,
 				ADDC6BC42AE5BA4A00FBEEA8 /* CircuitComponents.swift in Sources */,
-				ADDC6B942AE56A3E00FBEEA8 /* ResistorApp.swift in Sources */,
+				ADDC6B942AE56A3E00FBEEA8 /* ResTexApp.swift in Sources */,
 				ADDC6BC22AE56DB600FBEEA8 /* ResistorEditor.swift in Sources */,
 				AD67E3382AEE832B00D5BAA2 /* Component+HitBox.swift in Sources */,
 				ADF3D8D92AEE5BA100095953 /* Component+Shape.swift in Sources */,
@@ -348,12 +348,12 @@
 /* Begin PBXTargetDependency section */
 		ADDC6BA62AE56A4000FBEEA8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = ADDC6B8F2AE56A3E00FBEEA8 /* Resistor */;
+			target = ADDC6B8F2AE56A3E00FBEEA8 /* ResTex */;
 			targetProxy = ADDC6BA52AE56A4000FBEEA8 /* PBXContainerItemProxy */;
 		};
 		ADDC6BB02AE56A4000FBEEA8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = ADDC6B8F2AE56A3E00FBEEA8 /* Resistor */;
+			target = ADDC6B8F2AE56A3E00FBEEA8 /* ResTex */;
 			targetProxy = ADDC6BAF2AE56A4000FBEEA8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -574,7 +574,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Resistor.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Resistor";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ResTex.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ResTex";
 			};
 			name = Debug;
 		};
@@ -597,7 +597,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Resistor.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Resistor";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ResTex.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ResTex";
 			};
 			name = Release;
 		};
@@ -648,7 +648,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		ADDC6B8B2AE56A3D00FBEEA8 /* Build configuration list for PBXProject "Resistor" */ = {
+		ADDC6B8B2AE56A3D00FBEEA8 /* Build configuration list for PBXProject "ResTex" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				ADDC6BB62AE56A4000FBEEA8 /* Debug */,
@@ -657,7 +657,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		ADDC6BB82AE56A4000FBEEA8 /* Build configuration list for PBXNativeTarget "Resistor" */ = {
+		ADDC6BB82AE56A4000FBEEA8 /* Build configuration list for PBXNativeTarget "ResTex" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				ADDC6BB92AE56A4000FBEEA8 /* Debug */,
@@ -666,7 +666,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		ADDC6BBB2AE56A4000FBEEA8 /* Build configuration list for PBXNativeTarget "ResistorTests" */ = {
+		ADDC6BBB2AE56A4000FBEEA8 /* Build configuration list for PBXNativeTarget "ResTexTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				ADDC6BBC2AE56A4000FBEEA8 /* Debug */,
@@ -675,7 +675,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		ADDC6BBE2AE56A4000FBEEA8 /* Build configuration list for PBXNativeTarget "ResistorUITests" */ = {
+		ADDC6BBE2AE56A4000FBEEA8 /* Build configuration list for PBXNativeTarget "ResTexUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				ADDC6BBF2AE56A4000FBEEA8 /* Debug */,
