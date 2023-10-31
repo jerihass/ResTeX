@@ -8,6 +8,19 @@ enum ComponentEnum: Codable {
     case node(Node)
     case wire(Wire)
     case resistor(Resistor)
+
+    var component: Component? {
+        var comp: Component?
+        switch self {
+        case .node(let node):
+            comp = node
+        case .wire(let wire):
+            comp = wire
+        case .resistor(let resistor):
+            comp = resistor
+        }
+        return comp
+    }
 }
 
 extension Circuit: Codable {
@@ -25,28 +38,19 @@ extension Circuit: Codable {
             try componentContainer.encode(sameComps, forKey: key)
         }
     }
-
+    
     init(from decoder: Decoder) throws {
         var components = [Component]()
         let container = try decoder.container(keyedBy: CodingKeys.self)
         let componentContainer = try container.nestedContainer(keyedBy: ComponentKeys.self, forKey: .components)
         for key in ComponentKeys.allCases {
-            let things = try componentContainer.decode([ComponentEnum].self, forKey: key)
-            if !things.isEmpty {
-                for thing in things {
-                    switch thing {
-                    case .node(let node):
-                        components.append(node)
-                    case .wire(let wire):
-                        components.append(wire)
-                    case .resistor(let resistor):
-                        components.append(resistor)
-                    }
-                }
+            let things = try componentContainer
+                .decode([ComponentEnum].self, forKey: key)
+                .compactMap({ $0.component })
+            for thing in things {
+                components.append(thing)
             }
         }
-
-
         self = Circuit(components: components)
     }
 }

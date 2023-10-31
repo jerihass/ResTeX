@@ -44,7 +44,7 @@ final class CircuitTests: XCTestCase {
     }
 
     func test_shouldEncodeAndDecodeCircuit() throws {
-        var sut = Circuit(components: [node, wire, resistor])
+        let sut = Circuit(components: [node, wire, resistor])
         let encoder = JSONEncoder()
         let data = try encoder.encode(sut)
         let decoder = JSONDecoder()
