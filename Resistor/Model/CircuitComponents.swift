@@ -27,14 +27,17 @@ protocol Component: Codable, Sendable {
     var id: UUID { get }
     mutating func move(_ location: CGPoint)
     var origin: CGPoint { get }
+    var vertical: Bool { get set }
     var key: ComponentKeys { get }
     var selected: Bool { get set }
 }
 
 struct Node: Component {
+
     var id = UUID()
     var radius: Float
     var origin: CGPoint
+    var vertical: Bool = false
     var selected: Bool = false
     mutating func move(_ location: CGPoint) {
         origin = location
@@ -46,6 +49,7 @@ struct Wire: Component {
     var id = UUID()
     var start: CGPoint
     var end: CGPoint
+    var vertical: Bool = false
     var selected: Bool = false
     mutating func move(_ location: CGPoint) {
         let dX = start.x - location.x
@@ -60,7 +64,7 @@ struct Wire: Component {
 struct Resistor: Component {
     var id = UUID()
     var start: CGPoint
-    var vertical: Bool? = false
+    var vertical: Bool = false
     var selected: Bool = false
     mutating func move(_ location: CGPoint) {
         start = location

@@ -32,15 +32,16 @@ final class CircuitTests: XCTestCase {
         sut.rotate(resistor)
         let rotated = sut.components.first(where: {$0.id == resistor.id}) as? Resistor
         XCTAssertEqual(rotated?.vertical, true)
+        XCTAssertEqual(sut.components.count, 3)
     }
 }
 
 extension Circuit {
     mutating func rotate(_ component: Component) {
         modifyComponent(component, modification: { comp in
-            guard var res = comp as? Resistor else { return comp }
-            res.vertical?.toggle()
-            return res
+            var modified = component
+            modified.vertical.toggle()
+            return modified
         })
     }
 }
