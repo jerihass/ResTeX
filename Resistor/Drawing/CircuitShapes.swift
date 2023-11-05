@@ -8,6 +8,7 @@ import SwiftUI
 protocol CircuitShape: Shape, Identifiable {
     var origin: CGPoint { get }
     var isSelected: Bool { get set }
+    var component: Component { get }
 }
 
 struct ComponentPresenter: Identifiable {
@@ -34,6 +35,8 @@ struct NodeShape: CircuitShape {
     var point: Node
     var isSelected: Bool = false
 
+    var component: Component { point }
+
     func path(in rect: CGRect = .infinite) -> Path {
         var path = Path()
 
@@ -55,6 +58,8 @@ struct WireShape: CircuitShape {
     var line: Wire
     var isSelected: Bool = false
 
+    var component: Component { line }
+
     var thickness: Int = 1
     func path(in rect: CGRect = .infinite) -> Path {
 
@@ -73,6 +78,8 @@ struct ResistorShape: CircuitShape {
     var id = UUID()
     var resistor: Resistor
     var isSelected: Bool = false
+
+    var component: Component { resistor }
 
     private var points: [CGPoint]
     private var vertical: Bool
