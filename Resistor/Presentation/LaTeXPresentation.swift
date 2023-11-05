@@ -33,7 +33,6 @@ extension Node: LaTeXRepresentable {
     }
 }
 
-// TODO: get rid of leading 'to'
 extension Circuit {
     var latexString: String {
         var fullString: String = ""

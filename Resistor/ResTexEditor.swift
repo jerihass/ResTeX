@@ -35,9 +35,7 @@ struct ResTexEditor: Sendable, View {
                 }
             }
             .allowsHitTesting(true)
-            .onTapGesture { point in
-                selectedComponent = model.handleTapAtPoint(point: point)
-            }
+            .onTapGesture { selectedComponent = model.handleTapAtPoint(point: $0) }
             .gesture(drag)
             Text(model.latex)
         }

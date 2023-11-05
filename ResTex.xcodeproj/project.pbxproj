@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		AD67E3382AEE832B00D5BAA2 /* Component+HitBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD67E3372AEE832B00D5BAA2 /* Component+HitBox.swift */; };
 		AD6E24452AE6CD1400F313E7 /* CircuitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6E24442AE6CD1400F313E7 /* CircuitTests.swift */; };
+		ADD2240B2AF7243200113550 /* HitboxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD2240A2AF7243200113550 /* HitboxTests.swift */; };
+		ADD2240D2AF7247800113550 /* CodableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD2240C2AF7247800113550 /* CodableTests.swift */; };
 		ADDC6B942AE56A3E00FBEEA8 /* ResTexApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDC6B932AE56A3E00FBEEA8 /* ResTexApp.swift */; };
 		ADDC6B962AE56A3E00FBEEA8 /* ResTexDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDC6B952AE56A3E00FBEEA8 /* ResTexDocument.swift */; };
 		ADDC6B982AE56A3E00FBEEA8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDC6B972AE56A3E00FBEEA8 /* ContentView.swift */; };
@@ -47,6 +49,8 @@
 /* Begin PBXFileReference section */
 		AD67E3372AEE832B00D5BAA2 /* Component+HitBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Component+HitBox.swift"; sourceTree = "<group>"; };
 		AD6E24442AE6CD1400F313E7 /* CircuitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircuitTests.swift; sourceTree = "<group>"; };
+		ADD2240A2AF7243200113550 /* HitboxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitboxTests.swift; sourceTree = "<group>"; };
+		ADD2240C2AF7247800113550 /* CodableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableTests.swift; sourceTree = "<group>"; };
 		ADDC6B902AE56A3E00FBEEA8 /* ResTex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ResTex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADDC6B932AE56A3E00FBEEA8 /* ResTexApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResTexApp.swift; sourceTree = "<group>"; };
 		ADDC6B952AE56A3E00FBEEA8 /* ResTexDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResTexDocument.swift; sourceTree = "<group>"; };
@@ -95,6 +99,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		ADD224062AF722B100113550 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		ADDC6B872AE56A3D00FBEEA8 = {
 			isa = PBXGroup;
 			children = (
@@ -146,6 +157,8 @@
 			children = (
 				AD6E24442AE6CD1400F313E7 /* CircuitTests.swift */,
 				ADEAD2402AF148490069DC7E /* CircuitToLatexTest.swift */,
+				ADD2240A2AF7243200113550 /* HitboxTests.swift */,
+				ADD2240C2AF7247800113550 /* CodableTests.swift */,
 			);
 			path = ResTexTests;
 			sourceTree = "<group>";
@@ -162,6 +175,7 @@
 		ADDC6BC52AE5BA8800FBEEA8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				ADD224062AF722B100113550 /* Components */,
 				ADDC6BC32AE5BA4A00FBEEA8 /* CircuitComponents.swift */,
 				ADF3D8D62AEE5B0C00095953 /* Circuit.swift */,
 				ADF3D8D82AEE5BA100095953 /* Component+Shape.swift */,
@@ -345,7 +359,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADD2240B2AF7243200113550 /* HitboxTests.swift in Sources */,
 				AD6E24452AE6CD1400F313E7 /* CircuitTests.swift in Sources */,
+				ADD2240D2AF7247800113550 /* CodableTests.swift in Sources */,
 				ADEAD2412AF148490069DC7E /* CircuitToLatexTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

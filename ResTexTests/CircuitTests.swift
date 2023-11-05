@@ -25,39 +25,6 @@ final class CircuitTests: XCTestCase {
         XCTAssertEqual(sut.selectedComponent?.id, node.id)
     }
 
-    func test_shouldHitboxNode() throws {
-        var hit: CGPoint = .init(x: 0, y: 0)
-        let nodeshape = NodeShape(node: node)
-        var didHit = nodeshape.inBounds(point: hit)
-        XCTAssertEqual(didHit, true)
-
-        hit = CGPoint(x: 100, y: 100)
-        didHit = nodeshape.inBounds(point: hit)
-        XCTAssertEqual(didHit, false)
-    }
-
-    func test_shouldHitboxWire() throws {
-        var hit: CGPoint = .init(x: 0, y: 0)
-        let nodeshape = WireShape(line: wire)
-        var didHit = nodeshape.inBounds(point: hit)
-        XCTAssertEqual(didHit, true)
-
-        hit = CGPoint(x: 100, y: 100)
-        didHit = nodeshape.inBounds(point: hit)
-        XCTAssertEqual(didHit, false)
-    }
-
-    func test_shouldHitboxResistor() throws {
-        var hit: CGPoint = .init(x: 3, y: 3)
-        let nodeshape = ResistorShape(resistor: resistor)
-        var didHit = nodeshape.inBounds(point: hit)
-        XCTAssertEqual(didHit, true)
-
-        hit = CGPoint(x: 100, y: 100)
-        didHit = nodeshape.inBounds(point: hit)
-        XCTAssertEqual(didHit, false)
-    }
-
     func test_shouldAddComponent() throws {
         let res2 = Resistor(start: .init(x: 10, y: 10))
         let sut = ResTexModel(circuit: .init(), callback: { _ in })
@@ -65,12 +32,4 @@ final class CircuitTests: XCTestCase {
         XCTAssertEqual(sut.circuit.components.count, 1)
     }
 
-    func test_shouldEncodeAndDecodeCircuit() throws {
-        let sut = Circuit(components: [node, wire, resistor])
-        let encoder = JSONEncoder()
-        let data = try encoder.encode(sut)
-        let decoder = JSONDecoder()
-        let circuit = try decoder.decode(Circuit.self, from: data)
-        XCTAssertEqual(circuit.components.count, sut.components.count)
-    }
 }
