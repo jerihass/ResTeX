@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AD67E3382AEE832B00D5BAA2 /* Component+HitBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD67E3372AEE832B00D5BAA2 /* Component+HitBox.swift */; };
+		AD67E3382AEE832B00D5BAA2 /* Shape+HitBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD67E3372AEE832B00D5BAA2 /* Shape+HitBox.swift */; };
 		AD6E24452AE6CD1400F313E7 /* CircuitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6E24442AE6CD1400F313E7 /* CircuitTests.swift */; };
 		ADD2240B2AF7243200113550 /* HitboxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD2240A2AF7243200113550 /* HitboxTests.swift */; };
 		ADD2240D2AF7247800113550 /* CodableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD2240C2AF7247800113550 /* CodableTests.swift */; };
@@ -47,7 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		AD67E3372AEE832B00D5BAA2 /* Component+HitBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Component+HitBox.swift"; sourceTree = "<group>"; };
+		AD67E3372AEE832B00D5BAA2 /* Shape+HitBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Shape+HitBox.swift"; sourceTree = "<group>"; };
 		AD6E24442AE6CD1400F313E7 /* CircuitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircuitTests.swift; sourceTree = "<group>"; };
 		ADD2240A2AF7243200113550 /* HitboxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitboxTests.swift; sourceTree = "<group>"; };
 		ADD2240C2AF7247800113550 /* CodableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableTests.swift; sourceTree = "<group>"; };
@@ -178,8 +178,6 @@
 				ADD224062AF722B100113550 /* Components */,
 				ADDC6BC32AE5BA4A00FBEEA8 /* CircuitComponents.swift */,
 				ADF3D8D62AEE5B0C00095953 /* Circuit.swift */,
-				ADF3D8D82AEE5BA100095953 /* Component+Shape.swift */,
-				AD67E3372AEE832B00D5BAA2 /* Component+HitBox.swift */,
 				ADEAD23E2AEF42110069DC7E /* ResTexModel.swift */,
 			);
 			path = Model;
@@ -189,6 +187,8 @@
 			isa = PBXGroup;
 			children = (
 				ADDC6BC82AE5BAF200FBEEA8 /* CircuitShapes.swift */,
+				ADF3D8D82AEE5BA100095953 /* Component+Shape.swift */,
+				AD67E3372AEE832B00D5BAA2 /* Shape+HitBox.swift */,
 			);
 			path = Drawing;
 			sourceTree = "<group>";
@@ -345,7 +345,7 @@
 				ADDC6BC42AE5BA4A00FBEEA8 /* CircuitComponents.swift in Sources */,
 				ADDC6B942AE56A3E00FBEEA8 /* ResTexApp.swift in Sources */,
 				ADDC6BC22AE56DB600FBEEA8 /* ResTexEditor.swift in Sources */,
-				AD67E3382AEE832B00D5BAA2 /* Component+HitBox.swift in Sources */,
+				AD67E3382AEE832B00D5BAA2 /* Shape+HitBox.swift in Sources */,
 				ADF3D8D92AEE5BA100095953 /* Component+Shape.swift in Sources */,
 				ADF3D8D72AEE5B0C00095953 /* Circuit.swift in Sources */,
 				ADDC6BC92AE5BAF200FBEEA8 /* CircuitShapes.swift in Sources */,
