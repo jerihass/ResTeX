@@ -4,7 +4,6 @@
 
 import Foundation
 
-
 protocol LaTeXRepresentable {
     var latexString: String { get }
 }

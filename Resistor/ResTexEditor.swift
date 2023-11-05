@@ -2,7 +2,6 @@
 //  Created by Jericho Hasselbush on 10/22/23.
 //
 
-import Foundation
 import SwiftUI
 
 struct ResTexEditor: Sendable, View {
