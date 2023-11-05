@@ -33,10 +33,12 @@ class ResTexModel: ObservableObject {
         circuit.components.append(component)
         callback(circuit)
     }
-    
-    func deleteComponent(_ component: Component) {
+
+    func deleteComponent(_ component: Component?) {
+        guard let component = component else { return }
         guard let toRemove = circuit.components.first(where: {$0.id == component.id}) else { return }
         circuit.deleteComponent(toRemove)
+        callback(circuit)
     }
 
     func makeLatex() {
