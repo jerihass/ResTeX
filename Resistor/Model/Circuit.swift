@@ -37,6 +37,10 @@ extension Circuit {
         components.insert(component, at: index)
     }
 
+    mutating func deleteComponent(_ component: Component) {
+        components.removeAll(where: { $0.id == component.id })
+    }
+
     mutating func deselectAll() {
         var components = [Component]()
         for component in self.components {

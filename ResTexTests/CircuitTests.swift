@@ -18,6 +18,12 @@ final class CircuitTests: XCTestCase {
         XCTAssertEqual(moved?.origin, .init(x: 5, y: 5))
     }
 
+    func test_circuitShouldDeleteComponent() throws {
+        var sut = Circuit(components: [node, wire, resistor])
+        sut.deleteComponent(node)
+        XCTAssertEqual(sut.components.count, 2)
+    }
+
     func test_shouldSelectComponent() throws {
         let circuit = Circuit(components: [node, wire, resistor])
         let sut = ResTexModel(circuit: circuit, callback: { _ in })
@@ -36,5 +42,12 @@ final class CircuitTests: XCTestCase {
         let sut = ResTexModel(circuit: .init(components: [wire, resistor]), callback: { _ in })
         let comp = sut.handleTapAtPoint(point: resistor.start)
         XCTAssertEqual(comp?.id, resistor.id)
+    }
+
+    func test_shouldDeleteComponent() throws {
+        let sut = ResTexModel(circuit: .init(components: [node, wire, resistor]), callback: { _ in })
+        let component = sut.handleTapAtPoint(point: resistor.start)
+        sut.deleteComponent(component!)
+        XCTAssertEqual(sut.circuit.components.count, 2)
     }
 }
