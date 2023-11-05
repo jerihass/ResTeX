@@ -11,17 +11,36 @@ final class CircuitTests: XCTestCase {
     var wire = Wire(start: .init(x: 0, y: 0), end: .init(x: 5, y: 0))
     var resistor = Resistor(start: .init(x: 3, y: 3))
 
+    var sut: Circuit!
+
+    override func setUp() async throws {
+        sut = Circuit(components: [node, wire, resistor])
+    }
+
     func test_shouldMoveComponentOrigin() {
-        var sut = Circuit(components: [node, wire, resistor])
         sut.moveComponent(node, to: CGPoint(x: 5, y: 5))
         let moved = sut.components.first(where: {$0.id == node.id})
         XCTAssertEqual(moved?.origin, .init(x: 5, y: 5))
     }
 
     func test_circuitShouldDeleteComponent() throws {
-        var sut = Circuit(components: [node, wire, resistor])
         sut.deleteComponent(node)
         XCTAssertEqual(sut.components.count, 2)
     }
 
+    func test_shouldRotateComponent() throws {
+        sut.rotate(resistor)
+        let rotated = sut.components.first(where: {$0.id == resistor.id}) as? Resistor
+        XCTAssertEqual(rotated?.vertical, true)
+    }
+}
+
+extension Circuit {
+    mutating func rotate(_ component: Component) {
+        modifyComponent(component, modification: { comp in
+            guard var res = comp as? Resistor else { return comp }
+            res.vertical?.toggle()
+            return res
+        })
+    }
 }

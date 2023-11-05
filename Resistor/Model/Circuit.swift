@@ -64,14 +64,14 @@ extension Circuit {
         })
     }
 
-    private mutating func modifyComponent(_ component: Component, modification: (Component) -> Void) {
+    mutating func modifyComponent(_ component: Component, modification: (Component) -> Component) {
         guard let component = components.first(where: { $0.id == component.id }) else { return }
         guard let index = components.firstIndex(where: { $0.id == component.id }) else { return }
         components.removeAll(where: {$0.id == component.id})
 
-        modification(component)
+        let modified = modification(component)
 
-        components.insert(component, at: index)
+        components.insert(modified, at: index)
     }
 }
 
