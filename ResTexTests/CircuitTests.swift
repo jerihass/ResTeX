@@ -26,14 +26,35 @@ final class CircuitTests: XCTestCase {
     }
 
     func test_shouldHitboxNode() throws {
-        let hit: CGPoint = .init(x: 0, y: 0)
-        let didHit = node.inBounds(point: hit)
+        var hit: CGPoint = .init(x: 0, y: 0)
+        let nodeshape = NodeShape(node: node)
+        var didHit = nodeshape.inBounds(point: hit)
         XCTAssertEqual(didHit, true)
+
+        hit = CGPoint(x: 100, y: 100)
+        didHit = nodeshape.inBounds(point: hit)
+        XCTAssertEqual(didHit, false)
     }
 
-    func test_shouldMissHitbox() throws {
-        let hit = CGPoint(x: 100, y: 100)
-        let didHit = node.inBounds(point: hit)
+    func test_shouldHitboxWire() throws {
+        var hit: CGPoint = .init(x: 0, y: 0)
+        let nodeshape = WireShape(line: wire)
+        var didHit = nodeshape.inBounds(point: hit)
+        XCTAssertEqual(didHit, true)
+
+        hit = CGPoint(x: 100, y: 100)
+        didHit = nodeshape.inBounds(point: hit)
+        XCTAssertEqual(didHit, false)
+    }
+
+    func test_shouldHitboxResistor() throws {
+        var hit: CGPoint = .init(x: 3, y: 3)
+        let nodeshape = ResistorShape(resistor: resistor)
+        var didHit = nodeshape.inBounds(point: hit)
+        XCTAssertEqual(didHit, true)
+
+        hit = CGPoint(x: 100, y: 100)
+        didHit = nodeshape.inBounds(point: hit)
         XCTAssertEqual(didHit, false)
     }
 

@@ -32,16 +32,16 @@ struct ComponentPresenter: Identifiable {
 
 struct NodeShape: CircuitShape {
     var id = UUID()
-    var point: Node
+    var node: Node
     var isSelected: Bool = false
 
-    var component: Component { point }
+    var component: Component { node }
 
     func path(in rect: CGRect = .infinite) -> Path {
         var path = Path()
 
-        path.addArc(center: point.origin,
-                 radius: CGFloat(point.radius),
+        path.addArc(center: node.origin,
+                 radius: CGFloat(node.radius),
                  startAngle: .zero,
                  endAngle: .degrees(360),
                  clockwise: true)
@@ -50,7 +50,7 @@ struct NodeShape: CircuitShape {
         return path
     }
 
-    var origin: CGPoint { point.origin }
+    var origin: CGPoint { node.origin }
 }
 
 struct WireShape: CircuitShape {

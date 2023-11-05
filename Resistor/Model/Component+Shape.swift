@@ -10,7 +10,7 @@ protocol ComponentShape {
 
 extension Node: ComponentShape {
     var shape: any CircuitShape {
-        NodeShape(point: self)
+        NodeShape(node: self)
     }
 }
 
