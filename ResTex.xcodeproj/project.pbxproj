@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD485DDC2AF72BE80018242B /* ResTexModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD485DDB2AF72BE80018242B /* ResTexModelTests.swift */; };
 		AD67E3382AEE832B00D5BAA2 /* Shape+HitBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD67E3372AEE832B00D5BAA2 /* Shape+HitBox.swift */; };
 		AD6E24452AE6CD1400F313E7 /* CircuitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6E24442AE6CD1400F313E7 /* CircuitTests.swift */; };
 		ADD2240B2AF7243200113550 /* HitboxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD2240A2AF7243200113550 /* HitboxTests.swift */; };
@@ -47,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AD485DDB2AF72BE80018242B /* ResTexModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResTexModelTests.swift; sourceTree = "<group>"; };
 		AD67E3372AEE832B00D5BAA2 /* Shape+HitBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Shape+HitBox.swift"; sourceTree = "<group>"; };
 		AD6E24442AE6CD1400F313E7 /* CircuitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircuitTests.swift; sourceTree = "<group>"; };
 		ADD2240A2AF7243200113550 /* HitboxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitboxTests.swift; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 				ADEAD2402AF148490069DC7E /* CircuitToLatexTest.swift */,
 				ADD2240A2AF7243200113550 /* HitboxTests.swift */,
 				ADD2240C2AF7247800113550 /* CodableTests.swift */,
+				AD485DDB2AF72BE80018242B /* ResTexModelTests.swift */,
 			);
 			path = ResTexTests;
 			sourceTree = "<group>";
@@ -176,8 +179,8 @@
 			isa = PBXGroup;
 			children = (
 				ADD224062AF722B100113550 /* Components */,
-				ADDC6BC32AE5BA4A00FBEEA8 /* CircuitComponents.swift */,
 				ADF3D8D62AEE5B0C00095953 /* Circuit.swift */,
+				ADDC6BC32AE5BA4A00FBEEA8 /* CircuitComponents.swift */,
 				ADEAD23E2AEF42110069DC7E /* ResTexModel.swift */,
 			);
 			path = Model;
@@ -363,6 +366,7 @@
 				AD6E24452AE6CD1400F313E7 /* CircuitTests.swift in Sources */,
 				ADD2240D2AF7247800113550 /* CodableTests.swift in Sources */,
 				ADEAD2412AF148490069DC7E /* CircuitToLatexTest.swift in Sources */,
+				AD485DDC2AF72BE80018242B /* ResTexModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
