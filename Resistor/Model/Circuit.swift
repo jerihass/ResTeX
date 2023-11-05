@@ -54,6 +54,12 @@ extension Circuit {
         })
     }
 
+    var shapes: [ComponentShape] {
+        components.compactMap({
+            return $0 as? ComponentShape
+        })
+    }
+
     private mutating func modifyComponent(_ component: Component, modification: (Component) -> Void) {
         guard let component = components.first(where: { $0.id == component.id }) else { return }
         guard let index = components.firstIndex(where: { $0.id == component.id }) else { return }

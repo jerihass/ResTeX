@@ -38,4 +38,20 @@ class ResTexModel: ObservableObject {
         latex = circuit.latexString
         print(latex)
     }
+
+    func handleTapAtPoint(point: CGPoint) -> Component? {
+        for shape in circuit.shapes {
+            if let hitbox = shape.shape as? HitBox {
+                if hitbox.inBounds(point: point) {
+                    selectComponent(shape.shape.component)
+                    selectedComponent = shape.shape.component
+                    break
+                } else {
+                    selectComponent(nil)
+                    selectedComponent = nil
+                }
+            }
+        }
+        return selectedComponent
+    }
 }

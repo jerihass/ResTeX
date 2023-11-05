@@ -36,18 +36,7 @@ struct ResTexEditor: Sendable, View {
             }
             .allowsHitTesting(true)
             .onTapGesture { point in
-                for component in model.circuit.components {
-                    if let hitbox = component as? HitBox {
-                        if hitbox.inBounds(point: point) {
-                            model.selectComponent(component)
-                            selectedComponent = component
-                            return
-                        } else {
-                            model.selectComponent(nil)
-                            selectedComponent = nil
-                        }
-                    }
-                }
+                selectedComponent = model.handleTapAtPoint(point: point)
             }
             .gesture(drag)
             Text(model.latex)
