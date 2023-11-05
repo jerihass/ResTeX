@@ -64,3 +64,13 @@ extension Circuit {
         components.insert(component, at: index)
     }
 }
+
+extension Circuit {
+    static var demo: Circuit {
+        let node = Node(radius: 5, origin: .init(x: 20, y: 20))
+        let wire = Wire(start: .init(x: 20, y: 20), end: .init(x: 30, y: 20))
+        let resistor = Resistor(start: .init(x: 30, y: 20))
+        let wire2 = Wire(start: .init(x: 66, y: 20), end: .init(x: 76, y: 20))
+        return Circuit(components: [node, wire, resistor, wire2])
+    }
+}
