@@ -26,6 +26,7 @@ struct ResTexEditor: Sendable, View {
                 })
                 Button("Make Latex", action: { model.makeLatex() })
                 Button("Delete", action: { model.deleteComponent(selectedComponent)})
+                Button("Rotate", action: { model.rotateComponent(selectedComponent) })
             }
             ZStack {
                 Rectangle().fill().frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center).foregroundStyle(.ultraThinMaterial).backgroundStyle(.clear)

@@ -64,7 +64,15 @@ extension Circuit {
         })
     }
 
-    mutating func modifyComponent(_ component: Component, modification: (Component) -> Component) {
+    mutating func rotate(_ component: Component) {
+        modifyComponent(component, modification: { comp in
+            var modified = component
+            modified.vertical.toggle()
+            return modified
+        })
+    }
+
+    private mutating func modifyComponent(_ component: Component, modification: (Component) -> Component) {
         guard let component = components.first(where: { $0.id == component.id }) else { return }
         guard let index = components.firstIndex(where: { $0.id == component.id }) else { return }
         components.removeAll(where: {$0.id == component.id})

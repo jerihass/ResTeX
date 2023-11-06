@@ -35,13 +35,3 @@ final class CircuitTests: XCTestCase {
         XCTAssertEqual(sut.components.count, 3)
     }
 }
-
-extension Circuit {
-    mutating func rotate(_ component: Component) {
-        modifyComponent(component, modification: { comp in
-            var modified = component
-            modified.vertical.toggle()
-            return modified
-        })
-    }
-}

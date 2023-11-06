@@ -41,6 +41,12 @@ class ResTexModel: ObservableObject {
         callback(circuit)
     }
 
+    func rotateComponent(_ component: Component?) {
+        guard let component = component else { return }
+        circuit.rotate(component)
+        callback(circuit)
+    }
+
     func makeLatex() {
         latex = circuit.latexString
         print(latex)
