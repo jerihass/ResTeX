@@ -27,6 +27,7 @@ protocol Component: Codable, Sendable {
     var id: UUID { get }
     mutating func move(_ location: CGPoint)
     var origin: CGPoint { get }
+    var rect: CGRect { get }
     var vertical: Bool { get set }
     var key: ComponentKeys { get }
     var selected: Bool { get set }
@@ -36,6 +37,13 @@ struct Node: Component {
     var id = UUID()
     var radius: Float
     var origin: CGPoint
+    var rect: CGRect {
+        let x = origin.x
+        let y = origin.y
+        let width = CGFloat(radius * 2)
+        let height = CGFloat(radius * 2)
+        return .init(x: x, y: y, width: width, height: height)
+    }
     var vertical: Bool = false
     var selected: Bool = false
     mutating func move(_ location: CGPoint) {
@@ -47,16 +55,20 @@ struct Node: Component {
 struct Wire: Component {
     var id = UUID()
     var start: CGPoint
-    var end: CGPoint
+    var length: CGFloat
     var vertical: Bool = false
     var selected: Bool = false
     mutating func move(_ location: CGPoint) {
-        let dX = start.x - location.x
-        let dY = start.y - location.y
         start = location
-        end = .init(x: end.x - dX, y: end.y - dY)
     }
     var origin: CGPoint { start }
+    var rect: CGRect {
+        let x = origin.x
+        let y = origin.y
+        let width = CGFloat(vertical ? 3 : length)
+        let height = CGFloat(vertical ? length : 3)
+        return .init(x: x, y: y, width: width, height: height)
+    }
     var key: ComponentKeys { .wire }
 }
 
@@ -69,6 +81,13 @@ struct Resistor: Component {
         start = location
     }
     var origin: CGPoint { start }
+    var rect: CGRect {
+        let x = origin.x
+        let y = origin.y
+        let width = CGFloat(vertical ? 3 : 36)
+        let height = CGFloat(vertical ? 36 : 3)
+        return .init(x: x, y: y, width: width, height: height)
+    }
     var key: ComponentKeys { .resistor }
 }
 

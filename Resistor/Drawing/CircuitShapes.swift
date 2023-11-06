@@ -65,7 +65,11 @@ struct WireShape: CircuitShape {
 
         var path = Path()
         path.move(to: line.start)
-        path.addLine(to: line.end)
+        if line.vertical {
+            path.addLine(to: CGPoint(x: line.start.x, y: line.start.y + line.length))
+        } else {
+            path.addLine(to: CGPoint(x: line.start.x + line.length, y: line.start.y))
+        }
         path.closeSubpath()
 
         return path

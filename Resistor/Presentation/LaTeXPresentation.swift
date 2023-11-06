@@ -20,8 +20,8 @@ extension Wire: LaTeXRepresentable {
     var latexString: String {
         let sx = start.x / 20
         let sy = start.y / 20 * -1
-        let ex = end.x / 20
-        let ey = end.y / 20 * -1
+        let ey = vertical ? sy - length / 20 : sy
+        let ex = vertical ? sx : sx + length / 20
         return "(\(sx),\(sy)) to [short, -] (\(ex),\(ey))"
     }
 }

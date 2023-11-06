@@ -8,7 +8,7 @@ import XCTest
 final class CircuitTests: XCTestCase {
 
     var node = Node(radius: 5, origin: .init(x: 0, y: 0))
-    var wire = Wire(start: .init(x: 0, y: 0), end: .init(x: 5, y: 0))
+    var wire = Wire(start: .init(x: 0, y: 0), length: 40)
     var resistor = Resistor(start: .init(x: 3, y: 3))
 
     var sut: Circuit!

@@ -27,6 +27,7 @@ class ResTexModel: ObservableObject {
         }
         circuit.selectComponent(comp)
         self.selectedComponent = comp
+        callback(circuit)
     }
 
     func addComponent(_ component: Component) {

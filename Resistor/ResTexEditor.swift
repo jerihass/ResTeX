@@ -22,7 +22,7 @@ struct ResTexEditor: Sendable, View {
                     model.addComponent(Node(radius: 2, origin: .init(x: 30, y: 30)))
                 })
                 Button("Wire", action: {
-                    model.addComponent(Wire(start: .init(x: 40, y: 40), end: .init(x: 60, y: 40)))
+                    model.addComponent(Wire(start: .init(x: 40, y: 40), length: 40))
                 })
                 Button("Make Latex", action: { model.makeLatex() })
                 Button("Delete", action: { model.deleteComponent(selectedComponent)})

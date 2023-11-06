@@ -8,9 +8,9 @@ import XCTest
 final class CircuitToLatexTest: XCTestCase {
 
     var node = Node(radius: 5, origin: .init(x: 20, y: 20))
-    var wire = Wire(start: .init(x: 20, y: 20), end: .init(x: 30, y: 20))
+    var wire = Wire(start: .init(x: 20, y: 20), length: 40)
     var resistor = Resistor(start: .init(x: 30, y: 20))
-    var wire2 = Wire(start: .init(x: 66, y: 20), end: .init(x: 76, y: 20))
+    var wire2 = Wire(start: .init(x: 66, y: 20), length: 40)
 
     func test_shouldGenerateBasicLatexStringFromResistor() throws {
         let circuit = Circuit(components: [resistor])
