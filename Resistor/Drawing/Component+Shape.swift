@@ -22,6 +22,6 @@ extension Wire: ComponentShape {
 
 extension Resistor: ComponentShape {
     var shape: any CircuitShape {
-        ResistorShape(resistor: self, vertical: self.vertical ?? false)
+        ResistorShape(resistor: self)
     }
 }

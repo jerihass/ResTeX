@@ -33,7 +33,6 @@ protocol Component: Codable, Sendable {
 }
 
 struct Node: Component {
-
     var id = UUID()
     var radius: Float
     var origin: CGPoint

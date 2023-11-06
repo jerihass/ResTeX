@@ -8,6 +8,7 @@ protocol CircuitShape: Shape, Identifiable {
     var origin: CGPoint { get }
     var isSelected: Bool { get set }
     var component: Component { get }
+    var vertical: Bool { get }
 }
 
 struct ComponentPresenter: Identifiable {
@@ -35,7 +36,7 @@ struct NodeShape: CircuitShape {
     var isSelected: Bool = false
 
     var component: Component { node }
-
+    var vertical: Bool = false
     func path(in rect: CGRect = .infinite) -> Path {
         var path = Path()
 
@@ -58,7 +59,7 @@ struct WireShape: CircuitShape {
     var isSelected: Bool = false
 
     var component: Component { line }
-
+    var vertical: Bool { component.vertical }
     var thickness: Int = 1
     func path(in rect: CGRect = .infinite) -> Path {
 
@@ -79,10 +80,10 @@ struct ResistorShape: CircuitShape {
     var isSelected: Bool = false
 
     var component: Component { resistor }
+    var vertical: Bool { component.vertical }
 
     private var points: [CGPoint]
-    private var vertical: Bool
-    init(resistor: Resistor, vertical: Bool = false) {
+    init(resistor: Resistor) {
         self.resistor = resistor
 
         points = [.init(x: 0, y: 0),
@@ -96,8 +97,6 @@ struct ResistorShape: CircuitShape {
                   .init(x: 30, y: 0),
                   .init(x: 36, y: 0),
         ]
-
-        self.vertical = vertical
     }
 
     func path(in rect: CGRect) -> Path {
