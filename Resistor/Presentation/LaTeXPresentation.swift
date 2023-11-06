@@ -12,7 +12,14 @@ extension Resistor: LaTeXRepresentable {
     var latexString: String {
         // Resistor min length is 1.2, so +2
         // TODO: Handle vertical resistors?
-        "(\(origin.x / 20),\(origin.y / -20)) to [R, l=LABEL] (\(origin.x / 20 + 2),\(origin.y / -20))"
+        if vertical {
+//            return "(\(origin.x / 20),\(origin.y / -20)) to [R, l=LABEL] (\(origin.x / 20),\(origin.y / -20 - 2))"
+            return "(\(origin.x)pt,\(origin.y / -1)pt) to [R, l=LABEL] (\(origin.x)pt,\(origin.y / -1 - 36)pt)"
+
+        } else {
+//            return "(\(origin.x / 20),\(origin.y / -20)) to [R, l=LABEL] (\(origin.x / 20 + 2),\(origin.y / -20))"
+            return "(\(origin.x)pt,\(origin.y / -1)pt) to [R, l=LABEL] (\(origin.x + 36)pt,\(origin.y / -1)pt)"
+        }
     }
 }
 
