@@ -22,11 +22,11 @@ extension Circuit {
         let newY = Int(Int(newPoint.y) - dY)
         let snapPoint = CGPoint(x: newX, y: newY)
 
-        guard var component = components.first(where: { $0.id == component.id }) else { return }
-        guard let index = components.firstIndex(where: { $0.id == component.id }) else { return }
-        components.removeAll(where: {$0.id == component.id})
-        component.move(snapPoint)
-        components.insert(component, at: index)
+        modifyComponent(component, modification: { _ in
+            var modified = component
+            modified.move(snapPoint)
+            return modified
+        })
     }
 
     mutating func selectComponent(_ component: Component) {
@@ -65,14 +65,14 @@ extension Circuit {
     }
 
     mutating func rotate(_ component: Component) {
-        modifyComponent(component, modification: { comp in
+        modifyComponent(component, modification: { _ in
             var modified = component
             modified.vertical.toggle()
             return modified
         })
     }
 
-    private mutating func modifyComponent(_ component: Component, modification: (Component) -> Component) {
+    private mutating func modifyComponent(_ component: Component, modification: (_ comp: Component) -> Component) {
         guard let component = components.first(where: { $0.id == component.id }) else { return }
         guard let index = components.firstIndex(where: { $0.id == component.id }) else { return }
         components.removeAll(where: {$0.id == component.id})
