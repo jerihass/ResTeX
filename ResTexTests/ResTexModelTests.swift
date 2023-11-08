@@ -3,7 +3,7 @@
 //
 
 import XCTest
-@testable import ResTex
+@testable import ResTeX
 
 final class ResTexModelTests: XCTestCase {
     var node = Node(radius: 5, origin: .init(x: 0, y: 0))

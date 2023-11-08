@@ -3,7 +3,7 @@
 //
 
 import XCTest
-@testable import ResTex
+@testable import ResTeX
 
 final class HitboxTests: XCTestCase {
 

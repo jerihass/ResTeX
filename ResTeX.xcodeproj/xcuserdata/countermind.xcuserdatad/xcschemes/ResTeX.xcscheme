@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "ADDC6B8F2AE56A3E00FBEEA8"
-               BuildableName = "ResTex.app"
-               BlueprintName = "ResTex"
+               BuildableName = "ResTeX.app"
+               BlueprintName = "ResTeX"
                ReferencedContainer = "container:ResTex.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -35,8 +35,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "ADDC6BA32AE56A4000FBEEA8"
-               BuildableName = "ResTexTests.xctest"
-               BlueprintName = "ResTexTests"
+               BuildableName = "ResTeXTests.xctest"
+               BlueprintName = "ResTeXTests"
                ReferencedContainer = "container:ResTex.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -46,8 +46,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "ADDC6BAD2AE56A4000FBEEA8"
-               BuildableName = "ResTexUITests.xctest"
-               BlueprintName = "ResTexUITests"
+               BuildableName = "ResTeXUITests.xctest"
+               BlueprintName = "ResTeXUITests"
                ReferencedContainer = "container:ResTex.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -70,8 +70,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "ADDC6B8F2AE56A3E00FBEEA8"
-            BuildableName = "ResTex.app"
-            BlueprintName = "ResTex"
+            BuildableName = "ResTeX.app"
+            BlueprintName = "ResTeX"
             ReferencedContainer = "container:ResTex.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -87,8 +87,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "ADDC6B8F2AE56A3E00FBEEA8"
-            BuildableName = "ResTex.app"
-            BlueprintName = "ResTex"
+            BuildableName = "ResTeX.app"
+            BlueprintName = "ResTeX"
             ReferencedContainer = "container:ResTex.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

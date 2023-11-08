@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import ResTex
+@testable import ResTeX
 
 final class CodableTests: XCTestCase {
     func test_shouldEncodeAndDecodeCircuit() throws {
