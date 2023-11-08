@@ -17,7 +17,7 @@
                BlueprintIdentifier = "ADDC6B8F2AE56A3E00FBEEA8"
                BuildableName = "ResTeX.app"
                BlueprintName = "ResTeX"
-               ReferencedContainer = "container:ResTex.xcodeproj">
+               ReferencedContainer = "container:ResTeX.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -37,7 +37,7 @@
                BlueprintIdentifier = "ADDC6BA32AE56A4000FBEEA8"
                BuildableName = "ResTeXTests.xctest"
                BlueprintName = "ResTeXTests"
-               ReferencedContainer = "container:ResTex.xcodeproj">
+               ReferencedContainer = "container:ResTeX.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -48,7 +48,7 @@
                BlueprintIdentifier = "ADDC6BAD2AE56A4000FBEEA8"
                BuildableName = "ResTeXUITests.xctest"
                BlueprintName = "ResTeXUITests"
-               ReferencedContainer = "container:ResTex.xcodeproj">
+               ReferencedContainer = "container:ResTeX.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -72,7 +72,7 @@
             BlueprintIdentifier = "ADDC6B8F2AE56A3E00FBEEA8"
             BuildableName = "ResTeX.app"
             BlueprintName = "ResTeX"
-            ReferencedContainer = "container:ResTex.xcodeproj">
+            ReferencedContainer = "container:ResTeX.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -89,7 +89,7 @@
             BlueprintIdentifier = "ADDC6B8F2AE56A3E00FBEEA8"
             BuildableName = "ResTeX.app"
             BlueprintName = "ResTeX"
-            ReferencedContainer = "container:ResTex.xcodeproj">
+            ReferencedContainer = "container:ResTeX.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
