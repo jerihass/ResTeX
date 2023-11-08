@@ -63,6 +63,8 @@ struct WireShape: CircuitShape {
     var thickness: Int = 1
     func path(in rect: CGRect = .infinite) -> Path {
 
+        let leadingNode = Path(centered: line.start, radius: 2)
+        let trailingNode = Path(centered: .init(x: line.start.x + line.length, y: line.start.y), radius: 2)
         var path = Path()
         path.move(to: line.start)
         if line.vertical {
@@ -72,10 +74,29 @@ struct WireShape: CircuitShape {
         }
         path.closeSubpath()
 
-        return path
+        let test: CGMutablePath = CGMutablePath()
+        test.addPath(path.cgPath)
+
+        if line.endPoints.leading {
+            test.addPath(leadingNode.cgPath)
+        }
+
+        if line.endPoints.trailing {
+            test.addPath(trailingNode.cgPath)
+        }
+
+        return Path(test)
     }
 
     var origin: CGPoint { line.start }
+}
+
+extension Path {
+    init(centered: CGPoint, radius: CGFloat) {
+        var path = Path()
+        path.addArc(center: centered, radius: radius, startAngle: .degrees(0), endAngle:.degrees(360), clockwise: true)
+        self = path
+    }
 }
 
 struct ResistorShape: CircuitShape {

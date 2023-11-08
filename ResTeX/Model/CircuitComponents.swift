@@ -58,6 +58,7 @@ struct Wire: Component {
     var length: CGFloat
     var vertical: Bool = false
     var selected: Bool = false
+    var endPoints: EndPoints = EndPoints()
     mutating func move(_ location: CGPoint) {
         start = location
     }
@@ -70,6 +71,11 @@ struct Wire: Component {
         return .init(x: x, y: y, width: width, height: height)
     }
     var key: ComponentKeys { .wire }
+
+    struct EndPoints: Codable {
+        var leading: Bool = false
+        var trailing: Bool = false
+    }
 }
 
 struct Resistor: Component {

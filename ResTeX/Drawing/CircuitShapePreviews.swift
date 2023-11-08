@@ -25,7 +25,7 @@ fileprivate struct PreviewShapes {
 
     init() {
         let resistor: ResistorShape = .init(resistor: .init(start: origin))
-        let wire: WireShape = .init(line: .init(start: origin, length: 40))
+        let wire: WireShape = .init(line: .init(start: origin, length: 40, endPoints: .init(leading: true, trailing: true)))
 
         self.presenter.append(ComponentPresenter(circuitShape: resistor))
         self.presenter.append(ComponentPresenter(circuitShape: wire))
