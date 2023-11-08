@@ -13,28 +13,16 @@ struct Circuit: Sendable {
 
 extension Circuit {
     mutating func moveComponent(_ component: Component, to newPoint: CGPoint) {
-        let snapX: Int = 5
-        let snapY: Int = 5
-
-        let dX = Int(newPoint.x) % snapX
-        let dY = Int(newPoint.y) % snapY
-        let newX = Int(Int(newPoint.x) - dX)
-        let newY = Int(Int(newPoint.y) - dY)
-        let snapPoint = CGPoint(x: newX, y: newY)
-
-        modifyComponent(component, modification: { _ in
-            var modified = component
-            modified.move(snapPoint)
-            return modified
-        })
+        let snapPoint = snapToClosest(snapX: 5, snapY: 5, point: newPoint)
+        modifyComponent(component, modification: { move(snapPoint, $0) })
     }
 
     mutating func selectComponent(_ component: Component) {
-        guard var component = components.first(where: { $0.id == component.id }) else { return }
-        guard let index = components.firstIndex(where: { $0.id == component.id }) else { return }
-        components.removeAll(where: {$0.id == component.id})
-        component.selected.toggle()
-        components.insert(component, at: index)
+        modifyComponent(component, modification: select)
+    }
+
+    mutating func rotateComponent(_ component: Component) {
+        modifyComponent(component, modification: rotate)
     }
 
     mutating func deleteComponent(_ component: Component) {
@@ -64,27 +52,38 @@ extension Circuit {
         })
     }
 
-    mutating func rotateComponent(_ component: Component) {
-        modifyComponent(component, modification: rotate)
-    }
-
-    private mutating func modifyComponent(_ component: Component, modification: ComponentModification) {
+    private mutating func modifyComponent(_ component: Component, modification: (Component) -> Component) {
         guard let component = components.first(where: { $0.id == component.id }) else { return }
         guard let index = components.firstIndex(where: { $0.id == component.id }) else { return }
         components.removeAll(where: {$0.id == component.id})
-
         let modified = modification(component)
-
         components.insert(modified, at: index)
     }
 }
 
-typealias ComponentModification = (Component) -> Component
+func snapToClosest(snapX: Int, snapY: Int, point: CGPoint) -> CGPoint {
+    let dX = Int(point.x) % snapX
+    let dY = Int(point.y) % snapY
+    let newX = Int(Int(point.x) - dX)
+    let newY = Int(Int(point.y) - dY)
+    return CGPoint(x: newX, y: newY)
+}
 
+func select(_ component: Component) -> Component {
+    var modified = component
+    modified.selected.toggle()
+    return modified
+}
 
-let rotate: ComponentModification = { component in
+func rotate(_ component: Component) -> Component {
     var modified = component
     modified.vertical.toggle()
+    return modified
+}
+
+func move(_ point: CGPoint, _ component: Component) -> Component {
+    var modified = component
+    modified.move(point)
     return modified
 }
 
