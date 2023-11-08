@@ -52,6 +52,8 @@
 		AD67E3372AEE832B00D5BAA2 /* Shape+HitBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Shape+HitBox.swift"; sourceTree = "<group>"; };
 		AD6E24442AE6CD1400F313E7 /* CircuitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircuitTests.swift; sourceTree = "<group>"; };
 		ADB97B202AFB268900C34EE1 /* ResTeX.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ResTeX.entitlements; sourceTree = "<group>"; };
+		ADB97B222AFB363C00C34EE1 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		ADB97B232AFB364300C34EE1 /* LICENSE.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = LICENSE.txt; path = ../LICENSE.txt; sourceTree = "<group>"; };
 		ADD2240A2AF7243200113550 /* HitboxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitboxTests.swift; sourceTree = "<group>"; };
 		ADD2240C2AF7247800113550 /* CodableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableTests.swift; sourceTree = "<group>"; };
 		ADDC6B902AE56A3E00FBEEA8 /* ResTeX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ResTeX.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -141,6 +143,8 @@
 				ADDC6B992AE56A4000FBEEA8 /* Assets.xcassets */,
 				ADDC6B9B2AE56A4000FBEEA8 /* Info.plist */,
 				ADB97B202AFB268900C34EE1 /* ResTeX.entitlements */,
+				ADB97B222AFB363C00C34EE1 /* README.md */,
+				ADB97B232AFB364300C34EE1 /* LICENSE.txt */,
 				ADDC6B9D2AE56A4000FBEEA8 /* Preview Content */,
 			);
 			path = ResTeX;
