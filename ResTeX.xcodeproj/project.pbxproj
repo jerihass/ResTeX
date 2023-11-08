@@ -7,15 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		ADDC6B942AE56A3E00FBEEA8 /* ResistorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDC6B932AE56A3E00FBEEA8 /* ResistorApp.swift */; };
-		ADDC6B962AE56A3E00FBEEA8 /* ResistorDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDC6B952AE56A3E00FBEEA8 /* ResistorDocument.swift */; };
+		AD485DDC2AF72BE80018242B /* ResTexModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD485DDB2AF72BE80018242B /* ResTexModelTests.swift */; };
+		AD67E3382AEE832B00D5BAA2 /* Shape+HitBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD67E3372AEE832B00D5BAA2 /* Shape+HitBox.swift */; };
+		AD6E24452AE6CD1400F313E7 /* CircuitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6E24442AE6CD1400F313E7 /* CircuitTests.swift */; };
+		ADD2240B2AF7243200113550 /* HitboxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD2240A2AF7243200113550 /* HitboxTests.swift */; };
+		ADD2240D2AF7247800113550 /* CodableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD2240C2AF7247800113550 /* CodableTests.swift */; };
+		ADDC6B942AE56A3E00FBEEA8 /* ResTexApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDC6B932AE56A3E00FBEEA8 /* ResTexApp.swift */; };
+		ADDC6B962AE56A3E00FBEEA8 /* ResTexDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDC6B952AE56A3E00FBEEA8 /* ResTexDocument.swift */; };
 		ADDC6B982AE56A3E00FBEEA8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDC6B972AE56A3E00FBEEA8 /* ContentView.swift */; };
 		ADDC6B9A2AE56A4000FBEEA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADDC6B992AE56A4000FBEEA8 /* Assets.xcassets */; };
 		ADDC6B9F2AE56A4000FBEEA8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADDC6B9E2AE56A4000FBEEA8 /* Preview Assets.xcassets */; };
-		ADDC6BA92AE56A4000FBEEA8 /* ResistorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDC6BA82AE56A4000FBEEA8 /* ResistorTests.swift */; };
 		ADDC6BB32AE56A4000FBEEA8 /* ResistorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDC6BB22AE56A4000FBEEA8 /* ResistorUITests.swift */; };
 		ADDC6BB52AE56A4000FBEEA8 /* ResistorUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDC6BB42AE56A4000FBEEA8 /* ResistorUITestsLaunchTests.swift */; };
-		ADDC6BC22AE56DB600FBEEA8 /* ResistorEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDC6BC12AE56DB600FBEEA8 /* ResistorEditor.swift */; };
+		ADDC6BC22AE56DB600FBEEA8 /* ResTexEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDC6BC12AE56DB600FBEEA8 /* ResTexEditor.swift */; };
+		ADDC6BC42AE5BA4A00FBEEA8 /* CircuitComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDC6BC32AE5BA4A00FBEEA8 /* CircuitComponents.swift */; };
+		ADDC6BC92AE5BAF200FBEEA8 /* CircuitShapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDC6BC82AE5BAF200FBEEA8 /* CircuitShapes.swift */; };
+		ADDC6BCB2AE5FC5100FBEEA8 /* Circuit+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDC6BCA2AE5FC5100FBEEA8 /* Circuit+Codable.swift */; };
+		ADEAD23F2AEF42110069DC7E /* ResTexModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEAD23E2AEF42110069DC7E /* ResTexModel.swift */; };
+		ADEAD2412AF148490069DC7E /* CircuitToLatexTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEAD2402AF148490069DC7E /* CircuitToLatexTest.swift */; };
+		ADEAD2442AF1739A0069DC7E /* LaTeXPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEAD2432AF1739A0069DC7E /* LaTeXPresentation.swift */; };
+		ADF3D8D72AEE5B0C00095953 /* Circuit.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF3D8D62AEE5B0C00095953 /* Circuit.swift */; };
+		ADF3D8D92AEE5BA100095953 /* Component+Shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF3D8D82AEE5BA100095953 /* Component+Shape.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,20 +48,32 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		ADDC6B902AE56A3E00FBEEA8 /* Resistor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Resistor.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		ADDC6B932AE56A3E00FBEEA8 /* ResistorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResistorApp.swift; sourceTree = "<group>"; };
-		ADDC6B952AE56A3E00FBEEA8 /* ResistorDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResistorDocument.swift; sourceTree = "<group>"; };
+		AD485DDB2AF72BE80018242B /* ResTexModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResTexModelTests.swift; sourceTree = "<group>"; };
+		AD67E3372AEE832B00D5BAA2 /* Shape+HitBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Shape+HitBox.swift"; sourceTree = "<group>"; };
+		AD6E24442AE6CD1400F313E7 /* CircuitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircuitTests.swift; sourceTree = "<group>"; };
+		ADB97B202AFB268900C34EE1 /* ResTeX.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ResTeX.entitlements; sourceTree = "<group>"; };
+		ADD2240A2AF7243200113550 /* HitboxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitboxTests.swift; sourceTree = "<group>"; };
+		ADD2240C2AF7247800113550 /* CodableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableTests.swift; sourceTree = "<group>"; };
+		ADDC6B902AE56A3E00FBEEA8 /* ResTeX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ResTeX.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADDC6B932AE56A3E00FBEEA8 /* ResTexApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResTexApp.swift; sourceTree = "<group>"; };
+		ADDC6B952AE56A3E00FBEEA8 /* ResTexDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResTexDocument.swift; sourceTree = "<group>"; };
 		ADDC6B972AE56A3E00FBEEA8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		ADDC6B992AE56A4000FBEEA8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ADDC6B9B2AE56A4000FBEEA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ADDC6B9C2AE56A4000FBEEA8 /* Resistor.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Resistor.entitlements; sourceTree = "<group>"; };
 		ADDC6B9E2AE56A4000FBEEA8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		ADDC6BA42AE56A4000FBEEA8 /* ResistorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ResistorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		ADDC6BA82AE56A4000FBEEA8 /* ResistorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResistorTests.swift; sourceTree = "<group>"; };
-		ADDC6BAE2AE56A4000FBEEA8 /* ResistorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ResistorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADDC6BA42AE56A4000FBEEA8 /* ResTeXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ResTeXTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADDC6BAE2AE56A4000FBEEA8 /* ResTeXUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ResTeXUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADDC6BB22AE56A4000FBEEA8 /* ResistorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResistorUITests.swift; sourceTree = "<group>"; };
 		ADDC6BB42AE56A4000FBEEA8 /* ResistorUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResistorUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		ADDC6BC12AE56DB600FBEEA8 /* ResistorEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResistorEditor.swift; sourceTree = "<group>"; };
+		ADDC6BC12AE56DB600FBEEA8 /* ResTexEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResTexEditor.swift; sourceTree = "<group>"; };
+		ADDC6BC32AE5BA4A00FBEEA8 /* CircuitComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircuitComponents.swift; sourceTree = "<group>"; };
+		ADDC6BC82AE5BAF200FBEEA8 /* CircuitShapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircuitShapes.swift; sourceTree = "<group>"; };
+		ADDC6BCA2AE5FC5100FBEEA8 /* Circuit+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Circuit+Codable.swift"; sourceTree = "<group>"; };
+		ADEAD23E2AEF42110069DC7E /* ResTexModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResTexModel.swift; sourceTree = "<group>"; };
+		ADEAD2402AF148490069DC7E /* CircuitToLatexTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircuitToLatexTest.swift; sourceTree = "<group>"; };
+		ADEAD2432AF1739A0069DC7E /* LaTeXPresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaTeXPresentation.swift; sourceTree = "<group>"; };
+		ADF3D8D62AEE5B0C00095953 /* Circuit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Circuit.swift; sourceTree = "<group>"; };
+		ADF3D8D82AEE5BA100095953 /* Component+Shape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Component+Shape.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,12 +101,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		ADD224062AF722B100113550 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		ADDC6B872AE56A3D00FBEEA8 = {
 			isa = PBXGroup;
 			children = (
-				ADDC6B922AE56A3E00FBEEA8 /* Resistor */,
-				ADDC6BA72AE56A4000FBEEA8 /* ResistorTests */,
-				ADDC6BB12AE56A4000FBEEA8 /* ResistorUITests */,
+				ADDC6B922AE56A3E00FBEEA8 /* ResTeX */,
+				ADDC6BA72AE56A4000FBEEA8 /* ResTexTests */,
+				ADDC6BB12AE56A4000FBEEA8 /* ResTexUITests */,
 				ADDC6B912AE56A3E00FBEEA8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -90,26 +121,29 @@
 		ADDC6B912AE56A3E00FBEEA8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				ADDC6B902AE56A3E00FBEEA8 /* Resistor.app */,
-				ADDC6BA42AE56A4000FBEEA8 /* ResistorTests.xctest */,
-				ADDC6BAE2AE56A4000FBEEA8 /* ResistorUITests.xctest */,
+				ADDC6B902AE56A3E00FBEEA8 /* ResTeX.app */,
+				ADDC6BA42AE56A4000FBEEA8 /* ResTeXTests.xctest */,
+				ADDC6BAE2AE56A4000FBEEA8 /* ResTeXUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		ADDC6B922AE56A3E00FBEEA8 /* Resistor */ = {
+		ADDC6B922AE56A3E00FBEEA8 /* ResTeX */ = {
 			isa = PBXGroup;
 			children = (
-				ADDC6BC12AE56DB600FBEEA8 /* ResistorEditor.swift */,
-				ADDC6B932AE56A3E00FBEEA8 /* ResistorApp.swift */,
-				ADDC6B952AE56A3E00FBEEA8 /* ResistorDocument.swift */,
+				ADDC6B932AE56A3E00FBEEA8 /* ResTexApp.swift */,
 				ADDC6B972AE56A3E00FBEEA8 /* ContentView.swift */,
+				ADDC6BC12AE56DB600FBEEA8 /* ResTexEditor.swift */,
+				ADEAD2422AF1737D0069DC7E /* Presentation */,
+				ADDC6BC72AE5BAA300FBEEA8 /* Persistence */,
+				ADDC6BC62AE5BA9800FBEEA8 /* Drawing */,
+				ADDC6BC52AE5BA8800FBEEA8 /* Model */,
 				ADDC6B992AE56A4000FBEEA8 /* Assets.xcassets */,
 				ADDC6B9B2AE56A4000FBEEA8 /* Info.plist */,
-				ADDC6B9C2AE56A4000FBEEA8 /* Resistor.entitlements */,
+				ADB97B202AFB268900C34EE1 /* ResTeX.entitlements */,
 				ADDC6B9D2AE56A4000FBEEA8 /* Preview Content */,
 			);
-			path = Resistor;
+			path = ResTeX;
 			sourceTree = "<group>";
 		};
 		ADDC6B9D2AE56A4000FBEEA8 /* Preview Content */ = {
@@ -120,29 +154,71 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		ADDC6BA72AE56A4000FBEEA8 /* ResistorTests */ = {
+		ADDC6BA72AE56A4000FBEEA8 /* ResTexTests */ = {
 			isa = PBXGroup;
 			children = (
-				ADDC6BA82AE56A4000FBEEA8 /* ResistorTests.swift */,
+				AD6E24442AE6CD1400F313E7 /* CircuitTests.swift */,
+				ADEAD2402AF148490069DC7E /* CircuitToLatexTest.swift */,
+				ADD2240A2AF7243200113550 /* HitboxTests.swift */,
+				ADD2240C2AF7247800113550 /* CodableTests.swift */,
+				AD485DDB2AF72BE80018242B /* ResTexModelTests.swift */,
 			);
-			path = ResistorTests;
+			path = ResTexTests;
 			sourceTree = "<group>";
 		};
-		ADDC6BB12AE56A4000FBEEA8 /* ResistorUITests */ = {
+		ADDC6BB12AE56A4000FBEEA8 /* ResTexUITests */ = {
 			isa = PBXGroup;
 			children = (
 				ADDC6BB22AE56A4000FBEEA8 /* ResistorUITests.swift */,
 				ADDC6BB42AE56A4000FBEEA8 /* ResistorUITestsLaunchTests.swift */,
 			);
-			path = ResistorUITests;
+			path = ResTexUITests;
+			sourceTree = "<group>";
+		};
+		ADDC6BC52AE5BA8800FBEEA8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				ADD224062AF722B100113550 /* Components */,
+				ADF3D8D62AEE5B0C00095953 /* Circuit.swift */,
+				ADDC6BC32AE5BA4A00FBEEA8 /* CircuitComponents.swift */,
+				ADEAD23E2AEF42110069DC7E /* ResTexModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		ADDC6BC62AE5BA9800FBEEA8 /* Drawing */ = {
+			isa = PBXGroup;
+			children = (
+				ADDC6BC82AE5BAF200FBEEA8 /* CircuitShapes.swift */,
+				ADF3D8D82AEE5BA100095953 /* Component+Shape.swift */,
+				AD67E3372AEE832B00D5BAA2 /* Shape+HitBox.swift */,
+			);
+			path = Drawing;
+			sourceTree = "<group>";
+		};
+		ADDC6BC72AE5BAA300FBEEA8 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				ADDC6B952AE56A3E00FBEEA8 /* ResTexDocument.swift */,
+				ADDC6BCA2AE5FC5100FBEEA8 /* Circuit+Codable.swift */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		ADEAD2422AF1737D0069DC7E /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				ADEAD2432AF1739A0069DC7E /* LaTeXPresentation.swift */,
+			);
+			path = Presentation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		ADDC6B8F2AE56A3E00FBEEA8 /* Resistor */ = {
+		ADDC6B8F2AE56A3E00FBEEA8 /* ResTeX */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = ADDC6BB82AE56A4000FBEEA8 /* Build configuration list for PBXNativeTarget "Resistor" */;
+			buildConfigurationList = ADDC6BB82AE56A4000FBEEA8 /* Build configuration list for PBXNativeTarget "ResTeX" */;
 			buildPhases = (
 				ADDC6B8C2AE56A3E00FBEEA8 /* Sources */,
 				ADDC6B8D2AE56A3E00FBEEA8 /* Frameworks */,
@@ -152,14 +228,14 @@
 			);
 			dependencies = (
 			);
-			name = Resistor;
+			name = ResTeX;
 			productName = Resistor;
-			productReference = ADDC6B902AE56A3E00FBEEA8 /* Resistor.app */;
+			productReference = ADDC6B902AE56A3E00FBEEA8 /* ResTeX.app */;
 			productType = "com.apple.product-type.application";
 		};
-		ADDC6BA32AE56A4000FBEEA8 /* ResistorTests */ = {
+		ADDC6BA32AE56A4000FBEEA8 /* ResTeXTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = ADDC6BBB2AE56A4000FBEEA8 /* Build configuration list for PBXNativeTarget "ResistorTests" */;
+			buildConfigurationList = ADDC6BBB2AE56A4000FBEEA8 /* Build configuration list for PBXNativeTarget "ResTeXTests" */;
 			buildPhases = (
 				ADDC6BA02AE56A4000FBEEA8 /* Sources */,
 				ADDC6BA12AE56A4000FBEEA8 /* Frameworks */,
@@ -170,14 +246,14 @@
 			dependencies = (
 				ADDC6BA62AE56A4000FBEEA8 /* PBXTargetDependency */,
 			);
-			name = ResistorTests;
+			name = ResTeXTests;
 			productName = ResistorTests;
-			productReference = ADDC6BA42AE56A4000FBEEA8 /* ResistorTests.xctest */;
+			productReference = ADDC6BA42AE56A4000FBEEA8 /* ResTeXTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		ADDC6BAD2AE56A4000FBEEA8 /* ResistorUITests */ = {
+		ADDC6BAD2AE56A4000FBEEA8 /* ResTeXUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = ADDC6BBE2AE56A4000FBEEA8 /* Build configuration list for PBXNativeTarget "ResistorUITests" */;
+			buildConfigurationList = ADDC6BBE2AE56A4000FBEEA8 /* Build configuration list for PBXNativeTarget "ResTeXUITests" */;
 			buildPhases = (
 				ADDC6BAA2AE56A4000FBEEA8 /* Sources */,
 				ADDC6BAB2AE56A4000FBEEA8 /* Frameworks */,
@@ -188,9 +264,9 @@
 			dependencies = (
 				ADDC6BB02AE56A4000FBEEA8 /* PBXTargetDependency */,
 			);
-			name = ResistorUITests;
+			name = ResTeXUITests;
 			productName = ResistorUITests;
-			productReference = ADDC6BAE2AE56A4000FBEEA8 /* ResistorUITests.xctest */;
+			productReference = ADDC6BAE2AE56A4000FBEEA8 /* ResTeXUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -216,7 +292,7 @@
 					};
 				};
 			};
-			buildConfigurationList = ADDC6B8B2AE56A3D00FBEEA8 /* Build configuration list for PBXProject "Resistor" */;
+			buildConfigurationList = ADDC6B8B2AE56A3D00FBEEA8 /* Build configuration list for PBXProject "ResTeX" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -229,9 +305,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				ADDC6B8F2AE56A3E00FBEEA8 /* Resistor */,
-				ADDC6BA32AE56A4000FBEEA8 /* ResistorTests */,
-				ADDC6BAD2AE56A4000FBEEA8 /* ResistorUITests */,
+				ADDC6B8F2AE56A3E00FBEEA8 /* ResTeX */,
+				ADDC6BA32AE56A4000FBEEA8 /* ResTeXTests */,
+				ADDC6BAD2AE56A4000FBEEA8 /* ResTeXUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -267,10 +343,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ADDC6B942AE56A3E00FBEEA8 /* ResistorApp.swift in Sources */,
-				ADDC6BC22AE56DB600FBEEA8 /* ResistorEditor.swift in Sources */,
-				ADDC6B962AE56A3E00FBEEA8 /* ResistorDocument.swift in Sources */,
+				ADEAD2442AF1739A0069DC7E /* LaTeXPresentation.swift in Sources */,
+				ADEAD23F2AEF42110069DC7E /* ResTexModel.swift in Sources */,
+				ADDC6BC42AE5BA4A00FBEEA8 /* CircuitComponents.swift in Sources */,
+				ADDC6B942AE56A3E00FBEEA8 /* ResTexApp.swift in Sources */,
+				ADDC6BC22AE56DB600FBEEA8 /* ResTexEditor.swift in Sources */,
+				AD67E3382AEE832B00D5BAA2 /* Shape+HitBox.swift in Sources */,
+				ADF3D8D92AEE5BA100095953 /* Component+Shape.swift in Sources */,
+				ADF3D8D72AEE5B0C00095953 /* Circuit.swift in Sources */,
+				ADDC6BC92AE5BAF200FBEEA8 /* CircuitShapes.swift in Sources */,
+				ADDC6B962AE56A3E00FBEEA8 /* ResTexDocument.swift in Sources */,
 				ADDC6B982AE56A3E00FBEEA8 /* ContentView.swift in Sources */,
+				ADDC6BCB2AE5FC5100FBEEA8 /* Circuit+Codable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,7 +362,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ADDC6BA92AE56A4000FBEEA8 /* ResistorTests.swift in Sources */,
+				ADD2240B2AF7243200113550 /* HitboxTests.swift in Sources */,
+				AD6E24452AE6CD1400F313E7 /* CircuitTests.swift in Sources */,
+				ADD2240D2AF7247800113550 /* CodableTests.swift in Sources */,
+				ADEAD2412AF148490069DC7E /* CircuitToLatexTest.swift in Sources */,
+				AD485DDC2AF72BE80018242B /* ResTexModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,12 +384,12 @@
 /* Begin PBXTargetDependency section */
 		ADDC6BA62AE56A4000FBEEA8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = ADDC6B8F2AE56A3E00FBEEA8 /* Resistor */;
+			target = ADDC6B8F2AE56A3E00FBEEA8 /* ResTeX */;
 			targetProxy = ADDC6BA52AE56A4000FBEEA8 /* PBXContainerItemProxy */;
 		};
 		ADDC6BB02AE56A4000FBEEA8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = ADDC6B8F2AE56A3E00FBEEA8 /* Resistor */;
+			target = ADDC6B8F2AE56A3E00FBEEA8 /* ResTeX */;
 			targetProxy = ADDC6BAF2AE56A4000FBEEA8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -359,6 +447,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_WKWatchOnly = NO;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -414,6 +503,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_WKWatchOnly = NO;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -426,15 +516,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Resistor/Resistor.entitlements;
+				CODE_SIGN_ENTITLEMENTS = ResTeX/ResTeX.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Resistor/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"ResTeX/Preview Content\"";
 				DEVELOPMENT_TEAM = 7W77348744;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Resistor/Info.plist;
+				INFOPLIST_FILE = ResTeX/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -452,7 +542,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.6;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.sal-et-lucem.Resistor";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sal-et-lucem.ResTeX";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
@@ -467,15 +557,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Resistor/Resistor.entitlements;
+				CODE_SIGN_ENTITLEMENTS = ResTeX/ResTeX.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Resistor/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"ResTeX/Preview Content\"";
 				DEVELOPMENT_TEAM = 7W77348744;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Resistor/Info.plist;
+				INFOPLIST_FILE = ResTeX/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -493,7 +583,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.6;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.sal-et-lucem.Resistor";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sal-et-lucem.ResTeX";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
@@ -522,7 +612,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Resistor.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Resistor";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ResTeX.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ResTeX";
 			};
 			name = Debug;
 		};
@@ -545,7 +635,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Resistor.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Resistor";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ResTeX.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ResTeX";
 			};
 			name = Release;
 		};
@@ -596,7 +686,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		ADDC6B8B2AE56A3D00FBEEA8 /* Build configuration list for PBXProject "Resistor" */ = {
+		ADDC6B8B2AE56A3D00FBEEA8 /* Build configuration list for PBXProject "ResTeX" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				ADDC6BB62AE56A4000FBEEA8 /* Debug */,
@@ -605,7 +695,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		ADDC6BB82AE56A4000FBEEA8 /* Build configuration list for PBXNativeTarget "Resistor" */ = {
+		ADDC6BB82AE56A4000FBEEA8 /* Build configuration list for PBXNativeTarget "ResTeX" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				ADDC6BB92AE56A4000FBEEA8 /* Debug */,
@@ -614,7 +704,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		ADDC6BBB2AE56A4000FBEEA8 /* Build configuration list for PBXNativeTarget "ResistorTests" */ = {
+		ADDC6BBB2AE56A4000FBEEA8 /* Build configuration list for PBXNativeTarget "ResTeXTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				ADDC6BBC2AE56A4000FBEEA8 /* Debug */,
@@ -623,7 +713,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		ADDC6BBE2AE56A4000FBEEA8 /* Build configuration list for PBXNativeTarget "ResistorUITests" */ = {
+		ADDC6BBE2AE56A4000FBEEA8 /* Build configuration list for PBXNativeTarget "ResTeXUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				ADDC6BBF2AE56A4000FBEEA8 /* Debug */,
