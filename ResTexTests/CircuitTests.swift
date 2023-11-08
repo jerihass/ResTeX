@@ -29,7 +29,7 @@ final class CircuitTests: XCTestCase {
     }
 
     func test_shouldRotateComponent() throws {
-        sut.rotate(resistor)
+        sut.rotateComponent(resistor)
         let rotated = sut.components.first(where: {$0.id == resistor.id}) as? Resistor
         XCTAssertEqual(rotated?.vertical, true)
         XCTAssertEqual(sut.components.count, 3)

@@ -64,15 +64,11 @@ extension Circuit {
         })
     }
 
-    mutating func rotate(_ component: Component) {
-        modifyComponent(component, modification: { _ in
-            var modified = component
-            modified.vertical.toggle()
-            return modified
-        })
+    mutating func rotateComponent(_ component: Component) {
+        modifyComponent(component, modification: rotate)
     }
 
-    private mutating func modifyComponent(_ component: Component, modification: (_ comp: Component) -> Component) {
+    private mutating func modifyComponent(_ component: Component, modification: ComponentModification) {
         guard let component = components.first(where: { $0.id == component.id }) else { return }
         guard let index = components.firstIndex(where: { $0.id == component.id }) else { return }
         components.removeAll(where: {$0.id == component.id})
@@ -81,6 +77,15 @@ extension Circuit {
 
         components.insert(modified, at: index)
     }
+}
+
+typealias ComponentModification = (Component) -> Component
+
+
+let rotate: ComponentModification = { component in
+    var modified = component
+    modified.vertical.toggle()
+    return modified
 }
 
 extension Circuit {

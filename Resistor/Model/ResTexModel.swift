@@ -44,7 +44,7 @@ class ResTexModel: ObservableObject {
 
     func rotateComponent(_ component: Component?) {
         guard let component = component else { return }
-        circuit.rotate(component)
+        circuit.rotateComponent(component)
         callback(circuit)
     }
 
