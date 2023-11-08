@@ -50,7 +50,6 @@ class ResTexModel: ObservableObject {
 
     func makeLatex() {
         latex = circuit.latexString
-        print(latex)
     }
 
     func handleTapAtPoint(point: CGPoint) -> Component? {
