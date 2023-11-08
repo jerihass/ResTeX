@@ -10,14 +10,10 @@ protocol LaTeXRepresentable {
 
 extension Resistor: LaTeXRepresentable {
     var latexString: String {
-        // Resistor min length is 1.2, so +2
-        // TODO: Handle vertical resistors?
         if vertical {
-//            return "(\(origin.x / 20),\(origin.y / -20)) to [R, l=LABEL] (\(origin.x / 20),\(origin.y / -20 - 2))"
             return "(\(origin.x)pt,\(origin.y / -1)pt) to [R, l=LABEL] (\(origin.x)pt,\(origin.y / -1 - 36)pt)"
 
         } else {
-//            return "(\(origin.x / 20),\(origin.y / -20)) to [R, l=LABEL] (\(origin.x / 20 + 2),\(origin.y / -20))"
             return "(\(origin.x)pt,\(origin.y / -1)pt) to [R, l=LABEL] (\(origin.x + 36)pt,\(origin.y / -1)pt)"
         }
     }
@@ -25,11 +21,11 @@ extension Resistor: LaTeXRepresentable {
 
 extension Wire: LaTeXRepresentable {
     var latexString: String {
-        let sx = start.x / 20
-        let sy = start.y / 20 * -1
-        let ey = vertical ? sy - length / 20 : sy
-        let ex = vertical ? sx : sx + length / 20
-        return "(\(sx),\(sy)) to [short, -] (\(ex),\(ey))"
+        let sx = start.x
+        let sy = start.y * -1
+        let ey = vertical ? sy - length : sy
+        let ex = vertical ? sx : sx + length
+        return "(\(sx)pt,\(sy)pt) to [short, -] (\(ex)pt,\(ey)pt)"
     }
 }
 
@@ -47,9 +43,6 @@ extension Circuit {
             fullString += component.element.latexString
             if component.offset < latex.count - 1 {
                 fullString += "\n"
-            }
-            if component.offset != latex.endIndex - 1 {
-                fullString += "to "
             } else {
                 fullString += ";"
             }

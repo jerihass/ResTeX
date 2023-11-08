@@ -13,32 +13,37 @@ struct ResTexEditor: Sendable, View {
     }
 
     var body: some View {
-        VStack {
-            HStack {
-                Button("Resistor", action: {
-                    model.addComponent(Resistor(start: .init(x: 20, y: 20)))
-                })
-                Button("Node", action: {
-                    model.addComponent(Node(radius: 2, origin: .init(x: 30, y: 30)))
-                })
-                Button("Wire", action: {
-                    model.addComponent(Wire(start: .init(x: 40, y: 40), length: 40))
-                })
-                Button("Make Latex", action: { model.makeLatex() })
-                Button("Delete", action: { model.deleteComponent(selectedComponent)})
-                Button("Rotate", action: { model.rotateComponent(selectedComponent) })
-            }
-            ZStack {
-                Rectangle().fill().frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center).foregroundStyle(.ultraThinMaterial).backgroundStyle(.clear)
-                ForEach(model.circuit.presenter) { item in
-                    item.draw()
-                        .foregroundStyle(item.selected ? Color.red : Color.primary)
+        HStack {
+            VStack {
+                HStack {
+                    Button("Resistor", action: {
+                        model.addComponent(Resistor(start: .init(x: 20, y: 20)))
+                    })
+                    Button("Node", action: {
+                        model.addComponent(Node(radius: 2, origin: .init(x: 30, y: 30)))
+                    })
+                    Button("Wire", action: {
+                        model.addComponent(Wire(start: .init(x: 40, y: 40), length: 40))
+                    })
+                    Button("Make Latex", action: { model.makeLatex() })
+                    Button("Delete", action: { model.deleteComponent(selectedComponent)})
+                    Button("Rotate", action: { model.rotateComponent(selectedComponent) })
                 }
+                ZStack {
+                    Rectangle().fill().frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center).foregroundStyle(.ultraThinMaterial).backgroundStyle(.clear)
+                    ForEach(model.circuit.presenter) { item in
+                        item.draw()
+                            .foregroundStyle(item.selected ? Color.red : Color.primary)
+                    }
+                }
+                .allowsHitTesting(true)
+                .onTapGesture { selectedComponent = model.handleTapAtPoint(point: $0) }
+                .gesture(drag)
             }
-            .allowsHitTesting(true)
-            .onTapGesture { selectedComponent = model.handleTapAtPoint(point: $0) }
-            .gesture(drag)
-            Text(model.latex)
+            TextEditor(text: $model.latex)
+                .frame(maxHeight: .infinity)
+                .multilineTextAlignment(.leading)
+                .lineLimit(10, reservesSpace: true)
         }
     }
 
