@@ -11,10 +11,10 @@ protocol LaTeXRepresentable {
 extension Resistor: LaTeXRepresentable {
     var latexString: String {
         if vertical {
-            return "(\(origin.x)pt,\(origin.y / -1)pt) to [R, l=LABEL] (\(origin.x)pt,\(origin.y / -1 - 36)pt)"
+            return "(\(origin.x)pt,\(origin.y / -1)pt) to [R, l=R] (\(origin.x)pt,\(origin.y / -1 - 40)pt)"
 
         } else {
-            return "(\(origin.x)pt,\(origin.y / -1)pt) to [R, l=LABEL] (\(origin.x + 36)pt,\(origin.y / -1)pt)"
+            return "(\(origin.x)pt,\(origin.y / -1)pt) to [R, l=R] (\(origin.x + 40)pt,\(origin.y / -1)pt)"
         }
     }
 }

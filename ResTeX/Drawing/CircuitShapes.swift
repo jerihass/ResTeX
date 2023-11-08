@@ -82,7 +82,9 @@ struct ResistorShape: CircuitShape {
     var id = UUID()
     var resistor: Resistor
     var isSelected: Bool = false
-
+    var length: Int = 40
+    var width: Int = 6
+    var step: Int = 12
     var component: Component { resistor }
     var vertical: Bool { component.vertical }
 
@@ -90,16 +92,18 @@ struct ResistorShape: CircuitShape {
     init(resistor: Resistor) {
         self.resistor = resistor
 
+        step = length / step
+
         points = [.init(x: 0, y: 0),
-                  .init(x: 6, y: 0),
-                  .init(x: 8, y: -5),
-                  .init(x: 12, y: 5),
-                  .init(x: 16, y: -5),
-                  .init(x: 20, y: 5),
-                  .init(x: 24, y: -5),
-                  .init(x: 28, y: 5),
-                  .init(x: 30, y: 0),
-                  .init(x: 36, y: 0),
+                  .init(x: step, y: 0),
+                  .init(x: step*2, y: -width),
+                  .init(x: step*4, y: width),
+                  .init(x: step*6, y: -width),
+                  .init(x: step*8, y: width),
+                  .init(x: step*10, y: -width),
+                  .init(x: step*12, y: width),
+                  .init(x: step*13, y: 0),
+                  .init(x: step*14, y: 0)
         ]
     }
 
