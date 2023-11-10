@@ -38,15 +38,25 @@ extension Node: LaTeXRepresentable {
 extension Circuit {
     var latexString: String {
         var fullString: String = ""
-        let latex = components.compactMap({$0 as? LaTeXRepresentable})
-        for component in latex.enumerated() {
+        let circuitikzBegin = "\\begin{circuitikz}[american voltages]\n"
+        let drawCommand = "\\draw\n"
+
+        fullString += circuitikzBegin
+        fullString += drawCommand
+
+        let latexComponents = components.compactMap({$0 as? LaTeXRepresentable})
+        for component in latexComponents.enumerated() {
             fullString += component.element.latexString
-            if component.offset < latex.count - 1 {
+            if component.offset < latexComponents.count - 1 {
                 fullString += "\n"
             } else {
-                fullString += ";"
+                fullString += ";\n"
             }
         }
+
+        let circuitikzEnd = "\\end{circuitikz}\n"
+        fullString += circuitikzEnd
+
         return fullString
     }
 }
