@@ -65,27 +65,27 @@ struct WireShape: CircuitShape {
 
         let leadingNode = Path(centered: line.start, radius: 2)
         let trailingNode = Path(centered: .init(x: line.start.x + line.length, y: line.start.y), radius: 2)
-        var path = Path()
-        path.move(to: line.start)
+        var wirePath = Path()
+        wirePath.move(to: line.start)
         if line.vertical {
-            path.addLine(to: CGPoint(x: line.start.x, y: line.start.y + line.length))
+            wirePath.addLine(to: CGPoint(x: line.start.x, y: line.start.y + line.length))
         } else {
-            path.addLine(to: CGPoint(x: line.start.x + line.length, y: line.start.y))
+            wirePath.addLine(to: CGPoint(x: line.start.x + line.length, y: line.start.y))
         }
-        path.closeSubpath()
+        wirePath.closeSubpath()
 
-        let test: CGMutablePath = CGMutablePath()
-        test.addPath(path.cgPath)
+        let fullPath: CGMutablePath = CGMutablePath()
+        fullPath.addPath(wirePath.cgPath)
 
         if line.endPoints.leading {
-            test.addPath(leadingNode.cgPath)
+            fullPath.addPath(leadingNode.cgPath)
         }
 
         if line.endPoints.trailing {
-            test.addPath(trailingNode.cgPath)
+            fullPath.addPath(trailingNode.cgPath)
         }
 
-        return Path(test)
+        return Path(fullPath)
     }
 
     var origin: CGPoint { line.start }

@@ -89,7 +89,7 @@ func move(_ point: CGPoint, _ component: Component) -> Component {
 
 extension Circuit {
     static var demo: Circuit {
-        let node = Node(radius: 5, origin: .init(x: 20, y: 20))
+        let node = Node(radius: 1, origin: .init(x: 20, y: 20))
         let wire = Wire(start: .init(x: 20, y: 20), length: 40)
         let resistor = Resistor(start: .init(x: 30, y: 20))
         let wire2 = Wire(start: .init(x: 66, y: 20), length: 40)
