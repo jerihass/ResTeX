@@ -23,7 +23,6 @@ struct ComponentPresenter: Identifiable {
 
     @ViewBuilder
     private func makeBody() -> some View {
-        let _ = print("\(circuitShape)")
         if circuitShape.filled {
             circuitShape.path(in: .infinite).stroke(lineWidth: 1.0)
         } else {
@@ -40,15 +39,7 @@ struct NodeShape: CircuitShape {
     var vertical: Bool = false
     var filled: Bool = true
     func path(in rect: CGRect = .infinite) -> Path {
-        var path = Path()
-
-        path.addArc(center: node.origin,
-                 radius: CGFloat(node.radius),
-                 startAngle: .zero,
-                 endAngle: .degrees(360),
-                 clockwise: true)
-        path.closeSubpath()
-
+        let path = Path(circleCenteredAt: node.origin, radius: CGFloat(node.radius))
         return path
     }
 
@@ -87,7 +78,7 @@ struct WireShape: CircuitShape {
             fullPath.addPath(trailingNode.cgPath)
         }
 
-        return Path(fullPath.flattened(threshold: 100.0))
+        return Path(fullPath)
     }
 
     var origin: CGPoint { wire.start }
