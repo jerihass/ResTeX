@@ -11,6 +11,8 @@
 		AD67E3382AEE832B00D5BAA2 /* Shape+HitBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD67E3372AEE832B00D5BAA2 /* Shape+HitBox.swift */; };
 		AD6E24452AE6CD1400F313E7 /* CircuitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6E24442AE6CD1400F313E7 /* CircuitTests.swift */; };
 		ADB97B5B2AFBCAF900C34EE1 /* CircuitShapePreviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB97B5A2AFBCAF900C34EE1 /* CircuitShapePreviews.swift */; };
+		ADD156FD2AFEDFC9009E81BE /* ComponentInspectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD156FC2AFEDFC9009E81BE /* ComponentInspectorView.swift */; };
+		ADD156FF2AFF923A009E81BE /* WireComponentInspector.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD156FE2AFF923A009E81BE /* WireComponentInspector.swift */; };
 		ADD2240B2AF7243200113550 /* HitboxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD2240A2AF7243200113550 /* HitboxTests.swift */; };
 		ADD2240D2AF7247800113550 /* CodableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD2240C2AF7247800113550 /* CodableTests.swift */; };
 		ADDC6B942AE56A3E00FBEEA8 /* ResTexApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDC6B932AE56A3E00FBEEA8 /* ResTexApp.swift */; };
@@ -56,6 +58,8 @@
 		ADB97B222AFB363C00C34EE1 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		ADB97B232AFB364300C34EE1 /* LICENSE.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = LICENSE.txt; path = ../LICENSE.txt; sourceTree = "<group>"; };
 		ADB97B5A2AFBCAF900C34EE1 /* CircuitShapePreviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircuitShapePreviews.swift; sourceTree = "<group>"; };
+		ADD156FC2AFEDFC9009E81BE /* ComponentInspectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentInspectorView.swift; sourceTree = "<group>"; };
+		ADD156FE2AFF923A009E81BE /* WireComponentInspector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WireComponentInspector.swift; sourceTree = "<group>"; };
 		ADD2240A2AF7243200113550 /* HitboxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitboxTests.swift; sourceTree = "<group>"; };
 		ADD2240C2AF7247800113550 /* CodableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableTests.swift; sourceTree = "<group>"; };
 		ADDC6B902AE56A3E00FBEEA8 /* ResTeX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ResTeX.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,6 +109,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		ADD156FB2AFEDFA9009E81BE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				ADD156FC2AFEDFC9009E81BE /* ComponentInspectorView.swift */,
+				ADD156FE2AFF923A009E81BE /* WireComponentInspector.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		ADD224062AF722B100113550 /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +148,7 @@
 		ADDC6B922AE56A3E00FBEEA8 /* ResTeX */ = {
 			isa = PBXGroup;
 			children = (
+				ADD156FB2AFEDFA9009E81BE /* Views */,
 				ADDC6B932AE56A3E00FBEEA8 /* ResTexApp.swift */,
 				ADDC6B972AE56A3E00FBEEA8 /* ContentView.swift */,
 				ADDC6BC12AE56DB600FBEEA8 /* ResTexEditor.swift */,
@@ -352,6 +366,7 @@
 			files = (
 				ADEAD2442AF1739A0069DC7E /* LaTeXPresentation.swift in Sources */,
 				ADEAD23F2AEF42110069DC7E /* ResTexModel.swift in Sources */,
+				ADD156FD2AFEDFC9009E81BE /* ComponentInspectorView.swift in Sources */,
 				ADDC6BC42AE5BA4A00FBEEA8 /* CircuitComponents.swift in Sources */,
 				ADDC6B942AE56A3E00FBEEA8 /* ResTexApp.swift in Sources */,
 				ADDC6BC22AE56DB600FBEEA8 /* ResTexEditor.swift in Sources */,
@@ -361,6 +376,7 @@
 				ADDC6BC92AE5BAF200FBEEA8 /* CircuitShapes.swift in Sources */,
 				ADDC6B962AE56A3E00FBEEA8 /* ResTexDocument.swift in Sources */,
 				ADDC6B982AE56A3E00FBEEA8 /* ContentView.swift in Sources */,
+				ADD156FF2AFF923A009E81BE /* WireComponentInspector.swift in Sources */,
 				ADB97B5B2AFBCAF900C34EE1 /* CircuitShapePreviews.swift in Sources */,
 				ADDC6BCB2AE5FC5100FBEEA8 /* Circuit+Codable.swift in Sources */,
 			);

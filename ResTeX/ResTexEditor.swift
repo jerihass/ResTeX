@@ -48,7 +48,7 @@ struct ResTexEditor: Sendable, View {
     }
 
     var drag: some Gesture {
-        return DragGesture(minimumDistance: 0.0)
+        return DragGesture(minimumDistance: 1)
             .onChanged { value in
                 if let sel = selectedComponent {
                     model.moveComponent(sel, destination: value.location)
