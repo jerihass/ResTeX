@@ -40,8 +40,8 @@ struct Node: Component {
     var rect: CGRect {
         let x = origin.x
         let y = origin.y
-        let width = CGFloat(radius * 2)
-        let height = CGFloat(radius * 2)
+        let width: CGFloat = CGFloat(radius * 2 < 5 ? 5 : radius * 2)
+        let height = CGFloat(radius * 2 < 5 ? 5 : radius * 2)
         return .init(x: x, y: y, width: width, height: height)
     }
     var vertical: Bool = false

@@ -23,10 +23,11 @@ struct ComponentPresenter: Identifiable {
 
     @ViewBuilder
     private func makeBody() -> some View {
+        let _ = print("\(circuitShape)")
         if circuitShape.filled {
-            circuitShape.path(in: .infinite).stroke(lineWidth: 2.0).fill()
+            circuitShape.path(in: .infinite).stroke(lineWidth: 1.0)
         } else {
-            circuitShape.path(in: .infinite).stroke(lineWidth: 2.0)
+            circuitShape.path(in: .infinite).stroke(lineWidth: 1.0)
         }
     }
 }
@@ -60,7 +61,7 @@ struct WireShape: CircuitShape {
     var isSelected: Bool = false
     var component: Component { wire }
     var vertical: Bool { component.vertical }
-    var filled: Bool = false
+    var filled: Bool = true
     var thickness: Int = 1
     func path(in rect: CGRect = .infinite) -> Path {
 
@@ -86,7 +87,7 @@ struct WireShape: CircuitShape {
             fullPath.addPath(trailingNode.cgPath)
         }
 
-        return Path(fullPath)
+        return Path(fullPath.flattened(threshold: 100.0))
     }
 
     var origin: CGPoint { wire.start }

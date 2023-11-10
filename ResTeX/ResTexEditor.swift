@@ -20,7 +20,7 @@ struct ResTexEditor: Sendable, View {
                         model.addComponent(Resistor(start: .init(x: 20, y: 20)))
                     })
                     Button("Node", action: {
-                        model.addComponent(Node(radius: 2, origin: .init(x: 30, y: 30)))
+                        model.addComponent(Node(radius: 3, origin: .init(x: 30, y: 30)))
                     })
                     Button("Wire", action: {
                         model.addComponent(Wire(start: .init(x: 40, y: 40), length: 40))
