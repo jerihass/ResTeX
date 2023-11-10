@@ -106,19 +106,23 @@ struct ResistorShape: CircuitShape {
     private var points: [CGPoint]
     init(resistor: Resistor) {
         self.resistor = resistor
+        let leadLength = 2
+        let zigLength = length - 2 * leadLength
+        let fullZigLength = zigLength / 6
+        let halfZigLength = fullZigLength / 2
 
         step = length / step
 
         points = [.init(x: 0, y: 0),
-                  .init(x: step, y: 0),
-                  .init(x: step*2, y: -width),
-                  .init(x: step*4, y: width),
-                  .init(x: step*6, y: -width),
-                  .init(x: step*8, y: width),
-                  .init(x: step*10, y: -width),
-                  .init(x: step*12, y: width),
-                  .init(x: step*13, y: 0),
-                  .init(x: step*14, y: 0)
+                  .init(x: leadLength, y: 0),
+                  .init(x: leadLength + halfZigLength, y: -width),
+                  .init(x: leadLength + halfZigLength + 1*fullZigLength, y: width),
+                  .init(x: leadLength + halfZigLength + 2*fullZigLength, y: -width),
+                  .init(x: leadLength + halfZigLength + 3*fullZigLength, y: width),
+                  .init(x: leadLength + halfZigLength + 4*fullZigLength, y: -width),
+                  .init(x: leadLength + halfZigLength + 5*fullZigLength, y: width),
+                  .init(x: length - leadLength, y: 0),
+                  .init(x: length, y: 0),
         ]
     }
 
@@ -129,7 +133,8 @@ struct ResistorShape: CircuitShape {
             if !vertical {
                 path.addLine(to: .init(x: resistor.start.x + point.x, y: resistor.start.y + point.y))
             } else {
-                path.addLine(to: .init(x: resistor.start.x + point.y, y: resistor.start.y + point.x))
+                // The x = start.x - point.y is due to the way the LaTeX resistors are drawn,
+                path.addLine(to: .init(x: resistor.start.x - point.y, y: resistor.start.y + point.x))
             }
         }
         path.move(to: resistor.start)
