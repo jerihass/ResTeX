@@ -9,6 +9,7 @@ protocol CircuitShape: Shape, Identifiable {
     var isSelected: Bool { get set }
     var component: Component { get }
     var vertical: Bool { get }
+    var filled: Bool { get }
 }
 
 struct ComponentPresenter: Identifiable {
@@ -22,8 +23,8 @@ struct ComponentPresenter: Identifiable {
 
     @ViewBuilder
     private func makeBody() -> some View {
-        if fill {
-            circuitShape.path(in: .infinite).fill()
+        if circuitShape.filled {
+            circuitShape.path(in: .infinite).stroke(lineWidth: 2.0).fill()
         } else {
             circuitShape.path(in: .infinite).stroke(lineWidth: 2.0)
         }
@@ -34,9 +35,9 @@ struct NodeShape: CircuitShape {
     var id = UUID()
     var node: Node
     var isSelected: Bool = false
-
     var component: Component { node }
     var vertical: Bool = false
+    var filled: Bool = true
     func path(in rect: CGRect = .infinite) -> Path {
         var path = Path()
 
@@ -55,46 +56,46 @@ struct NodeShape: CircuitShape {
 
 struct WireShape: CircuitShape {
     var id = UUID()
-    var line: Wire
+    var wire: Wire
     var isSelected: Bool = false
-
-    var component: Component { line }
+    var component: Component { wire }
     var vertical: Bool { component.vertical }
+    var filled: Bool = false
     var thickness: Int = 1
     func path(in rect: CGRect = .infinite) -> Path {
 
-        let leadingNode = Path(centered: line.start, radius: 2)
-        let trailingNode = Path(centered: .init(x: line.start.x + line.length, y: line.start.y), radius: 2)
+        let leadingNode = Path(circleCenteredAt: wire.start, radius: 2)
+        let trailingNode = Path(circleCenteredAt: .init(x: wire.start.x + wire.length, y: wire.start.y), radius: 2)
         var wirePath = Path()
-        wirePath.move(to: line.start)
-        if line.vertical {
-            wirePath.addLine(to: CGPoint(x: line.start.x, y: line.start.y + line.length))
+        wirePath.move(to: wire.start)
+        if wire.vertical {
+            wirePath.addLine(to: CGPoint(x: wire.start.x, y: wire.start.y + wire.length))
         } else {
-            wirePath.addLine(to: CGPoint(x: line.start.x + line.length, y: line.start.y))
+            wirePath.addLine(to: CGPoint(x: wire.start.x + wire.length, y: wire.start.y))
         }
         wirePath.closeSubpath()
 
         let fullPath: CGMutablePath = CGMutablePath()
         fullPath.addPath(wirePath.cgPath)
 
-        if line.endPoints.leading {
+        if wire.endPoints.leading {
             fullPath.addPath(leadingNode.cgPath)
         }
 
-        if line.endPoints.trailing {
+        if wire.endPoints.trailing {
             fullPath.addPath(trailingNode.cgPath)
         }
 
         return Path(fullPath)
     }
 
-    var origin: CGPoint { line.start }
+    var origin: CGPoint { wire.start }
 }
 
 extension Path {
-    init(centered: CGPoint, radius: CGFloat) {
+    init(circleCenteredAt: CGPoint, radius: CGFloat) {
         var path = Path()
-        path.addArc(center: centered, radius: radius, startAngle: .degrees(0), endAngle:.degrees(360), clockwise: true)
+        path.addArc(center: circleCenteredAt, radius: radius, startAngle: .degrees(0), endAngle:.degrees(360), clockwise: true)
         self = path
     }
 }
@@ -108,6 +109,7 @@ struct ResistorShape: CircuitShape {
     var step: Int = 12
     var component: Component { resistor }
     var vertical: Bool { component.vertical }
+    var filled: Bool = false
 
     private var points: [CGPoint]
     init(resistor: Resistor) {
