@@ -38,11 +38,9 @@ extension Node: LaTeXRepresentable {
 extension Circuit {
     var latexString: String {
         var fullString: String = ""
-        let circuitikzBegin = "\\begin{circuitikz}[american voltages]\n"
-        let drawCommand = "\\draw\n"
 
-        fullString += circuitikzBegin
-        fullString += drawCommand
+        fullString += LaTeXStrings.begin
+        fullString += LaTeXStrings.draw
 
         let latexComponents = components.compactMap({$0 as? LaTeXRepresentable})
         for component in latexComponents.enumerated() {
@@ -54,9 +52,14 @@ extension Circuit {
             }
         }
 
-        let circuitikzEnd = "\\end{circuitikz}\n"
-        fullString += circuitikzEnd
+        fullString += LaTeXStrings.end
 
         return fullString
     }
+}
+
+struct LaTeXStrings {
+    static var begin: String = "\\begin{circuitikz}[american voltages]\n"
+    static var draw: String = "\\draw\n"
+    static var end: String = "\\end{circuitikz}\n"
 }
