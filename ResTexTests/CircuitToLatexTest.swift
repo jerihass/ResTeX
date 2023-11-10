@@ -23,8 +23,8 @@ final class CircuitToLatexTest: XCTestCase {
     }
 
     func test_shouldGenerateLaTeXWithSeveralComponent() throws {
-        let circuit = Circuit(components: [wire, resistor, wire2])
-        let sut = circuit.latexString
+        let sut = Circuit(components: [wire, resistor, wire2])
+        let string = sut.latexString
         let latex = """
                     \\begin{circuitikz}[american voltages]
                     \\draw
@@ -33,8 +33,8 @@ final class CircuitToLatexTest: XCTestCase {
                     (66.0pt,-20.0pt) to [short, -] (106.0pt,-20.0pt);
                     \\end{circuitikz}\n
                     """
-        print(sut)
-        XCTAssertEqual(sut,latex)
+        print(string)
+        XCTAssertEqual(string,latex)
     }
 }
 
