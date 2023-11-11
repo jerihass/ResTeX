@@ -8,10 +8,13 @@ struct ContentView: View {
     @Binding var document: ResTexDocument
     
     var body: some View {
-        ResTexEditor(model: ResTexModel(circuit: document.circuit,
+        HStack {
+            ResTexEditor(model: ResTexModel(circuit: document.circuit,
                                             callback: { circuit in
-            document.circuit = circuit
-        }))
+                document.circuit = circuit
+            }))
+            ComponentInspectorView(component: Wire(start: .zero, length: 5))
+        }
     }
 }
 

@@ -17,20 +17,24 @@ struct WireComponentInspector: View {
     @State var leadingNode: Bool
     @State var trailingNode: Bool
     var body: some View {
-        Text("Wire")
-            .font(.title)
-        Form {
-            LabeledContent(content: { TextField("Points:", value: $length, formatter: NumberFormatter()) },
-                           label: { Text("Length") })
-            Toggle(isOn: $leadingNode, label: {
-                Text("Leading Node")
-            })
-            Toggle(isOn: $trailingNode, label: {
-                Text("Trailing Node")
-            })
+        VStack {
+            Text("Wire")
+                .padding()
+            Form {
+                HStack {
+                    TextField("Points:", value: $length, formatter: NumberFormatter())
+                        .padding(.horizontal)
+                }
+                Toggle(isOn: $leadingNode, label: {
+                    Text("Leading Node")
+                })
+                Toggle(isOn: $trailingNode, label: {
+                    Text("Trailing Node")
+                })
+            }
+            .frame(maxWidth: 200, alignment: .leading)
+            .onChange(of: length, perform: { model.wire.length = $0 })
         }
-        .onChange(of: length, perform: { model.wire.length = $0 })
-        .frame(alignment: .leading)
     }
 }
 

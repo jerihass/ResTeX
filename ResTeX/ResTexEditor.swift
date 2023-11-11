@@ -13,7 +13,7 @@ struct ResTexEditor: Sendable, View {
     }
 
     var body: some View {
-        HStack {
+        VStack {
             VStack {
                 HStack {
                     Button("Resistor", action: {
