@@ -8,7 +8,7 @@ import SwiftUI
 struct ResTexApp: App {
     var body: some Scene {
         DocumentGroup(newDocument: ResTexDocument(circuit: .demo)) { file in
-                ContentView(document: file.$document)
+            ContentView(document: file.$document)
             }
     }
 }

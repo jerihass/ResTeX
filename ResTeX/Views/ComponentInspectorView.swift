@@ -6,9 +6,11 @@ import SwiftUI
 
 struct ComponentInspectorView: View {
     var component: (any Component)?
+    var handler: (any Component) -> Void
 
-    init(component: (any Component)?) {
+    init(component: (any Component)?, handler: @escaping (any Component) -> Void = { _ in }) {
         self.component = component
+        self.handler = handler
     }
 
     var body: some View {
@@ -16,16 +18,15 @@ struct ComponentInspectorView: View {
             makeBody()
             Spacer()
         }
+        .frame(maxWidth: 200, alignment: .leading)
         .background(.quinary)
     }
 
     @ViewBuilder
     func makeBody() -> some View {
         if let wire = component as? Wire {
-            WireComponentInspector(model: .init(wire: wire),
-                                   length: wire.length,
-                                   leadingNode: wire.endPoints.leading,
-                                   trailingNode: wire.endPoints.trailing)
+            let wireModel = WireModel(wire: wire, handler: { handler($0) })
+            WireComponentInspector(model: wireModel)
         }
     }
 }

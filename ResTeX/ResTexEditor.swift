@@ -13,37 +13,43 @@ struct ResTexEditor: Sendable, View {
     }
 
     var body: some View {
-        VStack {
+
+        HStack {
             VStack {
-                HStack {
-                    Button("Resistor", action: {
-                        model.addComponent(Resistor(start: .init(x: 20, y: 20)))
-                    })
-                    Button("Node", action: {
-                        model.addComponent(Node(radius: 3, origin: .init(x: 30, y: 30)))
-                    })
-                    Button("Wire", action: {
-                        model.addComponent(Wire(start: .init(x: 30, y: 30), length: 20))
-                    })
-                    Button("Make Latex", action: { model.makeLatex() })
-                    Button("Delete", action: { model.deleteComponent(selectedComponent)})
-                    Button("Rotate", action: { model.rotateComponent(selectedComponent) })
-                }
-                ZStack {
-                    Rectangle().fill().frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center).foregroundStyle(.ultraThinMaterial).backgroundStyle(.clear)
-                    ForEach(model.circuit.presenter) { item in
-                        item.draw()
-                            .foregroundStyle(item.selected ? Color.red : Color.primary)
+                VStack {
+                    HStack {
+                        Button("Resistor", action: {
+                            model.addComponent(Resistor(start: .init(x: 20, y: 20)))
+                        })
+                        Button("Node", action: {
+                            model.addComponent(Node(radius: 3, origin: .init(x: 30, y: 30)))
+                        })
+                        Button("Wire", action: {
+                            model.addComponent(Wire(start: .init(x: 30, y: 30), length: 20))
+                        })
+                        Button("Make Latex", action: { model.makeLatex() })
+                        Button("Delete", action: { model.deleteComponent(selectedComponent)})
+                        Button("Rotate", action: { model.rotateComponent(selectedComponent) })
                     }
+                    ZStack {
+                        Rectangle().fill().frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center).foregroundStyle(.ultraThinMaterial).backgroundStyle(.clear)
+                        ForEach(model.circuit.presenter) { item in
+                            item.draw()
+                                .foregroundStyle(item.selected ? Color.red : Color.primary)
+                        }
+                    }
+                    .allowsHitTesting(true)
+                    .onTapGesture { selectedComponent = model.handleTapAtPoint(point: $0) }
+                    .gesture(drag)
                 }
-                .allowsHitTesting(true)
-                .onTapGesture { selectedComponent = model.handleTapAtPoint(point: $0) }
-                .gesture(drag)
+                TextEditor(text: $model.latex)
+                    .frame(maxHeight: .infinity)
+                    .multilineTextAlignment(.leading)
+                    .lineLimit(10, reservesSpace: true)
             }
-            TextEditor(text: $model.latex)
-                .frame(maxHeight: .infinity)
-                .multilineTextAlignment(.leading)
-                .lineLimit(10, reservesSpace: true)
+            ComponentInspectorView(component: selectedComponent, handler: { comp in
+                print(comp)
+            })
         }
     }
 
