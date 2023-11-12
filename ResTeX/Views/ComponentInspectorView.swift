@@ -28,11 +28,19 @@ struct ComponentInspectorView: View {
             let wireModel = WireModel(wire: wire, handler: { handler($0) })
             WireComponentInspector(model: wireModel)
         }
+        if let res = component as? Resistor {
+            let resModel = ResistorModel(resistor: res, handler: { handler($0)})
+            ResistorComponentInspector(model: resModel)
+        }
     }
 }
 
 #Preview {
     @State var wire = Wire(start: .zero, length: 10) as Component?
-    return ComponentInspectorView(component: $wire)
+    @State var resistor = Resistor(start: .zero, length: 55) as Component?
+    return HStack {
+        ComponentInspectorView(component: $wire)
+        ComponentInspectorView(component: $resistor)
+    }
 }
 

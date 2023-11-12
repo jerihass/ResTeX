@@ -24,7 +24,7 @@ fileprivate struct PreviewShapes {
     let origin = CGPoint(x: 20, y: 20)
 
     init() {
-        let resistor: ResistorShape = .init(resistor: .init(start: origin))
+        let resistor: ResistorShape = .init(resistor: .init(start: origin, length: 60))
         let wire: WireShape = .init(wire: .init(start: origin, length: 40, endPoints: .init(leading: true, trailing: true)))
         let resistor2: ResistorShape = .init(resistor: .init(start: origin, vertical: true))
 

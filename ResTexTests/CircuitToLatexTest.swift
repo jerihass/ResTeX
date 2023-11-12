@@ -12,6 +12,11 @@ final class CircuitToLatexTest: XCTestCase {
     var resistor = Resistor(start: .init(x: 30, y: 20))
     var wire2 = Wire(start: .init(x: 66, y: 20), length: 40)
 
+    func test_shouldMakeLatexNode() throws {
+        let sut = node
+        XCTAssertEqual(sut.latexString, "(20.0pt,-20.0pt) node[circ]{} to (20.0pt,-20.0pt)")
+    }
+
     func test_shouldMakeLatexWireWithNodes() throws {
         var sut = wire
         sut.endPoints.leading = false

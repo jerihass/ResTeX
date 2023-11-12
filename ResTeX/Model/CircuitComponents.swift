@@ -25,6 +25,7 @@ enum ComponentKeys: String, CodingKey, CaseIterable {
 
 protocol Component: Codable, Sendable {
     var id: UUID { get }
+    var label: String { get set }
     mutating func move(_ location: CGPoint)
     var origin: CGPoint { get }
     var rect: CGRect { get }
@@ -35,6 +36,7 @@ protocol Component: Codable, Sendable {
 
 struct Node: Component {
     var id = UUID()
+    var label: String = ""
     var radius: Float
     var origin: CGPoint
     var rect: CGRect {
@@ -54,6 +56,7 @@ struct Node: Component {
 
 struct Wire: Component {
     var id = UUID()
+    var label: String = ""
     var start: CGPoint
     var length: CGFloat
     var vertical: Bool = false
@@ -80,7 +83,9 @@ struct Wire: Component {
 
 struct Resistor: Component {
     var id = UUID()
+    var label: String = "R"
     var start: CGPoint
+    var length: CGFloat = 40
     var vertical: Bool = false
     var selected: Bool = false
     mutating func move(_ location: CGPoint) {
