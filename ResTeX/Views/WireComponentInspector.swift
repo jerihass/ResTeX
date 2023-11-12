@@ -44,7 +44,7 @@ struct WireComponentInspector: View {
                 .padding()
             Form {
                 HStack {
-                    TextField("Points:", value: $length, formatter: NumberFormatter())
+                    TextField("Length:", value: $length, formatter: NumberFormatter())
                         .padding(.horizontal)
                 }
                 Toggle(isOn: $leadingNode, label: {

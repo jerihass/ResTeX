@@ -77,7 +77,7 @@ struct QuickButtonView: View {
     var body: some View {
         HStack {
             Button("Resistor") { model.addComponent(Resistor(start: .init(x: 20, y: 20))) }
-            Button("Node") { model.addComponent(Node(radius: 3, origin: .init(x: 30, y: 30))) }
+            Button("Node") { model.addComponent(Node(radius: 2, origin: .init(x: 30, y: 30))) }
             Button("Wire") { model.addComponent(Wire(start: .init(x: 30, y: 30), length: 20)) }
             Button("Make Latex") { model.makeLatex() }
             Button("Delete") { model.deleteComponent(selectedComponent)}

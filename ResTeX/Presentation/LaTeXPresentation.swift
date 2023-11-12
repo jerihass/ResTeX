@@ -11,10 +11,10 @@ protocol LaTeXRepresentable {
 extension Resistor: LaTeXRepresentable {
     var latexString: String {
         if vertical {
-            return "(\(origin.x)pt,\(origin.y / -1)pt) to [R, l=R] (\(origin.x)pt,\(origin.y / -1 - 40)pt)"
+            return "(\(origin.x)pt,\(origin.y / -1)pt) to [R, l=\(label)] (\(origin.x)pt,\(origin.y / -1 - self.length)pt)"
 
         } else {
-            return "(\(origin.x)pt,\(origin.y / -1)pt) to [R, l=R] (\(origin.x + 40)pt,\(origin.y / -1)pt)"
+            return "(\(origin.x)pt,\(origin.y / -1)pt) to [R, l=\(label)] (\(origin.x + self.length)pt,\(origin.y / -1)pt)"
         }
     }
 }
@@ -33,7 +33,9 @@ extension Wire: LaTeXRepresentable {
 
 extension Node: LaTeXRepresentable {
     var latexString: String {
-        "BAD NODE"
+        let x = origin.x
+        let y = origin.y * -1
+        return "(\(x)pt,\(y)pt) node[circ]{} to (\(x)pt,\(y)pt)"
     }
 }
 

@@ -103,7 +103,6 @@ struct ResistorShape: CircuitShape {
     var isSelected: Bool = false
     var length: Int = 40
     var width: Int = 6
-    var step: Int = 12
     var component: Component { resistor }
     var vertical: Bool { component.vertical }
     var filled: Bool = false
@@ -111,12 +110,12 @@ struct ResistorShape: CircuitShape {
     private var points: [CGPoint]
     init(resistor: Resistor) {
         self.resistor = resistor
-        let leadLength = 2
+        self.length = Int(resistor.length)
+        let bodyLength = 36
+        let leadLength = (length - bodyLength) / 2
         let zigLength = length - 2 * leadLength
         let fullZigLength = zigLength / 6
         let halfZigLength = fullZigLength / 2
-
-        step = length / step
 
         points = [.init(x: 0, y: 0),
                   .init(x: leadLength, y: 0),
