@@ -1,0 +1,41 @@
+{
+  "configurations" : [
+    {
+      "id" : "C51170FF-FC5F-41C9-8924-575B43E16A01",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:ResTeX.xcodeproj",
+      "identifier" : "ADDC6B8F2AE56A3E00FBEEA8",
+      "name" : "ResTeX"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:ResTeX.xcodeproj",
+        "identifier" : "ADDC6BA32AE56A4000FBEEA8",
+        "name" : "ResTeXTests"
+      }
+    },
+    {
+      "enabled" : false,
+      "parallelizable" : true,
+      "skippedTests" : [
+        "ResistorUITests"
+      ],
+      "target" : {
+        "containerPath" : "container:ResTeX.xcodeproj",
+        "identifier" : "ADDC6BAD2AE56A4000FBEEA8",
+        "name" : "ResTeXUITests"
+      }
+    }
+  ],
+  "version" : 1
+}

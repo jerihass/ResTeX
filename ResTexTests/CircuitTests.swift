@@ -23,6 +23,12 @@ final class CircuitTests: XCTestCase {
         XCTAssertEqual(moved?.origin, .init(x: 5, y: 5))
     }
 
+    func test_shouldMoveWireOrigin() {
+        sut.moveComponent(resistor, to: CGPoint(x: 5, y: 5))
+        let moved = sut.components.first(where: {$0.id == resistor.id})
+        XCTAssertEqual(moved?.origin, .init(x: 5, y: 5))
+    }
+
     func test_circuitShouldDeleteComponent() throws {
         sut.deleteComponent(node)
         XCTAssertEqual(sut.components.count, 2)
@@ -33,5 +39,12 @@ final class CircuitTests: XCTestCase {
         let rotated = sut.components.first(where: {$0.id == resistor.id}) as? Resistor
         XCTAssertEqual(rotated?.vertical, true)
         XCTAssertEqual(sut.components.count, 3)
+    }
+
+    func test_shouldUpdateComponent() throws {
+        wire.length = 200
+        sut.updateComponent(wire)
+        let updated = sut.components.first(where: { $0.id == wire.id }) as? Wire
+        XCTAssertEqual(updated?.length, 200)
     }
 }

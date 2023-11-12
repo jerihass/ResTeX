@@ -40,8 +40,8 @@ struct Node: Component {
     var rect: CGRect {
         let x = origin.x
         let y = origin.y
-        let width = CGFloat(radius * 2)
-        let height = CGFloat(radius * 2)
+        let width: CGFloat = CGFloat(radius * 2 < 5 ? 5 : radius * 2)
+        let height = CGFloat(radius * 2 < 5 ? 5 : radius * 2)
         return .init(x: x, y: y, width: width, height: height)
     }
     var vertical: Bool = false
@@ -58,6 +58,7 @@ struct Wire: Component {
     var length: CGFloat
     var vertical: Bool = false
     var selected: Bool = false
+    var endPoints: EndPoints = EndPoints()
     mutating func move(_ location: CGPoint) {
         start = location
     }
@@ -70,6 +71,11 @@ struct Wire: Component {
         return .init(x: x, y: y, width: width, height: height)
     }
     var key: ComponentKeys { .wire }
+
+    struct EndPoints: Codable {
+        var leading: Bool = false
+        var trailing: Bool = false
+    }
 }
 
 struct Resistor: Component {

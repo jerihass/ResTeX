@@ -24,7 +24,7 @@ final class HitboxTests: XCTestCase {
 
     func test_shouldHitboxWire() throws {
         var hit: CGPoint = .init(x: 0, y: 0)
-        let nodeshape = WireShape(line: wire)
+        let nodeshape = WireShape(wire: wire)
         var didHit = nodeshape.inBounds(point: hit)
         XCTAssertEqual(didHit, true)
 

@@ -16,7 +16,7 @@ extension Node: ComponentShape {
 
 extension Wire: ComponentShape {
     var shape: any CircuitShape {
-        WireShape(line: self)
+        WireShape(wire: self)
     }
 }
 

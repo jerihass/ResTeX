@@ -6,10 +6,10 @@ import SwiftUI
 
 struct ContentView: View {
     @Binding var document: ResTexDocument
-    
+
     var body: some View {
         ResTexEditor(model: ResTexModel(circuit: document.circuit,
-                                            callback: { circuit in
+                                        callback: { circuit in
             document.circuit = circuit
         }))
     }

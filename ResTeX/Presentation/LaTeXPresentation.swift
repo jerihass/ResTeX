@@ -11,10 +11,10 @@ protocol LaTeXRepresentable {
 extension Resistor: LaTeXRepresentable {
     var latexString: String {
         if vertical {
-            return "(\(origin.x)pt,\(origin.y / -1)pt) to [R, l=LABEL] (\(origin.x)pt,\(origin.y / -1 - 36)pt)"
+            return "(\(origin.x)pt,\(origin.y / -1)pt) to [R, l=R] (\(origin.x)pt,\(origin.y / -1 - 40)pt)"
 
         } else {
-            return "(\(origin.x)pt,\(origin.y / -1)pt) to [R, l=LABEL] (\(origin.x + 36)pt,\(origin.y / -1)pt)"
+            return "(\(origin.x)pt,\(origin.y / -1)pt) to [R, l=R] (\(origin.x + 40)pt,\(origin.y / -1)pt)"
         }
     }
 }
@@ -25,7 +25,9 @@ extension Wire: LaTeXRepresentable {
         let sy = start.y * -1
         let ey = vertical ? sy - length : sy
         let ex = vertical ? sx : sx + length
-        return "(\(sx)pt,\(sy)pt) to [short, -] (\(ex)pt,\(ey)pt)"
+        let leadNode = self.endPoints.leading ? "*" : ""
+        let trailNode = self.endPoints.trailing ? "*" : ""
+        return "(\(sx)pt,\(sy)pt) to [short, \(leadNode)-\(trailNode)] (\(ex)pt,\(ey)pt)"
     }
 }
 
@@ -38,15 +40,28 @@ extension Node: LaTeXRepresentable {
 extension Circuit {
     var latexString: String {
         var fullString: String = ""
-        let latex = components.compactMap({$0 as? LaTeXRepresentable})
-        for component in latex.enumerated() {
+
+        fullString += LaTeXStrings.begin
+        fullString += LaTeXStrings.draw
+
+        let latexComponents = components.compactMap({$0 as? LaTeXRepresentable})
+        for component in latexComponents.enumerated() {
             fullString += component.element.latexString
-            if component.offset < latex.count - 1 {
+            if component.offset < latexComponents.count - 1 {
                 fullString += "\n"
             } else {
-                fullString += ";"
+                fullString += ";\n"
             }
         }
+
+        fullString += LaTeXStrings.end
+
         return fullString
     }
+}
+
+struct LaTeXStrings {
+    static var begin: String = "\\begin{circuitikz}[american voltages]\n"
+    static var draw: String = "\\draw\n"
+    static var end: String = "\\end{circuitikz}\n"
 }

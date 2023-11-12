@@ -12,21 +12,31 @@ final class CircuitToLatexTest: XCTestCase {
     var resistor = Resistor(start: .init(x: 30, y: 20))
     var wire2 = Wire(start: .init(x: 66, y: 20), length: 40)
 
+    func test_shouldMakeLatexWireWithNodes() throws {
+        var sut = wire
+        sut.endPoints.leading = false
+        sut.endPoints.trailing = true
+        XCTAssertEqual(sut.latexString, "(20.0pt,-20.0pt) to [short, -*] (60.0pt,-20.0pt)")
+    }
+
     func test_shouldGenerateBasicLatexStringFromResistor() throws {
-        let circuit = Circuit(components: [resistor])
-        let sut = circuit.latexString
-        XCTAssertEqual(sut, "[R, l=LABEL] (5.0,3.0)")
+        let sut = resistor
+        XCTAssertEqual(sut.latexString, "(30.0pt,-20.0pt) to [R, l=R] (70.0pt,-20.0pt)")
     }
 
     func test_shouldGenerateLaTeXWithSeveralComponent() throws {
-        let circuit = Circuit(components: [wire, resistor, wire2])
-        let sut = circuit.latexString
+        let sut = Circuit(components: [wire, resistor, wire2])
+        let string = sut.latexString
         let latex = """
-                    [short, -] (5.0,5.0)
-                    to [R, l=LABEL] (5.0,3.0);
+                    \\begin{circuitikz}[american voltages]
+                    \\draw
+                    (20.0pt,-20.0pt) to [short, -] (60.0pt,-20.0pt)
+                    (30.0pt,-20.0pt) to [R, l=R] (70.0pt,-20.0pt)
+                    (66.0pt,-20.0pt) to [short, -] (106.0pt,-20.0pt);
+                    \\end{circuitikz}\n
                     """
-        print(sut)
-        XCTAssertEqual(sut,latex)
+        print(string)
+        XCTAssertEqual(string,latex)
     }
 }
 
