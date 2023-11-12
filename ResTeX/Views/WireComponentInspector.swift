@@ -55,8 +55,12 @@ struct WireComponentInspector: View {
                 })
             }
             .onChange(of: length) { model.changeLength($0) }
-            .onChange(of: leadingNode) { model.changeLeadingNode($0) }
-            .onChange(of: trailingNode) { model.changeTrailingNode($0) }
+            .onChange(of: leadingNode) {
+                model.changeLeadingNode($0)
+            }
+            .onChange(of: trailingNode) {
+                model.changeTrailingNode($0)
+            }
         }
     }
 }

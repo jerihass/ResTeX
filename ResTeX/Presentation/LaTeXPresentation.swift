@@ -25,7 +25,9 @@ extension Wire: LaTeXRepresentable {
         let sy = start.y * -1
         let ey = vertical ? sy - length : sy
         let ex = vertical ? sx : sx + length
-        return "(\(sx)pt,\(sy)pt) to [short, -] (\(ex)pt,\(ey)pt)"
+        let leadNode = self.endPoints.leading ? "*" : ""
+        let trailNode = self.endPoints.trailing ? "*" : ""
+        return "(\(sx)pt,\(sy)pt) to [short, \(leadNode)-\(trailNode)] (\(ex)pt,\(ey)pt)"
     }
 }
 

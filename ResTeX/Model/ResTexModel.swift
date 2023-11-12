@@ -17,6 +17,7 @@ class ResTexModel: ObservableObject {
     func moveComponent(_ comp: Component, destination: CGPoint) {
         circuit.moveComponent(comp, to: destination)
         callback(circuit)
+        selectedComponent = circuit.components.first(where: { $0.id == comp.id })
     }
 
     func selectComponent(_ component: Component?) {
@@ -40,12 +41,21 @@ class ResTexModel: ObservableObject {
         guard let toRemove = circuit.components.first(where: {$0.id == component.id}) else { return }
         circuit.deleteComponent(toRemove)
         callback(circuit)
+        selectedComponent = nil
     }
 
     func rotateComponent(_ component: Component?) {
         guard let component = component else { return }
         circuit.rotateComponent(component)
         callback(circuit)
+        selectedComponent = circuit.components.first(where: { $0.id == component.id })
+    }
+
+    func updateComponent(_ component: Component?) {
+        guard let component = component else { return }
+        circuit.updateComponent(component)
+        callback(circuit)
+        selectedComponent = circuit.components.first(where: {$0.id == component.id })
     }
 
     func makeLatex() {

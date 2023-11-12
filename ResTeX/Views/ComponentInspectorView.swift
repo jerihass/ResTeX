@@ -5,11 +5,11 @@
 import SwiftUI
 
 struct ComponentInspectorView: View {
-    var component: (any Component)?
+    @Binding var component: (any Component)?
     var handler: (any Component) -> Void
 
-    init(component: (any Component)?, handler: @escaping (any Component) -> Void = { _ in }) {
-        self.component = component
+    init(component: Binding<(any Component)?>, handler: @escaping (any Component) -> Void = { _ in }) {
+        self._component = component
         self.handler = handler
     }
 
@@ -32,7 +32,7 @@ struct ComponentInspectorView: View {
 }
 
 #Preview {
-    @State var wire = Wire(start: .zero, length: 10)
-    return ComponentInspectorView(component: wire)
+    @State var wire = Wire(start: .zero, length: 10) as Component?
+    return ComponentInspectorView(component: $wire)
 }
 

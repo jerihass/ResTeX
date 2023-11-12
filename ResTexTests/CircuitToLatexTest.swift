@@ -12,9 +12,11 @@ final class CircuitToLatexTest: XCTestCase {
     var resistor = Resistor(start: .init(x: 30, y: 20))
     var wire2 = Wire(start: .init(x: 66, y: 20), length: 40)
 
-    func test_shouldMakeLaTeXFromWire() throws {
-        let sut = wire
-        XCTAssertEqual(sut.latexString, "(20.0pt,-20.0pt) to [short, -] (60.0pt,-20.0pt)")
+    func test_shouldMakeLatexWireWithNodes() throws {
+        var sut = wire
+        sut.endPoints.leading = false
+        sut.endPoints.trailing = true
+        XCTAssertEqual(sut.latexString, "(20.0pt,-20.0pt) to [short, -*] (60.0pt,-20.0pt)")
     }
 
     func test_shouldGenerateBasicLatexStringFromResistor() throws {

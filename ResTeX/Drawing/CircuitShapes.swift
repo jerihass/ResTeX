@@ -56,10 +56,10 @@ struct WireShape: CircuitShape {
     var thickness: Int = 1
     func path(in rect: CGRect = .infinite) -> Path {
 
-        let leadingNode = Path(circleCenteredAt: wire.start, radius: 2)
-        let trailingNode = Path(circleCenteredAt: .init(x: wire.start.x + wire.length, y: wire.start.y), radius: 2)
+
         var wirePath = Path()
         wirePath.move(to: wire.start)
+
         if wire.vertical {
             wirePath.addLine(to: CGPoint(x: wire.start.x, y: wire.start.y + wire.length))
         } else {
@@ -71,10 +71,15 @@ struct WireShape: CircuitShape {
         fullPath.addPath(wirePath.cgPath)
 
         if wire.endPoints.leading {
+            let leadingNode = Path(circleCenteredAt: wire.start, radius: 2)
             fullPath.addPath(leadingNode.cgPath)
         }
 
         if wire.endPoints.trailing {
+            let trailingNode = wire.vertical ?
+            Path(circleCenteredAt: .init(x: wire.start.x, y: wire.start.y + wire.length), radius: 2) :
+            Path(circleCenteredAt: .init(x: wire.start.x + wire.length, y: wire.start.y), radius: 2)
+
             fullPath.addPath(trailingNode.cgPath)
         }
 

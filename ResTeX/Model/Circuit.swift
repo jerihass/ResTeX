@@ -17,6 +17,7 @@ extension Circuit {
         modifyComponent(component, modification: { move(snapPoint, $0) })
     }
 
+    //TODO: Rename this function
     mutating func selectComponent(_ component: Component) {
         modifyComponent(component, modification: select)
     }
@@ -27,6 +28,12 @@ extension Circuit {
 
     mutating func deleteComponent(_ component: Component) {
         components.removeAll(where: { $0.id == component.id })
+    }
+
+    mutating func updateComponent(_ component: Component) {
+        modifyComponent(component, modification: { _ in
+            component
+        })
     }
 
     mutating func deselectAll() {
@@ -87,12 +94,15 @@ func move(_ point: CGPoint, _ component: Component) -> Component {
     return modified
 }
 
+func update(_ component: Component) -> Component {
+    return component
+}
+
 extension Circuit {
     static var demo: Circuit {
-        let node = Node(radius: 1, origin: .init(x: 20, y: 20))
-        let wire = Wire(start: .init(x: 20, y: 20), length: 40)
-        let resistor = Resistor(start: .init(x: 30, y: 20))
-        let wire2 = Wire(start: .init(x: 66, y: 20), length: 40)
-        return Circuit(components: [node, wire, resistor, wire2])
+        let wire = Wire(start: .init(x: 20, y: 20), length: 40, endPoints: .init(leading: true))
+        let resistor = Resistor(start: .init(x: 60, y: 20))
+        let wire2 = Wire(start: .init(x: 100, y: 20), length: 40, endPoints: .init(trailing: true))
+        return Circuit(components: [wire, resistor, wire2])
     }
 }
