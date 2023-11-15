@@ -6,9 +6,7 @@ import SwiftUI
 import UniformTypeIdentifiers
 
 extension UTType {
-    static var restex: UTType {
-        UTType(importedAs: "com.saletlucem.restex")
-    }
+    static let restex = UTType(exportedAs: "com.saletlucem.restex")
 }
 
 struct ResTexDocument: FileDocument {

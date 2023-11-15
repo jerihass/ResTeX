@@ -8,6 +8,7 @@ enum ComponentEnum: Codable {
     case node(Node)
     case wire(Wire)
     case resistor(Resistor)
+    case capacitor(Capacitor)
 
     var component: Component? {
         var comp: Component?
@@ -18,6 +19,8 @@ enum ComponentEnum: Codable {
             comp = wire
         case .resistor(let resistor):
             comp = resistor
+        case .capacitor(let capacitor):
+            comp = capacitor
         }
         return comp
     }

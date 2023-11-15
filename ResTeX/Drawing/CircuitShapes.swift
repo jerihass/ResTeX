@@ -102,7 +102,7 @@ struct ResistorShape: CircuitShape {
     var resistor: Resistor
     var isSelected: Bool = false
     var length: Int = 40
-    var width: Int = 6
+    var width: Int = 8
     var component: Component { resistor }
     var vertical: Bool { component.vertical }
     var filled: Bool = false
@@ -147,4 +147,50 @@ struct ResistorShape: CircuitShape {
     }
 
     var origin: CGPoint { resistor.start }
+}
+
+struct CapacitorShape: CircuitShape {
+    var id = UUID()
+    var capacitor: Capacitor
+    var origin: CGPoint { capacitor.start }
+    var isSelected: Bool = false
+    var component: Component { capacitor }
+    var vertical: Bool { component.vertical }
+    var filled: Bool = false
+
+    init(capacitor: Capacitor) {
+        self.capacitor = capacitor
+    }
+
+    func path(in rect: CGRect) -> Path {
+        var path = Path()
+        let bodyLength = 6.0
+        let height = 17/2.0
+        let leadLength = (capacitor.length - bodyLength) / 2.0
+
+        let leftLeadStart = capacitor.start
+        let leftLeadEnd = CGPoint(x: capacitor.start.x + leadLength, y: capacitor.start.y)
+        let leftPlateX = capacitor.start.x + leadLength
+        let leftPlateTop = CGPoint(x: leftPlateX, y: capacitor.start.y - height)
+        let leftPlateBottom = CGPoint(x: leftPlateX, y: capacitor.start.y + height)
+
+        let rightPlateX = leftPlateX + bodyLength
+        let rightPlateTop = CGPoint(x: rightPlateX, y: capacitor.start.y - height)
+        let rightPlateBottom = CGPoint(x: rightPlateX, y: capacitor.start.y + height)
+        let rightLeadStart = CGPoint(x: rightPlateX, y: capacitor.start.y)
+        let rightLeadEnd = CGPoint(x: rightLeadStart.x + leadLength, y: rightLeadStart.y)
+
+        path.move(to: leftLeadStart)
+        path.addLine(to: leftLeadEnd)
+        path.move(to: leftPlateTop)
+        path.addLine(to: leftPlateBottom)
+        path.move(to: rightPlateTop)
+        path.addLine(to: rightPlateBottom)
+        path.move(to: .init(x: rightPlateX, y: capacitor.start.y))
+        path.addLine(to: rightLeadEnd)
+        path.move(to: capacitor.start)
+        path.closeSubpath()
+        return path
+    }
+    
 }

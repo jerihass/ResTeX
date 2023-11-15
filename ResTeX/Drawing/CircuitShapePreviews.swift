@@ -24,13 +24,13 @@ fileprivate struct PreviewShapes {
     let origin = CGPoint(x: 20, y: 20)
 
     init() {
-        let resistor: ResistorShape = .init(resistor: .init(start: origin, length: 60))
-        let wire: WireShape = .init(wire: .init(start: origin, length: 40, endPoints: .init(leading: true, trailing: true)))
+        let wire: WireShape = .init(wire: .init(start: origin, length: 40, endPoints: .init(leading: false, trailing: true)))
+        let resistor: ResistorShape = .init(resistor: .init(start: origin, length: 80))
         let resistor2: ResistorShape = .init(resistor: .init(start: origin, vertical: true))
-
-        self.presenter.append(ComponentPresenter(circuitShape: resistor))
+        let capacitor: CapacitorShape = .init(capacitor: .init(start: origin, length: 40))
         self.presenter.append(ComponentPresenter(circuitShape: wire))
-        self.presenter.append(ComponentPresenter(circuitShape: resistor2))
-
+        self.presenter.append(ComponentPresenter(circuitShape: resistor))
+//        self.presenter.append(ComponentPresenter(circuitShape: resistor2))
+        self.presenter.append(ComponentPresenter(circuitShape: capacitor))
     }
 }

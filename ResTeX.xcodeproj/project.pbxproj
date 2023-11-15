@@ -230,8 +230,8 @@
 				ADDC6BC82AE5BAF200FBEEA8 /* CircuitShapes.swift */,
 				ADF3D8D82AEE5BA100095953 /* Component+Shape.swift */,
 				AD67E3372AEE832B00D5BAA2 /* Shape+HitBox.swift */,
-				ADB97B5A2AFBCAF900C34EE1 /* CircuitShapePreviews.swift */,
 				ADD157022AFFE17F009E81BE /* CircuitPresenter.swift */,
+				ADB97B5A2AFBCAF900C34EE1 /* CircuitShapePreviews.swift */,
 			);
 			path = Drawing;
 			sourceTree = "<group>";
@@ -583,6 +583,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				"INFOPLIST_KEY_UISupportsDocumentBrowser[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UISupportsDocumentBrowser[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_WKWatchOnly = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
@@ -624,6 +625,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				"INFOPLIST_KEY_UISupportsDocumentBrowser[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UISupportsDocumentBrowser[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_WKWatchOnly = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";

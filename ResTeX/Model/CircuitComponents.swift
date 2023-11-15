@@ -8,6 +8,8 @@ enum ComponentKeys: String, CodingKey, CaseIterable {
     case node
     case wire
     case resistor
+    case capacitor
+
     func magic(_ component: Component) -> ComponentEnum? {
         switch self {
         case .node:
@@ -19,6 +21,9 @@ enum ComponentKeys: String, CodingKey, CaseIterable {
         case .resistor:
             guard let res = component as? Resistor else { return nil }
             return ComponentEnum.resistor(res)
+        case .capacitor:
+            guard let cap = component as? Capacitor else { return nil }
+            return ComponentEnum.capacitor(cap)
         }
     }
 }
@@ -102,4 +107,23 @@ struct Resistor: Component {
     var key: ComponentKeys { .resistor }
 }
 
-
+struct Capacitor: Component {
+    var id: UUID = UUID()
+    var label: String = "C"
+    var start: CGPoint
+    var length: CGFloat = 10
+    var origin: CGPoint { start }
+    var vertical: Bool = false
+    var selected: Bool = false
+    mutating func move(_ location: CGPoint) {
+        start = location
+    }
+    var rect: CGRect {
+        let x = origin.x
+        let y = origin.y
+        let width = CGFloat(6)
+        let height = CGFloat(17)
+        return .init(x: x, y: y, width: width, height: height)
+    }
+    var key: ComponentKeys { .capacitor }
+}
