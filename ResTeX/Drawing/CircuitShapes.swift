@@ -167,29 +167,53 @@ struct CapacitorShape: CircuitShape {
         let bodyLength = 6.0
         let height = 17/2.0
         let leadLength = (capacitor.length - bodyLength) / 2.0
+        if !vertical {
+            let leftLeadStart = capacitor.start
+            let leftLeadEnd = CGPoint(x: capacitor.start.x + leadLength, y: capacitor.start.y)
+            let leftPlateX = capacitor.start.x + leadLength
+            let leftPlateTop = CGPoint(x: leftPlateX, y: capacitor.start.y - height)
+            let leftPlateBottom = CGPoint(x: leftPlateX, y: capacitor.start.y + height)
 
-        let leftLeadStart = capacitor.start
-        let leftLeadEnd = CGPoint(x: capacitor.start.x + leadLength, y: capacitor.start.y)
-        let leftPlateX = capacitor.start.x + leadLength
-        let leftPlateTop = CGPoint(x: leftPlateX, y: capacitor.start.y - height)
-        let leftPlateBottom = CGPoint(x: leftPlateX, y: capacitor.start.y + height)
+            let rightPlateX = leftPlateX + bodyLength
+            let rightPlateTop = CGPoint(x: rightPlateX, y: capacitor.start.y - height)
+            let rightPlateBottom = CGPoint(x: rightPlateX, y: capacitor.start.y + height)
+            let rightLeadStart = CGPoint(x: rightPlateX, y: capacitor.start.y)
+            let rightLeadEnd = CGPoint(x: rightLeadStart.x + leadLength, y: rightLeadStart.y)
 
-        let rightPlateX = leftPlateX + bodyLength
-        let rightPlateTop = CGPoint(x: rightPlateX, y: capacitor.start.y - height)
-        let rightPlateBottom = CGPoint(x: rightPlateX, y: capacitor.start.y + height)
-        let rightLeadStart = CGPoint(x: rightPlateX, y: capacitor.start.y)
-        let rightLeadEnd = CGPoint(x: rightLeadStart.x + leadLength, y: rightLeadStart.y)
+            path.move(to: leftLeadStart)
+            path.addLine(to: leftLeadEnd)
+            path.move(to: leftPlateTop)
+            path.addLine(to: leftPlateBottom)
+            path.move(to: rightPlateTop)
+            path.addLine(to: rightPlateBottom)
+            path.move(to: .init(x: rightPlateX, y: capacitor.start.y))
+            path.addLine(to: rightLeadEnd)
+            path.move(to: capacitor.start)
+            path.closeSubpath()
+        } else {
+            let topLeadStart = capacitor.start
+            let topPlateY = capacitor.start.y + leadLength
+            let topLeadEnd = CGPoint(x: capacitor.start.x, y: topPlateY)
+            let topPlateLeft = CGPoint(x: capacitor.start.x - height, y: topPlateY)
+            let topPlateRight = CGPoint(x: capacitor.start.x + height, y:topPlateY)
 
-        path.move(to: leftLeadStart)
-        path.addLine(to: leftLeadEnd)
-        path.move(to: leftPlateTop)
-        path.addLine(to: leftPlateBottom)
-        path.move(to: rightPlateTop)
-        path.addLine(to: rightPlateBottom)
-        path.move(to: .init(x: rightPlateX, y: capacitor.start.y))
-        path.addLine(to: rightLeadEnd)
-        path.move(to: capacitor.start)
-        path.closeSubpath()
+            let bottomPlateY = topPlateY + bodyLength
+            let bottomPlateLeft = CGPoint(x: capacitor.start.x - height, y: bottomPlateY)
+            let bottomPlateRight = CGPoint(x: capacitor.start.x + height, y: bottomPlateY)
+            let bottomLeadStart = CGPoint(x: capacitor.start.x, y: bottomPlateY)
+            let bottomLeadEnd = CGPoint(x: capacitor.start.x, y: bottomLeadStart.y + leadLength)
+
+            path.move(to: topLeadStart)
+            path.addLine(to: topLeadEnd)
+            path.move(to: topPlateLeft)
+            path.addLine(to: topPlateRight)
+            path.move(to: bottomPlateLeft)
+            path.addLine(to: bottomPlateRight)
+            path.move(to: .init(x: capacitor.start.x, y: bottomPlateY))
+            path.addLine(to: bottomLeadEnd)
+            path.move(to: capacitor.start)
+            path.closeSubpath()
+        }
         return path
     }
     

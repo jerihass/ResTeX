@@ -42,7 +42,11 @@ extension Capacitor: LaTeXRepresentable {
     var latexString: String {
         let x = origin.x
         let y = origin.y
-        return "(\(x)pt,\(y / -1)pt) to [C, l=\(label)] (\(x + self.length)pt,\(y / -1)pt)"
+        if !vertical {
+            return "(\(x)pt,\(y / -1)pt) to [C, l=\(label)] (\(x + self.length)pt,\(y / -1)pt)"
+        } else {
+            return "(\(x)pt,\(y / -1)pt) to [C, l=\(label)] (\(x)pt,\(y / -1 - self.length)pt)"
+        }
     }
 }
 extension Circuit {
