@@ -32,6 +32,9 @@ struct ComponentInspectorView: View {
             let resModel = ResistorModel(resistor: res, handler: { handler($0)})
             ResistorComponentInspector(model: resModel)
         }
+        if let cap = component as? Capacitor {
+//            let capModel = CapacitorModel(cap)
+        }
     }
 }
 

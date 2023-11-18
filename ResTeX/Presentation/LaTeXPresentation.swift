@@ -38,7 +38,13 @@ extension Node: LaTeXRepresentable {
         return "(\(x)pt,\(y)pt) node[circ]{} to (\(x)pt,\(y)pt)"
     }
 }
-
+extension Capacitor: LaTeXRepresentable {
+    var latexString: String {
+        let x = origin.x
+        let y = origin.y
+        return "(\(x)pt,\(y / -1)pt) to [C, l=\(label)] (\(x + self.length)pt,\(y / -1)pt)"
+    }
+}
 extension Circuit {
     var latexString: String {
         var fullString: String = ""

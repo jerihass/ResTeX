@@ -25,3 +25,9 @@ extension Resistor: ComponentShape {
         ResistorShape(resistor: self)
     }
 }
+
+extension Capacitor: ComponentShape {
+    var shape: any CircuitShape {
+        CapacitorShape(capacitor: self)
+    }
+}

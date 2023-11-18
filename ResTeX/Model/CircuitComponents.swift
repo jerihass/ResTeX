@@ -121,7 +121,7 @@ struct Capacitor: Component {
     var rect: CGRect {
         let x = origin.x
         let y = origin.y
-        let width = CGFloat(6)
+        let width = length
         let height = CGFloat(17)
         return .init(x: x, y: y, width: width, height: height)
     }

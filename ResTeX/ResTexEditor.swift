@@ -65,11 +65,6 @@ struct ResTexEditor: Sendable, View {
     }
 }
 
-#Preview {
-    return ResTexEditor(model: .init(circuit: Circuit(components: [Resistor(start: .init(x: 50, y: 50))]),
-                                       callback: { _ in }))
-}
-
 struct QuickButtonView: View {
     @ObservedObject var model: ResTexModel
     @Binding var selectedComponent: (any Component)?
@@ -77,11 +72,16 @@ struct QuickButtonView: View {
     var body: some View {
         HStack {
             Button("Resistor") { model.addComponent(Resistor(start: .init(x: 20, y: 20))) }
-            Button("Node") { model.addComponent(Node(radius: 2, origin: .init(x: 30, y: 30))) }
+            Button("Capacitor") { model.addComponent(Capacitor(start: .init(x: 20, y: 20), length: 30)) }
             Button("Wire") { model.addComponent(Wire(start: .init(x: 30, y: 30), length: 20)) }
             Button("Make Latex") { model.makeLatex() }
             Button("Delete") { model.deleteComponent(selectedComponent)}
             Button("Rotate") { model.rotateComponent(selectedComponent) }
         }
     }
+}
+
+#Preview {
+    return ResTexEditor(model: .init(circuit: Circuit(components: [Resistor(start: .init(x: 50, y: 50))]),
+                                       callback: { _ in }))
 }

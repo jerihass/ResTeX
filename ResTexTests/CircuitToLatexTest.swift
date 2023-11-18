@@ -11,6 +11,7 @@ final class CircuitToLatexTest: XCTestCase {
     var wire = Wire(start: .init(x: 20, y: 20), length: 40)
     var resistor = Resistor(start: .init(x: 30, y: 20))
     var wire2 = Wire(start: .init(x: 66, y: 20), length: 40)
+    var capacitor = Capacitor(start: .init(x: 55, y: 40))
 
     func test_shouldMakeLatexNode() throws {
         let sut = node
@@ -29,6 +30,11 @@ final class CircuitToLatexTest: XCTestCase {
         XCTAssertEqual(sut.latexString, "(30.0pt,-20.0pt) to [R, l=R] (70.0pt,-20.0pt)")
     }
 
+    func test_shouldGenerateLaTeXForBasicCapacitor() throws {
+        let sut = capacitor
+        XCTAssertEqual(sut.latexString, "(55.0pt,-40.0pt) to [C, l=C] (65.0pt,-40.0pt)")
+    }
+    
     func test_shouldGenerateLaTeXWithSeveralComponent() throws {
         let sut = Circuit(components: [wire, resistor, wire2])
         let string = sut.latexString

@@ -22,6 +22,7 @@ struct CircuitPresenter {
         var path: Path = .init()
         for presenter in circuit.presenter {
             if !presenter.selected {
+                print("drawing presenter: \(presenter.circuitShape)")
                 path.addPath(presenter.circuitShape.path(in: .infinite))
             }
         }

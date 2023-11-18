@@ -29,6 +29,13 @@ extension ResistorShape: HitBox {
     }
 }
 
+extension CapacitorShape: HitBox {
+    func inBounds(point: CGPoint) -> Bool {
+        guard let cap = self.component as? Capacitor else  { return false }
+        return cap.rect.contains(point)
+    }
+}
+
 func rotateRect(_ rect: CGRect) -> CGRect {
     return CGRect(origin: rect.origin, size: .init(width: rect.height, height: rect.width))
 }
